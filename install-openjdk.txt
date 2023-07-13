@@ -1,0 +1,11 @@
+apt install openjdk-8-jdk
+apt install openjdk-11-jdk
+apt install openjdk-17-jdk
+
+java -version
+
+update-alternatives --list java
+
+update-java-alternatives --list
+
+update-alternatives --config java
