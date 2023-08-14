@@ -23,3 +23,24 @@ HotSpot-Young-Generation-Collection.jpg
 
 
 This section describes Garbage Collectors used for the Young generation: Serial, Parallel Scavenge (PS), Parallel New (ParNew), and Garbage First (G1).
+
+There are 4 primary garbage collectors for the Young (new) generation based on the algorithm used to perform the GC task:
+
+1. Serial Collector (invoked by "-XX:+UseSerialGC" option) - The Serial collector for Young generation uses the "Copy (also called Scavenge)" algorithm serially using 1 CPU processor (1 thread) only in a stop-the-world fashion:
+
+Copy live objects from "eden" to "from" space, when "eden" space is full.
+Empty "eden" space. Dead objects are wiped out.
+Copy live objects from "from" to "to" space, when "from" space is full.
+Empty "from" space. Dead objects are wiped out.
+Copy live objects from "to" space to "tenured" generation, when "to" space is full or the live object is getting too old.
+Swap "from" and "to" spaces".
+
+The Serial collector for Young (new) generation can be identified in GC log messages with the "DefNew" label, as in this example: "[DefNew: 182861K->22538K(206464K), 0.0442227 secs]".
+
+
+
+
+
+
+
+
