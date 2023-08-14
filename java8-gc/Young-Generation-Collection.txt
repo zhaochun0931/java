@@ -17,3 +17,4 @@ There are 6 basic steps involved in a Minor GC:
 6. Swap the label between the Survivor Space "From" area and the Survivor Space "To" area, so the Survivor Space "To" area is empty.
 
 The picture below illustrates basic steps of a Minor GC in HotSpot JVM:
+HotSpot-Young-Generation-Collection.jpg
