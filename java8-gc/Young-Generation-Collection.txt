@@ -18,3 +18,8 @@ There are 6 basic steps involved in a Minor GC:
 
 The picture below illustrates basic steps of a Minor GC in HotSpot JVM:
 HotSpot-Young-Generation-Collection.jpg
+
+
+
+
+This section describes Garbage Collectors used for the Young generation: Serial, Parallel Scavenge (PS), Parallel New (ParNew), and Garbage First (G1).
