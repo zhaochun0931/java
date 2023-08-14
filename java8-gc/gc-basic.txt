@@ -1,0 +1,8 @@
+A garbage collector is JVM component that is responsible for managing memory space primarily in the Head data area. 
+It also manages memory space in Method Area and Direct Memory data areas. 
+More specifically, a garbage collector has 3 major responsibilities.
+
+Allocating Memory for New Objects
+
+When the Java application is requesting to create a new data object (an instance of a class or array), the garbage collector must find a block of free space of a certain size in the memory. It is an easy task at the beginning, when the free space is a single continuous chuck. But when the free space becomes fragmented because of old objects are deallocated not in the same order as them were allocated. 
+The garbage collector may have to move data objects around to put free spaces together into large chunks.
