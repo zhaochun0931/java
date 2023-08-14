@@ -37,3 +37,4 @@ Most objects have shorter lives.
 Less older objects referencing younger objects than younger objects referencing older objects.
 
 The picture below illustrates the generational garbage collection architecture used in HotSpot JVM:
+HotSpot-Generational-Garbage-Collection.jpg
