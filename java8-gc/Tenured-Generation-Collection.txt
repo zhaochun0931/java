@@ -1,0 +1,14 @@
+Tenured Generation Collection - Major GC
+
+This section describes basic steps of a Tenured Generation Collection, also called a Major GC, which uses a simple 3-step Mark-Sweep-Compact algorithm on the entire Tenured Generation.
+
+
+The basic algorithm used in Major GC is called Mark-Sweep-Compact, which consists of 3 steps:
+
+Mark - Identify which objects are still live in the Tenured Generation and mark them.
+Sweep - Identify and remove garbage by sweeping over the entire Tenured Generation.
+Compact - Move live objects towards the beginning of the generation to combine fragmented free spaces into a single contiguous chunk at the end of the generation.
+
+
+The Mark-Sweep-Compact algorithm is very straightforward as illustrated in the picture below:
+
