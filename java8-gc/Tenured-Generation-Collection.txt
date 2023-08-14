@@ -11,4 +11,45 @@ Compact - Move live objects towards the beginning of the generation to combine f
 
 
 The Mark-Sweep-Compact algorithm is very straightforward as illustrated in the picture below:
+HotSpot-Tenured-Generation-Collection.jpg
+
+
+
+
+
+
+This section describes Garbage Collectors used for the Tenured generation: Serial, Parallel Old (ParOldGen), Concurrent Mark Sweep (CMS), and Garbage First (G1).
+
+There are 4 primary garbage collectors for the Tenured (old) generation based on the algorithm used to perform the GC task:
+
+1. Serial (also called MarkSweepCompact) Collector (invoked by "-XX:+UseSerialGC" option) - The Serial collector for Tenured generation uses the "Mark-Sweep-Compact" algorithm serially using 1 CPU processor (1 thread) only in a stop-the-world fashion.
+
+The Serial collector for Tenured (old) generation can be identified in GC log messages with the "Tenured" label, as in this example: "[Tenured: 426257K->215299K(458752K), 0.0630203 secs]".
+
+
+
+2. Parallel Old (Also called PS MarkSweep) Collector (invoked by "-XX:+UseParallelOldGC" option) - The Parallel Old collector for Tenured generation uses the "Mark-Sweep-Compact" algorithm parallelly using multiple CPU processors (multiple threads) in a stop-the-world fashion.
+
+The Parallel Old collector for Tenured (old) generation can be identified in GC log messages with the "ParOldGen" label, as in this example: "[ParOldGen: 517316K->468947K(524288K)]".
+
+The Parallel Old collector is also called Parallel Compaction collector.
+
+
+
+
+3. Concurrent Mark Sweep (CMS) Collector (invoked by "-XX:+UseConcMarkSweepGC" option) - The CMS collector for Tenured generation Uses an algorithm that runs concurrently without stopping the application for most of the GC duration. This will reduce the application pause time.
+
+The CMS collector for Tenured (old) generation can be identified in GC log messages with the "CMS-initial-mark" label, as in this example: "[1 CMS-initial-mark: 1240K(1540K)]".
+
+
+
+
+4. Garbage First (G1) Collector (invoked by "-XX:+UseG1GC" option) - The G1 collector divides the heap into 3 types of regions: Eden, Survivor and Tenured.
+
+When there are too many Tenured regions used, the G1 collector starts to loop through all existing Tenured regions to mark live objects. This is done concurrently with the application execution.
+
+The G1 collector will share the "copy" phase of the Young generation GC to copy live objects in exiting Tenured regions to new Tenured regions. The copy phase picks up Tenured regions with most garbage first. This is why this collector is called Garbage First (G1) collector.
+
+The G1 collector for Tenured (old) generation can be identified in GC log messages with "[GC concurrent-*]" labels.
+
 
