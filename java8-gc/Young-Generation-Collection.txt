@@ -1,1 +1,19 @@
 Young Generation Collection, also called a Minor GC. The Young Generation is divided into 3 areas: Eden, Survivor Space 'From' and Survivor Space 'To'.
+
+
+In order to make Minor GC more efficient, the Young Generation in HotSpot is further divided into 3 areas:
+1. Eden - Stores newly allocated objects with a larger space.
+2. Survivor Space "From" - Stores objects that survived at least one Minor Collection with a smaller space.
+3. Survivor Space "To" - Empty space reserved as working space for the garbage collector with same space size as Survivor Space "From".
+
+
+
+There are 6 basic steps involved in a Minor GC:
+1. Determine each object in the Young Generation is live or dead.
+2. Live objects in the Eden area are copied to the Survivor Space "To" area.
+3. Live objects in the Survivor Space "From" area that are old enough to be promoted are copied to the Tenured Generation.
+4. Live objects in the Survivor Space "From" area that are not old enough to be promoted are copied to the Survivor Space "To" area.
+5. Remove all dead objects to make the Eden area and the Survivor Space "From" area empty.
+6. Swap the label between the Survivor Space "From" area and the Survivor Space "To" area, so the Survivor Space "To" area is empty.
+
+The picture below illustrates basic steps of a Minor GC in HotSpot JVM:
