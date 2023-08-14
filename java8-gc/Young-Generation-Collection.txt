@@ -41,6 +41,31 @@ The Serial collector for Young (new) generation can be identified in GC log mess
 
 
 
+2. Parallel Scavenge (PS) (also called "PS Scavenge") Collector (invoked by "-XX:+UseParallelGC" option) - The PS collector for Young generation uses the "Copy (also called Scavenge)" algorithm parallelly using multiple CPU processors (multiple threads) in a stop-the-world fashion.
+
+The PS collector for Young (new) generation uses the same algorithm as the Serial collector, except that it uses multiple threads to get the job done faster.
+
+The PS collector for Young (new) generation can be identified in GC log messages with the "PSYoungGen" label, as in this example: "[PSYoungGen: 179654K->29760K(209920K)]".
+
+
+
+3. Parallel New (ParNew) Collector (invoked by "-XX:+UseParNewGC" option) - The ParNew collector for Young generation uses the "Copy (also called Scavenge)" algorithm parallelly using multiple CPU processors (multiple threads) in a stop-the-world fashion.
+
+The PS collector for Young (new) generation uses the same algorithm as the PS collector, except that it has an internal 'callback' that allows an old generation collector to operate on the objects it collects (really written to work with the concurrent collector), as described by Jack Shirazi in "Oracle JVM Garbage Collectors Available From JDK 1.7.0_04 And After".
+
+The ParNew collector for Young (new) generation can be identified in GC log messages with the "ParNew" label, as in this example: "[ParNew: 1068K->63K(1152K), 0.0024959 secs]".
+
+
+
+
+4. Garbage First (G1) Collector (invoked by "-XX:+UseG1GC" option) - The G1 collector divides the heap into 3 types of regions: Eden, Survivor and Tenured.
+
+During each Young generation GC, the G1 collector loops through all existing Eden and Survivor regions to mark all live objects. Then it copies all live objects younger than the tenuring threshold to new Survivor regions. Older objects are copied to new Tenured regions.
+
+The G1 collector for Young (new) generation can be identified in GC log messages with the "G1 Evacuation Pause" label, as in this example: "[GC pause (G1 Evacuation Pause) (young), 0.0096376 secs]".
+
+
+
 
 
 
