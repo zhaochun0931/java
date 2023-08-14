@@ -1,0 +1,1 @@
+Young Generation Collection, also called a Minor GC. The Young Generation is divided into 3 areas: Eden, Survivor Space 'From' and Survivor Space 'To'.
