@@ -2,7 +2,22 @@ A garbage collector is JVM component that is responsible for managing memory spa
 It also manages memory space in Method Area and Direct Memory data areas. 
 More specifically, a garbage collector has 3 major responsibilities.
 
-Allocating Memory for New Objects
-
-When the Java application is requesting to create a new data object (an instance of a class or array), the garbage collector must find a block of free space of a certain size in the memory. It is an easy task at the beginning, when the free space is a single continuous chuck. But when the free space becomes fragmented because of old objects are deallocated not in the same order as them were allocated. 
+1. Allocating Memory for New Objects
+When the Java application is requesting to create a new data object (an instance of a class or array), the garbage collector must find a block of free space of a certain size in the memory. It is an easy task at the beginning, when the free space is a single continuous chuck. 
+But when the free space becomes fragmented because of old objects are deallocated not in the same order as them were allocated. 
 The garbage collector may have to move data objects around to put free spaces together into large chunks.
+
+2. Ensuring Live Objects Remaining in Memory
+Once a data object is allocated, the garbage collector must keep tracking it to know where this object is actually located in the memory, and how many live references that are pointing this object.
+
+3. Deallocating Memory for Dead Objects
+When a data object loses its last live reference, it becomes a dead object, which is also called garbage. The garbage collector can leave dead objects in the memory for some time. But it must deallocate them when there is not enough free space to allocate new objects. The process of finding dead objects and freeing the space used by these objects is known as garbage collection.
+
+
+Takeaways:
+
+1. HotSpot JVM Heap area is divided into 2 generations: Young Generation and Tenured (Old) Generation.
+2. The Young Generation is divided into 3 areas: Eden, Survivor Space 'From' and Survivor Space 'To'.
+3. When the Eden area is full, a Minor Garbage Collection (GC) is performed, which moves live objects from the Eden area to the Survivor Space 'To' area. It also empties the Survivor Space 'From' area by moving "young" live objects to the Survivor Space 'To' area and promoting "old" live objects to the Tenured Generation.
+4. When the Tenured Generation is full, a Full Garbage Collection (GC) is performed, which follows a 3-step, Mark-Sweep-Compact (MSC), process to deallocate dead objects and defragment free space.
+5. There are 5 variations of garbage collectors used in HotSpot JVM: The Serial Collector, The Parallel Collector, The Parallel Compaction Collector, The Concurrent Mark-Sweep (CMS) Collector, and The Garbage First (G1) Collector.
