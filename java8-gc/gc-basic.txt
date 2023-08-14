@@ -21,3 +21,18 @@ Takeaways:
 3. When the Eden area is full, a Minor Garbage Collection (GC) is performed, which moves live objects from the Eden area to the Survivor Space 'To' area. It also empties the Survivor Space 'From' area by moving "young" live objects to the Survivor Space 'To' area and promoting "old" live objects to the Tenured Generation.
 4. When the Tenured Generation is full, a Full Garbage Collection (GC) is performed, which follows a 3-step, Mark-Sweep-Compact (MSC), process to deallocate dead objects and defragment free space.
 5. There are 5 variations of garbage collectors used in HotSpot JVM: The Serial Collector, The Parallel Collector, The Parallel Compaction Collector, The Concurrent Mark-Sweep (CMS) Collector, and The Garbage First (G1) Collector.
+
+
+
+Architecturally, the HotSpot garbage collector is called Generational Collector, which divides the memory into two parts (generations):
+
+1. Young (New) Generation - Stores objects that have shorter lives with less memory space. Garbage collections occur more frequently in Young Generation. The operation of garbage collection in the Young Generation is referred as Minor GC. Faster and less space efficient garbage collection algorithms can be chosen for Minor GC.
+2. Tenured (Old) Generation - Stores objects that have longer lives with more memory space. Garbage collections occur less frequently in Tenured Generation. The operation of garbage collection in the Tenured Generation is referred as Major GC. More space efficient and slower garbage collection algorithms can be chosen for Major GC.
+
+
+A new objects is normally allocated in the Young Generation first. If it survives some number of Minor GC, it will be then promoted to the Tenured Generation.
+
+The generational garbage collection approach is more efficient because of the following weak generational hypothesis observed in most Java applications:
+Most objects have shorter lives.
+Less older objects referencing younger objects than younger objects referencing older objects.
+
