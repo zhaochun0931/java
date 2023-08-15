@@ -32,3 +32,30 @@ So you can read this example as "A Young Generation GC was performed at 0.102 se
 
 "... 0.0009833 secs]" - Total time in seconds spent on the entire GC operation, including Young Generation GC, Tenured Generation GC and Method Area GC. So you can read this example as "0.0009833 seconds spent on the entire GC operation."
 "[Times: user=0.00 sys=0.00, real=0.00 secs]" - CPU time report of the entire GC operation with CPU time spent on the JVM (user), CPU time spent on the OS kernel (system), and elapsed time of the GC. Note that CPU time could be higher than elapsed time, if multiple CPUs were used. All times are in unit of seconds and truncated with 2 decimal points. So you can read this example as "0.00 CPU seconds spent on the JVM, 0.00 CPU seconds spent on OS kernel. The entire GC took 0.00 seconds."
+
+
+
+
+
+
+
+
+Continue with additional output in the console:
+
+...
+1.055: [GC (Allocation Failure)
+      1.055: [DefNew: 861K->64K(960K), 0.0008510 secs]
+      1.056: [Tenured: 1226K->1279K(1280K), 0.0009817 secs]
+      1303K->1290K(2240K),
+      [Metaspace: 44K->44K(4480K)],
+      0.0019995 secs]
+
+...
+This log message indicates a Full Collection in the Heap (both Young Generation and Tenured Generation). It also did a Method Area (Metaspace) garbage collection. The Full Collection log is larger than the Minor Collection log and contains additional information:
+
+"1.056: [Tenured: 1226K->1279K(1280K), 0.0009817 secs]" - Tenured Generation GC record with the timestamp in seconds relative the JVM start time, the total object size in the Tenured Generation before GC, the total object size after GC, and the current total memory size and time spent on the GC. So you can read this example as "A Tenured Generation GC was performed at 1.056 seconds since the JVM started. The total object size increased by 53K from 1226K to 1279K, because older objects promoted from the Young Generation into the Tenured Generation. The Tenured Generation GC took 0.0009817 seconds. The total memory size of the Tenured Generation was 1280K at the time of the GC." "Tenured" is the internal name of the Serial Collector.
+
+"[Metaspace: 44K->44K(4480K)]" - Method Area (also called Meta Space) GC, which always performed at the same time as the Tenured Generation GC) record with the total object size in the Method Area before GC, the total object size after GC, and the current total memory size of the Method Area. So you can read this example as "A Method Area GC was performed at the same time as the Tenured Generation GC. The total object size was 44K and did not change, because there was no dead objects. The total memory size of the Method Area was 4480K at the time of the GC."
+
+
+
