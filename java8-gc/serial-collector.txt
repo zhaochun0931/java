@@ -22,7 +22,11 @@ Step/TotalMemory/FreeMemory/UsedMemory:
 "0.102:" - Timestamp in seconds relative to the JVM start time.
 
 "[GC (Allocation Failure) ...]" - Header of the GC (Garbage Collection) message with the reason code "Allocation Failure" for the GC. So you can read this example as "A GC is performed because of Allocation Failure."
-"0.102: [DefNew: 649K->64K(960K), 0.0008674 secs]" - Young Generation GC record with the timestamp in seconds relative the JVM start time, the total object size in the Young Generation before GC, the total object size after GC, and the current total memory size and time spent on the GC. So you can read this example as "A Young Generation GC was performed at 0.102 seconds since the JVM started. It released 585K of space by removing dead objects and promoting older objects to the Tenured Generation, reduced the total object size from 649K to 64K in the Young Generation, and took 0.0008674 seconds. The total memory size of the Young Generation was 960K at the time of the GC." "DefNew (Default New)" is the internal name of the Serial Collector.
+"0.102: [DefNew: 649K->64K(960K), 0.0008674 secs]" - Young Generation GC record with the timestamp in seconds relative the JVM start time, the total object size in the Young Generation before GC, the total object size after GC, and the current total memory size and time spent on the GC. 
+So you can read this example as "A Young Generation GC was performed at 0.102 seconds since the JVM started. It released 585K of space by removing dead objects and promoting older objects to the Tenured Generation, reduced the total object size from 649K to 64K in the Young Generation, and took 0.0008674 seconds. The total memory size of the Young Generation was 960K at the time of the GC." 
+"DefNew (Default New)" is the internal name of the Serial Collector.
+
+
 
 "... 649K->505K(1984K), ..." - GC summary at the Heap level, including both Young Generation and Tenured Generation, with the total object size in the Heap before GC, the total object size after GC, and the current total memory size of the Heap. So you can read this example as "The GC released 144 of dead objects, reduced the total object size from 649K to 505K in the Heap. The total memory size of the Heap was 1984K at the time of the GC."
 
