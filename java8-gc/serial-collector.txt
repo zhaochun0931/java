@@ -64,3 +64,40 @@ The total object size increased by 53K from 1226K to 1279K, because older object
 
 
 
+
+
+
+The table below summarizes different types of information included in a GC log message:
+
+[GC (Allocation Failure)
+     ^- GC reason
+
+           v- GC type - Young Generation
+   1.055: [DefNew: 861K->64K(960K), 0.0008510 secs]
+   ^               ^     ^   ^      ^- Time spent on GC
+   ^               ^     ^   ^- Total area size
+   ^               ^     ^- Object size after GC
+   ^- Timestamp    ^- Object size before GC
+
+           v- GC type - Tenured Generation
+   1.056: [Tenured: 1226K->1279K(1280K), 0.0009817 secs]
+
+    v- Heap Summary
+   1303K->1290K(2240K),
+   ^      ^     ^- Total area size
+   ^      ^- Object size after GC
+   ^- Object size before GC
+
+    v- GC type - Method Area (Metaspace)
+   [Metaspace: 44K->44K(4480K)],
+
+    v- Total time spent on the entire GC operation
+   0.0019995 secs]
+
+    v- CPU time report of the entire GC operation
+[Times: user=0.00 sys=0.00, real=0.00 secs]
+        ^         ^         ^- Elapsed time
+        ^         ^- CPU time spent on OS kernel
+        ^- CPU time spent on JVM
+
+
