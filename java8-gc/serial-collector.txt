@@ -53,7 +53,12 @@ Continue with additional output in the console:
 ...
 This log message indicates a Full Collection in the Heap (both Young Generation and Tenured Generation). It also did a Method Area (Metaspace) garbage collection. The Full Collection log is larger than the Minor Collection log and contains additional information:
 
-"1.056: [Tenured: 1226K->1279K(1280K), 0.0009817 secs]" - Tenured Generation GC record with the timestamp in seconds relative the JVM start time, the total object size in the Tenured Generation before GC, the total object size after GC, and the current total memory size and time spent on the GC. So you can read this example as "A Tenured Generation GC was performed at 1.056 seconds since the JVM started. The total object size increased by 53K from 1226K to 1279K, because older objects promoted from the Young Generation into the Tenured Generation. The Tenured Generation GC took 0.0009817 seconds. The total memory size of the Tenured Generation was 1280K at the time of the GC." "Tenured" is the internal name of the Serial Collector.
+"1.056: [Tenured: 1226K->1279K(1280K), 0.0009817 secs]"
+Tenured Generation GC record with the timestamp in seconds relative the JVM start time, the total object size in the Tenured Generation before GC, the total object size after GC, and the current total memory size and time spent on the GC. So you can read this example as "A Tenured Generation GC was performed at 1.056 seconds since the JVM started. 
+The total object size increased by 53K from 1226K to 1279K, because older objects promoted from the Young Generation into the Tenured Generation. The Tenured Generation GC took 0.0009817 seconds. The total memory size of the Tenured Generation was 1280K at the time of the GC." "Tenured" is the internal name of the Serial Collector.
+
+
+
 
 "[Metaspace: 44K->44K(4480K)]" - Method Area (also called Meta Space) GC, which always performed at the same time as the Tenured Generation GC) record with the total object size in the Method Area before GC, the total object size after GC, and the current total memory size of the Method Area. So you can read this example as "A Method Area GC was performed at the same time as the Tenured Generation GC. The total object size was 44K and did not change, because there was no dead objects. The total memory size of the Method Area was 4480K at the time of the GC."
 
