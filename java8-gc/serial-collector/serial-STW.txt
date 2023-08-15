@@ -1,0 +1,123 @@
+java -Xms2m -Xmx64m -XX:+PrintGC \
+   -XX:+PrintGCApplicationStoppedTime -XX:+PrintGCApplicationConcurrentTime \
+   -XX:+PrintGCTimeStamps -XX:+UseSerialGC GarbageCollection
+
+
+
+# java -Xms2m -Xmx64m -XX:+PrintGC \
+   -XX:+PrintGCApplicationStoppedTime -XX:+PrintGCApplicationConcurrentTime \
+   -XX:+PrintGCTimeStamps -XX:+UseSerialGC GarbageCollection
+Step/TotalMemory/FreeMemory/UsedMemory:
+0.063: Application time: 0.0207665 seconds
+0.063: [GC (Allocation Failure)  1007K->792K(1920K), 0.0019091 secs]
+0.065: Total time for which application threads were stopped: 0.0021267 seconds, Stopping threads took: 0.0000183 seconds
+1   1966080   560552   1405528
+1.067: Application time: 1.0020998 seconds
+1.068: [GC (Allocation Failure)  1628K->1608K(2824K), 0.0016234 secs]
+1.069: [Full GC (Allocation Failure)  1608K->1608K(2824K), 0.0019097 secs]
+1.071: Total time for which application threads were stopped: 0.0037407 seconds, Stopping threads took: 0.0000350 seconds
+2   4059136   1553136   2506000
+2.072: Application time: 1.0010977 seconds
+2.073: [GC (Allocation Failure)  2703K->2681K(3964K), 0.0014159 secs]
+2.074: Total time for which application threads were stopped: 0.0016173 seconds, Stopping threads took: 0.0000284 seconds
+3   4059136   455040   3604096
+3.075: Application time: 1.0008842 seconds
+3.075: [GC (Allocation Failure)  3775K->3753K(4936K), 0.0016790 secs]
+3.077: [Full GC (Allocation Failure)  3753K->3753K(4936K), 0.0021279 secs]
+3.079: Total time for which application threads were stopped: 0.0044670 seconds, Stopping threads took: 0.0003378 seconds
+4   9072640   4342568   4730072
+4.052: Application time: 0.9722398 seconds
+4.052: Total time for which application threads were stopped: 0.0002860 seconds, Stopping threads took: 0.0001160 seconds
+5   9072640   3244296   5828344
+5.081: Application time: 1.0293761 seconds
+5.082: [GC (Allocation Failure)  5947K->5897K(8860K), 0.0026146 secs]
+5.084: Total time for which application threads were stopped: 0.0030284 seconds, Stopping threads took: 0.0001933 seconds
+6   9072640   2147600   6925040
+7   9072640   1049320   8023320
+7.086: Application time: 2.0014188 seconds
+7.086: [GC (Allocation Failure)  8347K->8298K(10872K), 0.0026224 secs]
+7.089: [Full GC (Allocation Failure)  8298K->8298K(10872K), 0.0031728 secs]
+7.092: Total time for which application threads were stopped: 0.0062129 seconds, Stopping threads took: 0.0002010 seconds
+8   19951616   10773520   9178096
+9   19951616   9675232   10276384
+10   19951616   8576944   11374672
+11   19951616   7478656   12472960
+12   19951616   6380368   13571248
+12.096: Application time: 5.0040314 seconds
+12.096: [GC (Allocation Failure)  13253K->13146K(19484K), 0.0043197 secs]
+12.101: Total time for which application threads were stopped: 0.0045492 seconds, Stopping threads took: 0.0000815 seconds
+13   19951616   5285272   14666344
+14   19951616   4186976   15764640
+15   19951616   3088680   16862936
+16   19951616   2064112   17887504
+17   19951616   974976   18976640
+17.104: Application time: 5.0032518 seconds
+17.104: [GC (Allocation Failure)  18531K->18507K(23948K), 0.0045528 secs]
+17.109: [Full GC (Allocation Failure)  18507K->18499K(23948K), 0.0068511 secs]
+17.116: Total time for which application threads were stopped: 0.0117448 seconds, Stopping threads took: 0.0000741 seconds
+18   44244992   24041736   20203256
+19   44244992   23018512   21226480
+20   44244992   21929736   22315256
+21   44244992   20824560   23420432
+22   44244992   19735784   24509208
+23   44244992   18630608   25614384
+24   44244992   17525432   26719560
+25   44244992   16436656   27808336
+26   44244992   15331480   28913512
+27   44244992   14242704   30002288
+27.123: Application time: 10.0073292 seconds
+27.123: [GC (Allocation Failure)  29811K->29733K(43208K), 0.0086065 secs]
+27.132: Total time for which application threads were stopped: 0.0088954 seconds, Stopping threads took: 0.0000888 seconds
+28   44244992   13171088   31073904
+29   44244992   12019480   32225512
+30   44244992   10933424   33311568
+31   44244992   9847368   34397624
+32   44244992   8744912   35500080
+33   44244992   7658856   36586136
+34   44244992   6556400   37688592
+35   44244992   5453944   38791048
+36   44244992   4367888   39877104
+37   44244992   3265432   40979560
+38   44244992   2162976   42082016
+38.138: Application time: 11.0059576 seconds
+38.138: [GC (Allocation Failure)  41607K->41526K(53560K), 0.0101514 secs]
+38.148: [Full GC (Allocation Failure)  41526K->35222K(53560K), 0.0143068 secs]
+38.163: Total time for which application threads were stopped: 0.0247767 seconds, Stopping threads took: 0.0000575 seconds
+39   64880640   28138600   36742040
+40   64880640   26940000   37940640
+41   64880640   25806952   39073688
+42   64880640   24673904   40206736
+43   64880640   23655512   41225128
+44   64880640   22522464   42358176
+45   64880640   21389416   43491224
+46   64880640   20537384   44343256
+47   64880640   19256832   45623808
+48   64880640   18123784   46756856
+49   64880640   16990736   47889904
+50   64880640   15969912   48910728
+51   64880640   14836864   50043776
+52   64880640   13703816   51176824
+53   64880640   12851784   52028856
+54   64880640   11571232   53309408
+54.172: Application time: 16.0096915 seconds
+54.172: [Full GC (Allocation Failure)  52572K->35222K(63360K), 0.0151089 secs]
+54.188: Total time for which application threads were stopped: 0.0153855 seconds, Stopping threads took: 0.0000662 seconds
+55   64880640   28136008   36744632
+56   64880640   26934816   37945824
+57   64880640   25799176   39081464
+58   64880640   24663536   40217104
+59   64880640   23658952   41221688
+60   64880640   22523312   42357328
+61   64880640   21387672   43492968
+62   64880640   20535640   44345000
+63   64880640   19252496   45628144
+64   64880640   17937952   46942688
+65   64880640   16802312   48078328
+66   64880640   15781328   49099312
+67   64880640   14645688   50234952
+68   64880640   13510048   51370592
+69   64880640   12489064   52391576
+70   64880640   11353424   53527216
+70.197: Application time: 16.0092839 seconds
+70.197: [Full GC (Allocation Failure)  52528K->34966K(63360K), 0.0156137 secs]
+70.213: Total time for which application threads were stopped: 0.0158534 seconds, Stopping threads took: 0.0000426 seconds
