@@ -1,10 +1,12 @@
 apt update
 apt install openjdk-8-jdk -y
-apt install openjdk-11-jdk -y
-apt install openjdk-17-jdk -y
-
 java -version
 javac -version
+
+
+
+apt install openjdk-11-jdk -y
+apt install openjdk-17-jdk -y
 
 
 
