@@ -3,6 +3,10 @@ apt install openjdk-8-jdk -y
 java -version
 javac -version
 
+export JAVA_HOME=/usr
+
+
+
 
 
 apt install openjdk-11-jdk -y
