@@ -3,7 +3,6 @@ apt install openjdk-8-jdk -y
 java -version
 javac -version
 
-export JAVA_HOME=/usr
 
 
 
