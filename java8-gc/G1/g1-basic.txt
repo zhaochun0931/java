@@ -4,4 +4,7 @@ You can explicitly enable it by providing -XX:+UseG1GC on the command line.
 
 
 
+
+java -XX:+PrintFlagsFinal
+
 java -XX:+UseG1GC GarbageCollection
