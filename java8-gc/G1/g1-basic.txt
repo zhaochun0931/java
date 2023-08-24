@@ -1,1 +1,6 @@
+The Garbage-First garbage collector is the default collector, so typically you don't have to perform any additional actions.
+
+You can explicitly enable it by providing -XX:+UseG1GC on the command line.
+
+
 
