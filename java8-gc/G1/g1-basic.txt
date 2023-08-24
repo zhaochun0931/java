@@ -8,3 +8,7 @@ You can explicitly enable it by providing -XX:+UseG1GC on the command line.
 java -XX:+PrintFlagsFinal
 
 java -XX:+UseG1GC GarbageCollection
+
+java -XX:+UseG1GC -XX:+PrintGC GarbageCollection
+
+java -XX:+UseG1GC -XX:+PrintGC -XX:+PrintGCTimeStamps GarbageCollection 
