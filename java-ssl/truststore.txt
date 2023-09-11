@@ -1,10 +1,8 @@
 # first, export the public cert from the keystore
 
-keytool -export -alias myjavassl  -keystore ./myjavassl.keystore -file myjavassl.cert -storepass password
+keytool -export -alias xxx-ssl  -keystore ./xxx-ssl.keystore -file xxx-ssl.cert -storepass password
 
-# keytool -export -alias myjavassl  -keystore ./myjavassl.keystore -file myjavassl.cert -storepass password
-Certificate stored in file <myjavassl.cert>
-#
+
 # ls -al
 total 16
 drwxr-xr-x 2 root root 4096 Jun 29 02:03 .
@@ -13,7 +11,7 @@ drwx------ 8 root root 4096 Jun 29 01:08 ..
 -rw-r--r-- 1 root root 2750 Jun 29 01:56 myjavassl.keystore
 #
 
-keytool -printcert -file myjavassl.cert
+keytool -printcert -file xxx-ssl.cert
 
 
 
