@@ -22,11 +22,10 @@ keytool -printcert -file xxx-ssl.cert
 
 # second, import the public cert(generated in the last step) to the truststore
 
-keytool -import -file myjavassl.cert -alias myjavassl -keystore ./myjavassl.truststore -storepass password -noprompt
+keytool -import -file xxx-ssl.cert -alias xxx-ssl -keystore ./xxx-ssl.truststore -storepass password -noprompt
 
 
-# keytool -import -file myjavassl.cert -alias myjavassl -keystore ./myjavassl.truststore -storepass password -noprompt
-Certificate was added to keystore
+
 # 
 # ls -al
 total 20
