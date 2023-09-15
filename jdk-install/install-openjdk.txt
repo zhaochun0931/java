@@ -1,5 +1,8 @@
 apt update
 apt install openjdk-8-jdk -y
+
+JAVA_HOME
+
 java -version
 javac -version
 
