@@ -4,6 +4,14 @@ You can explicitly enable it by providing -XX:+UseG1GC on the command line.
 
 
 
+-XX:+UseG1GC
+
+
+vmHeapMemoryStats
+
+
+
+
 
 java -XX:+PrintFlagsFinal
 
