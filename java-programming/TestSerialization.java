@@ -27,9 +27,7 @@ public class TestSerialization implements Serializable{
     @SuppressWarnings("reource")
     public static void main(String[] args) throws IOException, ClassNotFoundException{
 
-        System.out.println("hello serialization");
-
-//        serialization test
+//        serialization demo
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("testSerialization.obj"));
         oos.writeObject("test serialization");
         oos.writeObject(618);
@@ -37,14 +35,15 @@ public class TestSerialization implements Serializable{
         oos.writeObject(test);
 
 
+//        deserialization demo
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream("testSerialization.obj"));
+
         System.out.println((String) ois.readObject());
-
         System.out.println((Integer)ois.readObject());
-
         System.out.println((TestSerialization)ois.readObject());
 
 
+        
 
     }
 }
