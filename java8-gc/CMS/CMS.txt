@@ -3,3 +3,7 @@ The Concurrent Mark Sweep (CMS) collector
 
 
 
+-XX:+UseConcMarkSweepGC
+
+
+
