@@ -6,4 +6,8 @@ The Concurrent Mark Sweep (CMS) collector
 -XX:+UseConcMarkSweepGC
 
 
+-XX:+PrintGC
+-XX:+PrintGCDetails
+
+-Xms10m -Xmx10m
 
