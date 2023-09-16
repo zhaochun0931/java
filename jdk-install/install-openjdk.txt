@@ -34,6 +34,7 @@ update-alternatives --config javac
 
 
 
+https://www.logicbig.com/how-to/java-command/jvm-option-list.html
 
 java -XX:+PrintFlagsFinal
 
