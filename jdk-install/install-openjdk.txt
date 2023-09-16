@@ -30,3 +30,10 @@ update-java-alternatives --list
 
 update-alternatives --config java
 update-alternatives --config javac
+
+
+
+
+
+java -XX:+PrintFlagsFinal
+
