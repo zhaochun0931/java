@@ -13,6 +13,10 @@ java -version
 javac -version
 
 
+/etc/environment 
+
+
+
 
 
 
