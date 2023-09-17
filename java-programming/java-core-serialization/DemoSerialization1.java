@@ -16,9 +16,14 @@ class DemoSerialization1{
         Demo myobj = new Demo(1,"xiaoming");
         String myfilename = "file.txt";
 
+//        Serialization
+
         try {
+//            Saving of object in a file
             FileOutputStream fso = new FileOutputStream(myfilename);
             ObjectOutputStream oos = new ObjectOutputStream(fso);
+
+//            Method for serialization of object
             oos.writeObject(myobj);
             oos.close();
             fso.close();
@@ -32,10 +37,15 @@ class DemoSerialization1{
 
 
         Demo object1 = null;
+
+//        Deserialization
         try {
+
+//            Reading the object from a file
             FileInputStream fis = new FileInputStream(myfilename);
             ObjectInputStream ois = new ObjectInputStream(fis);
 
+//            Method for deserialization of object
             object1 = (Demo) ois.readObject();
             ois.close();
             fis.close();
