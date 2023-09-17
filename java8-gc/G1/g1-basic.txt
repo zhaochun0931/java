@@ -5,6 +5,21 @@ You can explicitly enable it by providing -XX:+UseG1GC on the command line.
 
 
 -XX:+UseG1GC
+-XX:+PrintFlagsFinal
+
+-XX:+PrintGC
+
+-XX:+PrintGCDetails
+
+
+-XX:+PrintGCTimeStamps
+
+-Xms2m -Xmx24m
+
+-Xloggc:gc.log
+
+
+
 
 
 vmHeapMemoryStats
@@ -13,17 +28,9 @@ vmHeapMemoryStats
 
 
 
-java -XX:+PrintFlagsFinal
 
-java -XX:+UseG1GC 
 
-java -XX:+UseG1GC -XX:+PrintGC 
-
-java -XX:+UseG1GC -XX:+PrintGC -XX:+PrintGCTimeStamps  
-
-java -Xms2m -Xmx24m -Xloggc:gc.log -XX:+UseG1GC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps 
-
-java -Xms2m -Xmx24m -XX:+UseG1GC -XX:+PrintGC -XX:+PrintGCTimeStamps 
+   
 
 
 
