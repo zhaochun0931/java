@@ -1,4 +1,4 @@
-The Garbage-First garbage collector is the default collector, so typically you don't have to perform any additional actions.
+In Java 11, the G1 garbage collector is the default (and the CMS garbage collector is deprecated).
 
 You can explicitly enable it by providing -XX:+UseG1GC on the command line.
 
