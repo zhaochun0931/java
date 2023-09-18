@@ -12,9 +12,6 @@ You can explicitly enable it by providing -XX:+UseG1GC on the command line.
 -XX:+PrintGCDetails
 
 
-
--XX:+PrintGCTimeStamps
-
 -Xms2m -Xmx24m
 
 -Xloggc:gc.log
@@ -25,6 +22,25 @@ You can explicitly enable it by providing -XX:+UseG1GC on the command line.
 
 vmHeapMemoryStats
 
+
+
+
+
+In Java 11 some JVM flags including those used in Java 8 for Garbage Collection Logging have been removed.
+
+If these are still contained in the JVM flags specified in the setenv.sh or setenv.bat the JVM will not be able to start.
+
+It's known that the following options are unrecognized in Java 11:
+
+-d64
+PrintGCTimeStamps
+PrintGCDateStamps
+PrintTenuringDistribution
+PrintGCCause
+PrintGCDetails
+UseGCLogFileRotation
+NumberOfGCLogFiles
+GCLogFileSize
 
 
 
