@@ -6,11 +6,17 @@ apt install openjdk-8-jdk -y
 apt install openjdk-11-jdk -y
 apt install openjdk-17-jdk -y
 
-
-JAVA_HOME
-
 java -version
 javac -version
+
+
+
+
+JAVA_HOME=xxx
+PATH=$JAVA_HOME/bin:$PATH
+
+
+
 
 
 /etc/environment 
