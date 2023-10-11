@@ -1,11 +1,11 @@
 # first, export the public cert from the keystore
-keytool -export -alias xxx-ssl  -keystore ./xxx-ssl.keystore -file xxx-ssl.cert -storepass password
-keytool -printcert -file xxx-ssl.cert
+keytool -export -alias xxx-ssl  -keystore /tmp/xxx-ssl.keystore -file /tmp/xxx-ssl.cert -storepass password
+keytool -printcert -file /tmp/xxx-ssl.cert
 
 
 
 # second, import the public cert(generated in the last step) to the truststore
-keytool -import -file xxx-ssl.cert -alias xxx-ssl -keystore ./xxx-ssl.truststore -storepass password -noprompt
+keytool -import -file /tmp/xxx-ssl.cert -alias xxx-ssl -keystore /tmp/xxx-ssl.truststore -storepass password -noprompt
 
 
 
