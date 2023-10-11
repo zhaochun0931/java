@@ -1,6 +1,8 @@
 # first, export the public cert from the keystore
 keytool -export -alias xxxssl  -keystore /tmp/xxxssl.keystore -file /tmp/xxxssl.cert -storepass password
-keytool -exportcert -alias xxxssl  -keystore /tmp/xxxssl.keystore -file /tmp/xxxssl.cert -storepass password
+
+keytool -exportcert -alias ssl  -keystore /tmp/server.keystore -file /tmp/server.cert -storepass password
+keytool -exportcert -alias ssl  -keystore /tmp/client.keystore -file /tmp/client.cert -storepass password
 
 keytool -printcert -file /tmp/xxxssl.cert
 
