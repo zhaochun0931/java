@@ -1,26 +1,14 @@
 # first, export the public cert from the keystore
-keytool -export -alias xxxssl  -keystore /tmp/xxxssl.keystore -file /tmp/xxxssl.cert -storepass password
+keytool -export -alias tls  -keystore /tmp/tls.keystore -file /tmp/tls.cert -storepass password
+keytool -exportcert -alias tls  -keystore /tmp/tls.keystore -file /tmp/tls.cert -storepass password
 
-keytool -exportcert -alias ssl  -keystore /tmp/server.keystore -file /tmp/server.cert -storepass password
-keytool -exportcert -alias ssl  -keystore /tmp/client.keystore -file /tmp/client.cert -storepass password
 
-keytool -printcert -file /tmp/xxxssl.cert
+keytool -printcert -file /tmp/tls.cert
 
 
 
 # second, import the public cert(generated in the last step) to the truststore
-keytool -import -file /tmp/xxx-ssl.cert -alias xxx-ssl -keystore /tmp/xxx-ssl.truststore -storepass password -noprompt
-
-
-
-$ ls -al
-total 24
-drwxr-xr-x@   5 zchun  staff    160 Oct 11 16:01 .
-drwx------@ 707 zchun  staff  22624 Oct 11 15:58 ..
--rw-r--r--@   1 zchun  staff    891 Oct 11 16:01 xxx-ssl.cert
--rw-r--r--@   1 zchun  staff   2746 Oct 11 15:59 xxx-ssl.keystore
--rw-r--r--@   1 zchun  staff   1270 Oct 11 16:01 xxx-ssl.truststore
-$
+keytool -import -file /tmp/tls.cert -alias tls -keystore /tmp/tls.truststore -storepass password -noprompt
 
 
 
