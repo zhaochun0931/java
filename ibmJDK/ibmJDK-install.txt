@@ -7,3 +7,6 @@ chmod +x ibm-java-x86_64-jre-8.0-8.11.bin
 
 
 /opt/ibm/java-x86_64-80
+
+
+export JAVA_HOME=/opt/ibm/java-x86_64-80/jre
