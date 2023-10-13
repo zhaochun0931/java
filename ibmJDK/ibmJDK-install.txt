@@ -10,3 +10,19 @@ chmod +x ibm-java-x86_64-jre-8.0-8.11.bin
 
 
 export JAVA_HOME=/opt/ibm/java-x86_64-80/jre
+export PATH=$JAVA_HOME/bin:$PATH
+
+
+
+
+
+
+# java -version
+java version "1.8.0_381"
+Java(TM) SE Runtime Environment (build 8.0.8.11 - pxa6480sr8fp11-20230901_01(SR8 FP11))
+IBM J9 VM (build 2.9, JRE 1.8.0 Linux amd64-64-Bit Compressed References 20230817_56476 (JIT enabled, AOT enabled)
+OpenJ9   - c425e1c
+OMR      - e712c65
+IBM      - 696e9df)
+JCL - 20230811_01 based on Oracle jdk8u381-b09
+#
