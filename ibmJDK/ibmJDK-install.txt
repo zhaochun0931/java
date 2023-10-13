@@ -1,9 +1,9 @@
 https://www.ibm.com/support/pages/java-sdk-downloads-version-80
 
 
-chmod +x ibm-java-x86_64-jre-8.0-8.11.bin
+chmod +x ibm-java-x86_64-sdk-8.0-8.11.bin
 
-./ibm-java-x86_64-jre-8.0-8.11.bin
+./ibm-java-x86_64-sdk-8.0-8.11.bin
 
 
 /opt/ibm/java-x86_64-80
