@@ -12,6 +12,8 @@ public class SSLServer {
 		System.setProperty("javax.net.ssl.keyStorePassword","password" );
 		System.setProperty("javax.net.ssl.trustStore","/root/tls.truststore");
 		System.setProperty("javax.net.ssl.trustStorePassword","password");
+		System.setProperty("javax.net.debug", "ssl,handshake");
+
 		// 通过套接字工厂，获取一个服务器端套接字
 		SSLServerSocketFactory socketFactory = (SSLServerSocketFactory)SSLServerSocketFactory.getDefault();
 		serverSocket = (SSLServerSocket)socketFactory.createServerSocket(8443);
