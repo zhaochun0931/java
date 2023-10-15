@@ -74,17 +74,17 @@ public class SSLServer {
 			TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509");  
  
 			KeyStore ks = KeyStore.getInstance("JKS");  
-			ks.load(new FileInputStream("src/serverkeys"), "serverkeys".toCharArray());  
+			ks.load(new FileInputStream("/root/tls.keystore"), "serverkeys".toCharArray());  
  
 			KeyStore tks = KeyStore.getInstance("JKS");  
-			tks.load(new FileInputStream("src/servertrust"), "servertrust".toCharArray());  
+			tks.load(new FileInputStream("/root/tls.truststore"), "servertrust".toCharArray());  
  
 			kmf.init(ks, "serverkeys".toCharArray());  
 			tmf.init(tks);  
  
 			ctx.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);  
  
-			serverSocket = (SSLServerSocket) ctx.getServerSocketFactory().createServerSocket(8888);  
+			serverSocket = (SSLServerSocket) ctx.getServerSocketFactory().createServerSocket(8443);  
 			serverSocket.setNeedClientAuth(true);   
 		} catch (Exception e) {  
 			e.printStackTrace();  
