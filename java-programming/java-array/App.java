@@ -1,19 +1,26 @@
-public class NewArray {
+public class App {
 
     public static void main(String[] args) {
 
-        System.out.println("new array demo");
+        int[] a1;
+        int a2[];
+        int [] a3 = {1,2,10,20};
+        a1 = a3;
+        a2 = a3;
 
-        byte[] xxx = new byte[100];
-        int xxx_length = xxx.length;
 
-        for (int i = 0; i<100;i++){
 
-            xxx[i] = (byte) i;
-            System.out.println(xxx[i]);
+        for (int i = 0; i < a3.length; i++)
+        {
+            System.out.println(a3[i]);
         }
 
-        System.out.println("the size of the array is " + xxx_length);
+
+        System.out.println(a1[2]);
+
+        System.out.println(a2[1]);
+
+
 
 
     }
