@@ -1,3 +1,33 @@
+# install maven
+
+
+wget https://dlcdn.apache.org/maven/maven-3/3.9.5/binaries/apache-maven-3.9.5-bin.tar.gz
+
+tar xzvf apache-maven-3.9.5-bin.tar.gz
+
+
+
+vi .bash_profile
+export PATH=/root/apache-maven-3.9.5/bin:$PATH
+
+
+
+source .bash_profile
+
+
+
+
+mvn -v
+
+
+
+
+
+
+
+
+
+
 https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
 
 
