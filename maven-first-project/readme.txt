@@ -7,8 +7,10 @@ tar xzvf apache-maven-3.9.5-bin.tar.gz
 
 
 
-vi .bash_profile
+cat << done >>  .bash_profile
 export PATH=/root/apache-maven-3.9.5/bin:$PATH
+done
+
 
 
 
