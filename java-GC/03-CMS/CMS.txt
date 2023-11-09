@@ -1,6 +1,28 @@
+The Concurrent Mark Sweep (CMS) collector, -XX:+UseConcMarkSweepGC, was deprecated in HotSpot JVM version 9.0 and will likely be removed in a future release.
+
 In Java 8, the CMS is the default garbage collector and tends to give the best performance characteristics with the lowest garbage collection pause times.
 
-The Concurrent Mark Sweep (CMS) collector
+
+The CMS collector actually uses the Parallel New (ParNew) Collector of the Young generation and the Concurrent Mark Sweep (CMS) Collector of the Tenured generation.
+
+
+
+
+
+The CMS Collector uses "ParNew" to represent Young Generation GC in log messages.
+The CMS Collector uses "Old" to represent Tenured Generation GC in log messages.
+The CMS Collector performs Old (Major) GC with multiple threads concurrently without stopping the application most of the time.
+Application is stopped by the CMS Collector for Initial Mark and Final Mark steps of Major GC.
+Application is stopped by the CMS Collector for Minor GC.
+Application is stopped by the CMS Collector for Full GC.
+The CMS collector is also called Low-Latency Collector, because it reduces the application pause time. But it may slowdown the application, because the GC is running concurrently with the application. It's a good choice for interactive applications like Websites.
+ParNew collector is used to perform Young generation GC when "-XX:+UseConcMarkSweepGC" option is used.
+ParNew maintains a Tenuring Age Distribution list to determine object promotion to Tenured generation.
+Tenured generation occupancy percentage initiates the CMS GC.
+CMS Concurrent mode may fail, if Tenured generation gets fully occupied before it can finish the GC process.
+The CMS collector does uses multiple threads for some phases in the GC process.
+The number of threads in CMS parallel (stop-the-world) phases can be controlled by the "-XX:ParallelGCThreads=n" option.
+The number of threads in 1 CMS concurrent phase, Mark phase, can be controlled by the "-XX:ConcGCThreads=n" option.
 
 
 
