@@ -3,7 +3,29 @@ The Concurrent Mark Sweep (CMS) collector, -XX:+UseConcMarkSweepGC, was deprecat
 In Java 8, the CMS is the default garbage collector and tends to give the best performance characteristics with the lowest garbage collection pause times.
 
 
+
+
+
+
+
+
+
 The CMS collector actually uses the Parallel New (ParNew) Collector of the Young generation and the Concurrent Mark Sweep (CMS) Collector of the Tenured generation.
+
+Concurrent Mark-Sweep (CMS) Collector is actually a combination of two garbage collectors:
+
+The Parallel New (ParNew) Collector of Young generation - It uses the 3-area (Eden, Survivor Space "From" and Survivor Space "To") algorithm parallelly with multiple threads in a stop-the-world fashion. It also has an internal 'callback' that allows an old generation collector to operate on the objects it collects
+
+The Concurrent Mark Sweep (CMS) Collector of Tenured generation - It uses the "Mark-Sweep-Compact" algorithm with multiple threads concurrently with the application. A small portion is still running in a stop-the-world fashion.
+
+
+
+
+
+
+
+
+
 
 
 
