@@ -43,3 +43,9 @@ mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darchety
 mvn install
 
 
+
+
+# run a project
+mvn exec:java -Dexec.mainClass=App
+
+
