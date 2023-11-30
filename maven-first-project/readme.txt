@@ -26,6 +26,8 @@ mvn -v
 
 
 
+$HOME/.m2/repository
+
 
 
 
