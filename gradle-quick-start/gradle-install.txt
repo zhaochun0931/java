@@ -107,3 +107,42 @@ To learn more about Gradle by exploring our Samples at https://docs.gradle.org/8
 BUILD SUCCESSFUL in 1m 6s
 2 actionable tasks: 2 executed
 $
+
+
+
+
+
+
+
+$ tree -a .
+.
+├── .gitattributes
+├── .gitignore
+├── .gradle
+├── app
+│   ├── build.gradle.kts
+│   └── src
+│       ├── main
+│       │   ├── java
+│       │   │   └── gradle
+│       │   │       └── demo
+│       │   │           └── App.java
+│       │   └── resources
+│       └── test
+│           ├── java
+│           │   └── gradle
+│           │       └── demo
+│           │           └── AppTest.java
+│           └── resources
+├── gradle
+│   ├── libs.versions.toml
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+└── settings.gradle.kts
+
+15 directories, 11 files
+$
+
