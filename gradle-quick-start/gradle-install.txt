@@ -109,11 +109,6 @@ BUILD SUCCESSFUL in 1m 6s
 $
 
 
-
-
-
-
-
 $ tree -a .
 .
 ├── .gitattributes
@@ -145,4 +140,29 @@ $ tree -a .
 
 15 directories, 11 files
 $
+
+
+
+
+
+
+
+./gradlew build
+./gradlew run
+
+
+
+$ ./gradlew run
+
+> Task :app:run
+Hello World!
+
+BUILD SUCCESSFUL in 852ms
+2 actionable tasks: 1 executed, 1 up-to-date
+$
+
+
+
+
+
 
