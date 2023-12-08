@@ -13,3 +13,12 @@ java -jar demo.jar
 $ java -jar demo.jar
 Hello World!
 $
+
+
+
+
+$ jar tf demo.jar
+META-INF/
+META-INF/MANIFEST.MF
+App.class
+$
