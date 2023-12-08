@@ -1,5 +1,15 @@
 javac App.java
 
-jar cf App.jar App.class
+jar cvfm demo.jar manifest.mf App.class
+
+$ jar cvfm demo.jar manifest.mf App.class
+added manifest
+adding: App.class(in = 412) (out= 287)(deflated 30%)
+$
 
 
+java -jar demo.jar
+
+$ java -jar demo.jar
+Hello World!
+$
