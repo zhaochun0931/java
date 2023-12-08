@@ -1,0 +1,5 @@
+javac App.java
+
+jar cf App.jar App.class
+
+
