@@ -10,7 +10,7 @@ https://www.jetbrains.com/guide/java/tutorials/your-first-spring-application/
 
 
 mvn spring-boot:run
-
+mvn spring-boot:run -Dspring-boot.run.arguments=--logging.level.org.springframework=TRACE
 
 
 http://localhost:8080/
