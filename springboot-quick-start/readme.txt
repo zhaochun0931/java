@@ -29,11 +29,5 @@ http://localhost:8080/goodbye
 
 src/main/resources/application.properties
 
-server.port=8081
-
-
-
 src/main/resources/application.yml
 
-server:
-  port: 8082
