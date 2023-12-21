@@ -82,7 +82,7 @@ public class SSLClient{
  
 			ctx.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);  
  
-			sslSocket = (SSLSocket) ctx.getSocketFactory().createSocket("127.0.0.1", 8888);  
+			sslSocket = (SSLSocket) ctx.getSocketFactory().createSocket("127.0.0.1", 8443);  
 		} catch (Exception e) {  
 			System.out.println(e);  
 		}  
