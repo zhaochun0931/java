@@ -25,6 +25,7 @@ public class SSLServer {
 		SSLServer server = new SSLServer();  
 		server.init();  
 		server.start();  
+		// the default port is 8443
 	}  
  
 	/** 
