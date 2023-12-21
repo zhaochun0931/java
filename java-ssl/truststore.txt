@@ -9,7 +9,8 @@ keytool -printcert -file /tmp/tls.cert
 
 # second, import the public cert(generated in the last step) to the truststore
 keytool -import -file /tmp/tls.cert -alias tls -keystore /tmp/tls.truststore -storepass password -noprompt
+keytool -import -file /tmp/tls.cert -alias tls -keystore /tmp/tls.truststore -storepass password -noprompt -storetype PKCS12
 
 
-
+keytool -list -v --key-store /tmp/tls.truststore -storepass password
 
