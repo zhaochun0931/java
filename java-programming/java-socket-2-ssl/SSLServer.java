@@ -8,9 +8,9 @@ public class SSLServer {
 	private SSLServerSocket serverSocket = null;
 
 	public SSLServer() throws Exception {
-		System.setProperty("javax.net.ssl.keyStore","/root/tls.keystore" );
+		System.setProperty("javax.net.ssl.keyStore","/tmp/tls.keystore" );
 		System.setProperty("javax.net.ssl.keyStorePassword","password" );
-		System.setProperty("javax.net.ssl.trustStore","/root/tls.truststore");
+		System.setProperty("javax.net.ssl.trustStore","/tmp/tls.truststore");
 		System.setProperty("javax.net.ssl.trustStorePassword","password");
 		System.setProperty("javax.net.debug", "ssl,handshake");
 
