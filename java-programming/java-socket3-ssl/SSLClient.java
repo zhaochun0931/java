@@ -68,9 +68,12 @@ public class SSLClient{
 			KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");  
 			TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509");  
  
-			KeyStore ks = KeyStore.getInstance("JKS");  
-			KeyStore tks = KeyStore.getInstance("JKS");  
- 
+			//KeyStore ks = KeyStore.getInstance("JKS");  
+			//KeyStore tks = KeyStore.getInstance("JKS");  
+
+			KeyStore ks = KeyStore.getInstance("PKCS12");  
+			KeyStore tks = KeyStore.getInstance("PKCS12"); 
+			
 			ks.load(new FileInputStream("/tmp/tls.keystore"), "clientkeys".toCharArray());  
 			tks.load(new FileInputStream("/tmp/tls.truststore "), "clienttrust".toCharArray());  
  
