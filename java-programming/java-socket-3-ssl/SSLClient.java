@@ -75,7 +75,7 @@ public class SSLClient{
 			KeyStore tks = KeyStore.getInstance("PKCS12"); 
 			
 			ks.load(new FileInputStream("/tmp/tls.keystore"), "password".toCharArray());  
-			tks.load(new FileInputStream("/tmp/tls.truststore "), "password".toCharArray());  
+			tks.load(new FileInputStream("/tmp/tls.truststore"), "password".toCharArray());  
  
 			kmf.init(ks, "password".toCharArray());  
 			tmf.init(tks);  
