@@ -1,5 +1,3 @@
-
- 
 import java.io.BufferedInputStream;  
 import java.io.BufferedOutputStream;  
 import java.io.FileInputStream;  
@@ -73,8 +71,8 @@ public class SSLClient{
 			KeyStore ks = KeyStore.getInstance("JKS");  
 			KeyStore tks = KeyStore.getInstance("JKS");  
  
-			ks.load(new FileInputStream("src/clientkeys"), "clientkeys".toCharArray());  
-			tks.load(new FileInputStream("src/clienttrust "), "clienttrust".toCharArray());  
+			ks.load(new FileInputStream("/tmp/tls.keystore"), "clientkeys".toCharArray());  
+			tks.load(new FileInputStream("/tmp/tls.truststore "), "clienttrust".toCharArray());  
  
 			kmf.init(ks, "clientkeys".toCharArray());  
 			tmf.init(tks);  
