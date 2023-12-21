@@ -43,6 +43,8 @@ mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darchety
 
 
 mvn install
+mvn clean install
+
 
 
 
