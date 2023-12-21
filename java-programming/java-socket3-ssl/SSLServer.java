@@ -73,13 +73,17 @@ public class SSLServer {
 			KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");  
 			TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509");  
  
-			KeyStore ks = KeyStore.getInstance("JKS");  
-			ks.load(new FileInputStream("/root/tls.keystore"), "serverkeys".toCharArray());  
+			//KeyStore ks = KeyStore.getInstance("JKS");
+			KeyStore ks = KeyStore.getInstance("PKCS12");  
+
+			ks.load(new FileInputStream("/tmp/tls.keystore"), "password".toCharArray());  
  
-			KeyStore tks = KeyStore.getInstance("JKS");  
-			tks.load(new FileInputStream("/root/tls.truststore"), "servertrust".toCharArray());  
+			//KeyStore tks = KeyStore.getInstance("JKS");
+			KeyStore tks = KeyStore.getInstance("PKCS12"); 
+			
+			tks.load(new FileInputStream("/tmp/tls.truststore"), "password".toCharArray());  
  
-			kmf.init(ks, "serverkeys".toCharArray());  
+			kmf.init(ks, "password".toCharArray());  
 			tmf.init(tks);  
  
 			ctx.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);  
