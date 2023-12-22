@@ -3,7 +3,7 @@ keytool -genkeypair -alias tls -keyalg RSA -keystore tls.jks -keypass password -
 -dname "CN=tls,OU=,O=,L=,ST=,C="
 
 # PKCS12, ending with pfx or p12 suffix
-keytool -genkeypair -alias tls -keyalg RSA -keystore /tls.pfx -keypass password -storepass password -storetype PKCS12 \
+keytool -genkeypair -alias tls -keyalg RSA -keystore tls.pfx -keypass password -storepass password -storetype PKCS12 \
 -dname "CN=tls,OU=,O=,L=,ST=,C="
 
 
