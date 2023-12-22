@@ -17,7 +17,17 @@ keytool -list -v -keystore /tmp/tls.pfx -storepass password
 keytool -exportcert -alias tls  -keystore /tmp/tls.jks -file /tmp/tls.cert -storepass password
 
 # extra private key
-openssl pkcs12 -in /tmp/tls.keystore.p12 -nodes -nocerts -out tls.key
+openssl pkcs12 -in /tmp/tls.pfx -nodes -nocerts -out tls.key
+
+
+
+
+
+
+
+
+
+
 
 # generate csr
 keytool -certreq -alias tls -keystore /tmp/tls.jks -file /tmp/tls.csr -keypass password -storepass password
