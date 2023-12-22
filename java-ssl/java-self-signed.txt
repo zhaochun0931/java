@@ -2,13 +2,19 @@
 keytool -genkeypair -alias tls -keyalg RSA -keystore /tmp/tls.jks -keypass password -storepass password -storetype JKS \
 -dname "CN=tls,OU=,O=,L=,ST=,C="
 
-# PKCS12
-keytool -genkeypair -alias tls -keyalg RSA -keystore /tmp/tls.jks -keypass password -storepass password -storetype PKCS12 \
+# PKCS12, ending with pfx or p12 suffix
+keytool -genkeypair -alias tls -keyalg RSA -keystore /tmp/tls.pfx -keypass password -storepass password -storetype PKCS12 \
 -dname "CN=tls,OU=,O=,L=,ST=,C="
 
 
 
 keytool -list -v -keystore /tmp/tls.jks -storepass password
+keytool -list -v -keystore /tmp/tls.pfx -storepass password
+
+
+
+# extract public key from jks
+keytool -exportcert -alias tls  -keystore /tmp/tls.jks -file /tmp/tls.cert -storepass password
 
 
 # generate csr
