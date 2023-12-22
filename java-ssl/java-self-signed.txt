@@ -14,7 +14,9 @@ keytool -list -v -keystore /tmp/tls.pfx -storepass password
 
 
 # extract public key from jks
-keytool -exportcert -alias tls  -keystore /tmp/tls.jks -file /tmp/tls.cert -storepass password
+keytool -exportcert -alias tls  -keystore /tmp/tls.jks -file /tmp/tls.crt -storepass password
+keytool -exportcert -alias tls  -keystore /tmp/tls.pfx -file /tmp/tls.crt -storepass password
+
 
 # extra private key
 openssl pkcs12 -in /tmp/tls.pfx -nodes -nocerts -out tls.key
