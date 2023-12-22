@@ -1,20 +1,26 @@
 # JKS
-keytool -genkeypair -alias tls -keyalg RSA -keystore /tmp/xxx/demo.jks -keypass password -storepass password -storetype JKS \
--dname "CN=server.com,OU=,O=,L=,ST=,C="
+keytool -genkeypair -alias tls -keyalg RSA -keystore /tmp/xxx/tls.jks -keypass password -storepass password -storetype JKS \
+-dname "CN=tls,OU=,O=,L=,ST=,C="
 
 # PKCS12
-keytool -genkeypair -alias tls -keyalg RSA -keystore /tmp/xxx/demo.jks -keypass password -storepass password -storetype PKCS12
+keytool -genkeypair -alias tls -keyalg RSA -keystore /tmp/xxx/tls.jks -keypass password -storepass password -storetype PKCS12 \
+-dname "CN=tls,OU=,O=,L=,ST=,C="
 
 
 
-keytool -list -v -keystore /tmp/xxx/demo.jks
-keytool -list -v -keystore /tmp/xxx/demo.jks -storepass password
+keytool -list -v -keystore /tmp/xxx/tls.jks -storepass password
 
+
+# generate csr
+keytool -certreq -alias tls -keystore /tmp/xxx/tls.jks -file /tmp/xxx/tls.csr -keypass password -storepass password
 
 
 
 # root ca
-keytool -genkeypair -alias rootca -keyalg RSA -keystore teststore.jks -storetype JKS -keypass password -storepass password -storetype
+keytool -genkeypair -alias rootca -keyalg RSA -keystore rootca.jks -keypass password -storepass password -storetype PKCS12 \
+-dname "CN=rootca,OU=,O=,L=,ST=,C="
 
-# generate csr
-keytool -certreq -alias tls -keystore /tmp/xxx/demo.jks -file /tmp/xxx/demo.csr -keypass password -storepass password
+
+
+# sign with root ca
+keytool -gencert -alias rootca -keystore rootca.jks -infile tls.csr -outfile tls.crt -storepass password
