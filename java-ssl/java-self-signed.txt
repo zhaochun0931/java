@@ -13,7 +13,7 @@ keytool -list -v -keystore /tmp/tls.pfx -storepass password
 
 
 
-# extract public key from jks
+# extract public certificate from jks
 keytool -exportcert -alias tls  -keystore /tmp/tls.jks -file /tmp/tls.crt -storepass password
 keytool -exportcert -alias tls  -keystore /tmp/tls.pfx -file /tmp/tls.crt -storepass password
 
