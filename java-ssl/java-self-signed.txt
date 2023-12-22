@@ -20,6 +20,7 @@ keytool -exportcert -alias tls  -keystore /tmp/tls.pfx -file /tmp/tls.crt -store
 
 # extra private key
 openssl pkcs12 -in /tmp/tls.pfx -nodes -nocerts -out tls.key
+openssl pkcs12 -in /tmp/tls.pfx -out tls.key -nodes -nocerts
 
 
 
