@@ -1,4 +1,5 @@
-keytool -genkeypair -alias tls -keyalg RSA -keystore /tmp/xxx/demo.jks -storetype JKS -keypass passoword -storepass password
+keytool -genkeypair -alias tls -keyalg RSA -keystore /tmp/xxx/demo.jks -storetype JKS -keypass password -storepass password -storetype jks
+keytool -genkeypair -alias tls -keyalg RSA -keystore /tmp/xxx/demo.jks -storetype JKS -keypass password -storepass password -storetype PKCS12
 
 
 
@@ -11,3 +12,4 @@ keytool -list -v -keystore /tmp/xxx/demo.jks -storepass password
 
 # generate csr
 keytool -certreq -alias tls -keystore /tmp/xxx/demo.jks -file /tmp/xxx/demo.csr -keypass password -storepass password
+-storetype
