@@ -1,9 +1,9 @@
-# jks
-keytool -genkeypair -alias tls -keyalg RSA -keystore /tmp/xxx/demo.jks -storetype JKS -keypass password -storepass password -storetype jks \
+# JKS
+keytool -genkeypair -alias tls -keyalg RSA -keystore /tmp/xxx/demo.jks -keypass password -storepass password -storetype JKS \
 -dname "CN=server.com,OU=,O=,L=,ST=,C="
 
-# pkcs12
-keytool -genkeypair -alias tls -keyalg RSA -keystore /tmp/xxx/demo.jks -storetype JKS -keypass password -storepass password -storetype PKCS12
+# PKCS12
+keytool -genkeypair -alias tls -keyalg RSA -keystore /tmp/xxx/demo.jks -keypass password -storepass password -storetype PKCS12
 
 
 
@@ -12,6 +12,9 @@ keytool -list -v -keystore /tmp/xxx/demo.jks -storepass password
 
 
 
+
+# root ca
+keytool -genkeypair -alias rootca -keyalg RSA -keystore teststore.jks -storetype JKS -keypass password -storepass password -storetype
 
 # generate csr
 keytool -certreq -alias tls -keystore /tmp/xxx/demo.jks -file /tmp/xxx/demo.csr -keypass password -storepass password
