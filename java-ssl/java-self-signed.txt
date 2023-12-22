@@ -1,26 +1,26 @@
 # JKS
-keytool -genkeypair -alias tls -keyalg RSA -keystore /tmp/tls.jks -keypass password -storepass password -storetype JKS \
+keytool -genkeypair -alias tls -keyalg RSA -keystore tls.jks -keypass password -storepass password -storetype JKS \
 -dname "CN=tls,OU=,O=,L=,ST=,C="
 
 # PKCS12, ending with pfx or p12 suffix
-keytool -genkeypair -alias tls -keyalg RSA -keystore /tmp/tls.pfx -keypass password -storepass password -storetype PKCS12 \
+keytool -genkeypair -alias tls -keyalg RSA -keystore /tls.pfx -keypass password -storepass password -storetype PKCS12 \
 -dname "CN=tls,OU=,O=,L=,ST=,C="
 
 
 
-keytool -list -v -keystore /tmp/tls.jks -storepass password
-keytool -list -v -keystore /tmp/tls.pfx -storepass password
+keytool -list -v -keystore tls.jks -storepass password
+keytool -list -v -keystore tls.pfx -storepass password
 
 
 
 # extract public certificate from jks
-keytool -exportcert -alias tls  -keystore /tmp/tls.jks -file /tmp/tls.crt -storepass password
-keytool -exportcert -alias tls  -keystore /tmp/tls.pfx -file /tmp/tls.crt -storepass password
+keytool -exportcert -alias tls  -keystore tls.jks -file tls.crt -storepass password
+keytool -exportcert -alias tls  -keystore tls.pfx -file tls.crt -storepass password
 
 
 # extra private key
-openssl pkcs12 -in /tmp/tls.pfx -nodes -nocerts -out tls.key
-openssl pkcs12 -in /tmp/tls.pfx -out tls.key -nodes -nocerts
+openssl pkcs12 -in tls.pfx -nodes -nocerts -out tls.key
+openssl pkcs12 -in tls.pfx -out tls.key -nodes -nocerts
 
 
 
@@ -33,7 +33,7 @@ openssl pkcs12 -in /tmp/tls.pfx -out tls.key -nodes -nocerts
 
 
 # generate csr
-keytool -certreq -alias tls -keystore /tmp/tls.jks -file /tmp/tls.csr -keypass password -storepass password
+keytool -certreq -alias tls -keystore tls.jks -file tls.csr -keypass password -storepass password
 
 
 # root ca
