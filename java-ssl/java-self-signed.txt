@@ -35,7 +35,7 @@ openssl pkcs12 -in tls.pfx -out tls.key -nodes -nocerts
 
 # generate csr
 keytool -certreq -alias tls -keystore tls.jks -file tls.csr -keypass password -storepass password
-
+keytool -certreq -alias tls -keystore tls.pfx -file tls.csr -keypass password -storepass password -keyalg RSA
 
 # root ca
 keytool -genkeypair -alias rootca -keyalg RSA -keystore rootca.jks -keypass password -storepass password -storetype PKCS12 \
