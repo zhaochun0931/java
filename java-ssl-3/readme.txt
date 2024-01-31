@@ -12,7 +12,7 @@ keytool -import -trustcacerts -file server-certificate.pem -keypass password -st
 
 # Client Certificate
 
-keytool -genkey -alias clientkey -keyalg RSA -keysize 2048 -sigalg SHA256withRSA -keystore clientkeystore.p12 -storepass password -ext san=ip:127.0.0.1,dns:localhost
+keytool -genkey -alias clientkey -keyalg RSA -keysize 2048 -sigalg SHA256withRSA -storetype pkcs12 -keystore clientkeystore.p12 -storepass password -ext san=ip:127.0.0.1,dns:localhost
 
 keytool -exportcert -keystore clientkeystore.p12 -alias clientkey -storepass password -rfc -file client-certificate.pem
 
