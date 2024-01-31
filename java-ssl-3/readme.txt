@@ -1,6 +1,6 @@
 # Server Certificate
 
-keytool -genkey -alias serverkey -keyalg RSA -keysize 2048 -sigalg SHA256withRSA -keystore serverkeystore.p12 -storepass password -ext san=ip:127.0.0.1,dns:localhost
+keytool -genkey -alias serverkey -keyalg RSA -keysize 2048 -sigalg SHA256withRSA -storetype pkcs12 -keystore serverkeystore.p12 -storepass password -ext san=ip:127.0.0.1,dns:localhost
 
 keytool -exportcert -keystore serverkeystore.p12 -alias serverkey -storepass password -rfc -file server-certificate.pem
 
