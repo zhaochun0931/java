@@ -8,3 +8,7 @@ https://www.baeldung.com/java-https-client-certificate-authentication
 
 
 https://www.ibm.com/support/pages/how-generate-jks-keystore-existing-private-key
+
+
+
+https://linuxhandbook.com/check-certificate-openssl/
