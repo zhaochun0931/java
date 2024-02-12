@@ -1,1 +1,6 @@
 https://www.baeldung.com/convert-pem-to-jks
+
+
+
+
+https://www.baeldung.com/java-https-client-certificate-authentication
