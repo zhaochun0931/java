@@ -35,8 +35,9 @@ keytool -importkeystore -srckeystore tls.jks -srcstoretype pkcs12 -destkeystore 
 keytool -importkeystore -srckeystore tls.jks -destkeystore tls.p12 -deststoretype pkcs12
 
 
-# convert openssl public cert to truststore
 
+# convert openssl public cert to truststore
+keytool -import -file /tmp/tls.crt -alias tls -keystore /tmp/tls.truststore -storepass password -noprompt
 
 
 
