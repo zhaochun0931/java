@@ -18,3 +18,10 @@ https://linuxhandbook.com/check-certificate-openssl/
 
 
 https://github.com/gemfire/node-examples/tree/develop/ssl
+
+
+
+# convert openssl private key to keystore
+
+# convert openssl public cert to truststore
+
