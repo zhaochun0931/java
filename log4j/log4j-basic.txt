@@ -48,3 +48,14 @@ We can specify the format of log statements using conversion patterns. The class
 
 
 
+
+The log4j.properties file
+
+We can configure Log4j using XML or the properties file. The log4j.properties file stores the configurations in key-value pairs.
+
+The default name of the log4j properties configuration file is log4j.properties. The Logger looks for this file name in the CLASSPATH. However, if we need to use a different configuration file name, we can set it using the system property log4j.configuration.
+
+The log4j.properties file contains the specifications of appenders, their names and types, and layout patterns. It also contains specifications about the default root Logger and its log levels.
+
+
+
