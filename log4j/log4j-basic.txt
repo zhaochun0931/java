@@ -8,3 +8,27 @@ There are three main components of Log4j – loggers, appenders, and layouts –
 
 
 
+
+
+===
+The Logger object is responsible for representing the logging information. It’s the first mandatory layer in Log4j architecture. The Logger class is defined in package org.apache.log4j.
+
+Generally, we create one Logger instance per application class to log important events belonging to that class. Also, we generally create this instance at the beginning of the class using a static factory method that accepts the class name as a parameter:
+
+
+private static final Logger logger = Logger.getLogger(JavaClass.class.getName());
+
+
+Subsequently, we can use various methods of the Logger class to log or print important events depending on their categories. These methods are trace(), debug(), info(), warn(), error(), fatal(). These methods determine the level of a logging request.
+
+The priority order of the Logger methods is: TRACE < DEBUG < INFO < WARN < ERROR < FATAL. Therefore, these methods print the log messages depending on the logger level set in the log4j.properties file. This means if we set the logger level as INFO, then all the INFO, WARN, ERROR, and FATAL events will be logged.
+
+
+
+===
+
+===
+
+
+
+
