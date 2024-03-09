@@ -25,9 +25,25 @@ The priority order of the Logger methods is: TRACE < DEBUG < INFO < WARN < ERROR
 
 
 
-===
+
 
 ===
+Appender denotes the destination of log output. We can print the log out to multiple preferred destinations using Log4j like console, files, remote socket server, database, etc. We refer to these output destinations as Appenders. Moreover, we can attach multiple appenders to a Logger.
+
+Appenders work according to the appender additivity rule. This rule states that the output of a log statement of any Logger will go to all of its appenders and its ancestors – the appenders that are higher in the hierarchy.
+
+Log4j has multiple appenders defined for files, consoles, GUI components, remote socket servers, JMS, etc.
+
+
+
+
+
+
+===
+We use layouts for customizing the format of the log statements. We can do this by associating a layout with the already defined appender. Thus, a combination of layout and appenders helps us send the formatted log statements to the desired destinations.
+
+We can specify the format of log statements using conversion patterns. The class PatternLayout explains more about conversion characters that we can use based on our needs.
+
 
 
 
