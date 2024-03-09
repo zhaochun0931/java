@@ -1,4 +1,6 @@
 Log4J is a popular, open-source logging framework written in Java. 
 
 
+Log4j 1.x reached the end of life on August 5, 2015. Therefore, as of today, Log4j2 is the latest upgrade to Log4j.
+
 
