@@ -3,6 +3,19 @@ https://www.baeldung.com/java-log4j-properties-guide
 
 
 
+mkdir -p src/main/resources
+touch log4j.properties
+
+
+
+
+
+
+
+
+
+
+
 
 
 Log4J is a popular, open-source logging framework written in Java. 
