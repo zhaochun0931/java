@@ -1,6 +1,11 @@
 https://www.baeldung.com/java-log4j-properties-guide
 
 
+rotate xx.log to xx.log.0
+
+the original xx.log.0 will rotate to xx.log.1
+
+
 
 
 mkdir -p src/main/resources
