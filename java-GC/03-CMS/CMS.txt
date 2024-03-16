@@ -4,8 +4,8 @@ In Java 8, the CMS is the default garbage collector and tends to give the best p
 
 
 
- -XX:+UseConcMarkSweepGC
-
+-XX:+UseConcMarkSweepGC
+-XX:+UseParNewGC
 
 
 -Xms
@@ -17,6 +17,11 @@ sets the maximum heap size that the JVM can use. Setting both values to be the s
 
 -XX:CMSInitiatingOccupancyFraction
 Determines the heap occupancy percentage at which the CMS collector starts. This parameter helps in fine-tuning CMS initiation based on memory usage. For example, setting -XX:CMSInitiatingOccupancyFraction=75 means that CMS starts when the occupancy is 75%. 
+
+
+-XX:+UseCMSInitiatingOccupancyOnly
+Restricts CMS to handle only full garbage collections. This can be useful in scenarios where you want to control CMS initiation more precisely. When set, CMS won’t start until the occupancy fraction is reached and a full garbage collection is required.
+
 
 
 
