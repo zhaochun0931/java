@@ -23,7 +23,8 @@ Determines the heap occupancy percentage at which the CMS collector starts. This
 Restricts CMS to handle only full garbage collections. This can be useful in scenarios where you want to control CMS initiation more precisely. When set, CMS won’t start until the occupancy fraction is reached and a full garbage collection is required.
 
 
-
+-XX:+PrintGC
+-XX:+PrintGCDetails
 
 
 
@@ -74,11 +75,8 @@ The number of threads in 1 CMS concurrent phase, Mark phase, can be controlled b
 
 
 
--XX:+UseConcMarkSweepGC
 
 
--XX:+PrintGC
--XX:+PrintGCDetails
 
--Xms10m -Xmx10m
+
 
