@@ -5,6 +5,12 @@ The New generation is further made up of Eden space where objects are created an
 
 
 
+The JVM divides the memory it manages in 3 major “generations”:
+- Young Generation (or “New”)
+- Old Generation (or “Tenured”)
+- Permanent Generation
+
+
 
 
 The Young Generation is where all new objects are allocated and aged. When the young generation fills up, this causes a minor garbage collection. 
@@ -25,3 +31,14 @@ The Permanent generation contains metadata required by the JVM to describe the c
 Classes may get collected (unloaded) if the JVM finds they are no longer needed and space may be needed for other classes. The permanent generation is included in a full garbage collection.
 
 
+-Xms
+The minimum size
+
+
+-Xmx
+the maximum size
+
+
+
+-Xmn
+the young generation heap space
