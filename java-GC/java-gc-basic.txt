@@ -65,3 +65,20 @@ Classes may get collected (unloaded) if the JVM finds they are no longer needed 
 
 
 
+
+
+Garbage Collector Algorithms:
+1. Parallel (PS – Parallel Scavenge)
+  Two available for the Young Generation
+  -XX:+UseParallelGC, cannot be used with CMS
+  -XX:+UseParNewGC, for use with CMS
+
+  One available for the Old Generation
+  XX:+UseParallelOldGC
+
+2. Concurrent (CMS – Concurrent Mark Sweep), Only for the Old Generation
+  -XX:+UseConcMarkSweepGC
+
+3. Serial, Only for the Old Generation
+
+
