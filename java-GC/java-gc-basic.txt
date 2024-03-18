@@ -2,3 +2,5 @@
 The Java heap is made up of the Permanent, Old(tenured), and New (sometimes called Young) generations. 
 
 The New generation is further made up of Eden space where objects are created and Survivor spaces S0 and S1 where they are kept later for a limited number of New generation garbage collection cycles.
+
+
