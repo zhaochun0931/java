@@ -41,6 +41,8 @@ The Young Generation is again divided in 3 “spaces”:
 -Xmn
 the young generation heap space
 
+-XX:SurvivorRatio=6 sets the ratio between each survivor space and eden space to be 1:6
+
 
 
 
