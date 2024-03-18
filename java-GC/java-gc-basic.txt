@@ -11,6 +11,39 @@ The JVM divides the memory it manages in 3 major “generations”:
 - Permanent Generation
 
 
+Young + Old = Total Heap
+
+
+-Xmx
+the maximum size of total heap memory
+
+Default Young:Old ratio on 64-bit server JVM is 1:2
+
+-Xms
+The minimum size of total heap memory
+
+
+
+
+
+
+
+
+
+
+The Young Generation is again divided in 3 “spaces”:
+- Eden Space
+- Survivor Space 0
+- Survivor Space 1
+
+
+
+-Xmn
+the young generation heap space
+
+
+
+
 
 
 The Young Generation is where all new objects are allocated and aged. When the young generation fills up, this causes a minor garbage collection. 
@@ -31,14 +64,4 @@ The Permanent generation contains metadata required by the JVM to describe the c
 Classes may get collected (unloaded) if the JVM finds they are no longer needed and space may be needed for other classes. The permanent generation is included in a full garbage collection.
 
 
--Xms
-The minimum size
 
-
--Xmx
-the maximum size
-
-
-
--Xmn
-the young generation heap space
