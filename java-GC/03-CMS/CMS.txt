@@ -1,4 +1,7 @@
-The Concurrent Mark Sweep (CMS) collector was deprecated in HotSpot JVM version 9.0 and will likely be removed in a future release.
+The Concurrent Mark Sweep (CMS) collector was deprecated in HotSpot JVM version 9.0 and will likely be removed in a future release. 
+
+CMS is only for the old generation.
+
 
 In Java 8, the CMS is the default garbage collector and tends to give the best performance characteristics with the lowest garbage collection pause times.
 
@@ -7,12 +10,6 @@ In Java 8, the CMS is the default garbage collector and tends to give the best p
 -XX:+UseConcMarkSweepGC
 -XX:+UseParNewGC
 
-
--Xms
-sets the initial heap size when the Java Virtual Machine (JVM) starts
-
--Xmx
-sets the maximum heap size that the JVM can use. Setting both values to be the same value, ensures a fixed and non-resizable heap size.
 
 
 -XX:CMSInitiatingOccupancyFraction
