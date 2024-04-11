@@ -50,6 +50,8 @@ update-alternatives --config javac
 https://www.logicbig.com/how-to/java-command/jvm-option-list.html
 
 
+
+https://www.baeldung.com/java-find-class-version
 https://www.baeldung.com/java-lang-unsupportedclassversion
 
 45 = Java 1.1
@@ -75,6 +77,8 @@ https://www.baeldung.com/java-lang-unsupportedclassversion
 65 = Java 21
 66 = Java 22
 
+
+javap -verbose App
 
 
 
