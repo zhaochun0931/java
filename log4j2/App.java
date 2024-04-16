@@ -2,6 +2,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
+/**
+ * Hello world!
+ *
+ */
 public class App
 {
 
@@ -11,7 +15,11 @@ public class App
     {
         System.out.println( "Hello World!" );
 
-	LOGGER.info("This is an INFO level log message!");
-	LOGGER.error("This is an ERROR level log message!");
+	LOGGER.info("This is the INFO level log message!");
+	LOGGER.error("This is the ERROR level log message!");
+	LOGGER.trace("This is the TRACE level log message!");
+	LOGGER.debug("This is the DEBUG level log message!");
+	LOGGER.warn("This is the WARN level log message!");
+	LOGGER.fatal("This is the FATAL level log message!");
     }
 }
