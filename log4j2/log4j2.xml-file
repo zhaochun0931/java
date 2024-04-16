@@ -13,11 +13,11 @@
         </File>
 
 
-	        <File name="tofile2" fileName="/tmp/log4j2.log" append="true">
+	<File name="tofile2" fileName="/tmp/log4j2.log" append="true">
             <PatternLayout>
                 <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level - %msg%n</Pattern>
             </PatternLayout>
-    </File>
+        </File>
 
 
     </Appenders>
