@@ -13,3 +13,10 @@
 
 
 
+
+
+
+The Appender is responsible for delivering the LogEvent to its destination.
+
+
+
