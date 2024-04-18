@@ -22,3 +22,10 @@ META-INF/
 META-INF/MANIFEST.MF
 App.class
 $
+
+
+
+
+jar xf demo.jar
+
+
