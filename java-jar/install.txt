@@ -1,11 +1,8 @@
-javac App.java
+javac App.java class2.java
 
-jar cvfm demo.jar manifest.mf App.class
+jar cvfm demo.jar manifest.mf App.class class2.class
 
-$ jar cvfm demo.jar manifest.mf App.class
-added manifest
-adding: App.class(in = 412) (out= 287)(deflated 30%)
-$
+
 
 
 java -jar demo.jar
