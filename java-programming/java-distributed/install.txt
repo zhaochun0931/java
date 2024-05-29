@@ -1,1 +1,12 @@
+javac *.java
+
+
+
+Run the server 
+java CalculatorServer
+
+
+
+open another terminal and run the client
+java CalculatorClient
 
