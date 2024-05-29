@@ -12,5 +12,7 @@ public class App {
     capitalCities.put("Norway", "Oslo");
     capitalCities.put("USA", "Washington DC");
     System.out.println(capitalCities);
+    System.out.println(capitalCities.get("England"));
+
   }
 }
