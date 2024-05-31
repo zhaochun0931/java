@@ -16,10 +16,16 @@ public class App {
             LocalTime localtime2 = LocalTime.now();
             System.out.println(localtime2);
             System.out.println("hello world");
+            printStackTrace();
+
 
         }
         catch (Exception e){
             System.out.println(e);
         }
+    }
+
+            public static void printStackTrace() {
+        Thread.dumpStack();
     }
 }
