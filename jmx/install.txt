@@ -1,0 +1,19 @@
+JMX stands for Java Management Extensions. 
+
+It is a Java technology that provides a standard way of managing and monitoring Java applications, system objects, devices (such as printers and disk drives), and service-oriented networks. 
+JMX is a part of the Java platform starting from Java 5.
+
+
+
+
+
+JMX architecture consists of the following key components:
+
+MBeans (Managed Beans): These are Java objects that represent manageable resources. MBeans expose attributes and operations that can be accessed and invoked remotely
+
+MBean Server: The MBean Server is the core component of JMX. It acts as a registry for MBeans and provides the management interface for accessing and manipulating MBeans. 
+
+MX Agents: JMX Agents are Java applications or processes that host the MBean Server.
+
+JMX Connectors: JMX Connectors enable communication between JMX Agents and management tools. Connectors define the protocol and transport mechanism used for communication. 
+Common JMX connectors include RMI (Remote Method Invocation), JMXMP (JMX Messaging Protocol), and JMX over HTTP.
