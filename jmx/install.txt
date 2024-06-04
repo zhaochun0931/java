@@ -17,3 +17,11 @@ MX Agents: JMX Agents are Java applications or processes that host the MBean Ser
 
 JMX Connectors: JMX Connectors enable communication between JMX Agents and management tools. Connectors define the protocol and transport mechanism used for communication. 
 Common JMX connectors include RMI (Remote Method Invocation), JMXMP (JMX Messaging Protocol), and JMX over HTTP.
+
+
+
+
+javac HelloMBean.java
+
+java HelloMBean
+
