@@ -25,3 +25,7 @@ task run(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
 }
 
+Then you can execute the run task:
+
+
+gradle run
