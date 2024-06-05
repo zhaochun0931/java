@@ -7,3 +7,9 @@ repositories {
 dependencies {
     // No dependencies for this simple project
 }
+
+
+task run(type: JavaExec) {
+    main = 'HelloWorld'
+    classpath = sourceSets.main.runtimeClasspath
+}
