@@ -1,0 +1,4 @@
+mkdir helloworld
+cd helloworld
+
+mkdir -p src/main/java
