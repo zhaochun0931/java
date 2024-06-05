@@ -3,9 +3,12 @@ cd helloworld
 
 mkdir -p src/main/java
 
-create HelloWorld.java
+# create HelloWorld.java file
 
-go the project directory, create the build.gradle
+# go the project directory, create the build.gradle file
 
 
 
+gradle build
+
+java -cp build/classes/java/main/ HelloWorld
