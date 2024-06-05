@@ -2,10 +2,14 @@ https://gradle.org/releases/
   
   
   
-  
-mkdir -p /opt/gradle
-unzip -d /opt/gradle gradle-8.5-bin.zip
-ls -al /opt/gradle/
+wget https://services.gradle.org/distributions/gradle-8.8-all.zip?_gl=1*dop92n*_ga*MTMyNTAzNDEwMS4xNzE3NTU1MjY2*_ga_7W7NC6YNPT*MTcxNzU1NTI2Ni4xLjEuMTcxNzU1NTI3My41My4wLjA.  
+
+
+
+
+apt install unzip
+
+unzip gradle-8.5-bin.zip
 
 
 
@@ -13,7 +17,7 @@ ls -al /opt/gradle/
 
 $HOME/.bash_profile
 
-export PATH=$PATH:/opt/gradle/gradle-8.5/bin
+export PATH=$PATH:/root/gradle-8.8/bin
 
 
 
