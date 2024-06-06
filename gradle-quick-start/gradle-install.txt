@@ -124,17 +124,25 @@ $
 
 
 
-./gradlew build
-./gradlew run
 
 
 
-$ ./gradlew run
+
+
+
+
+
+
+
+
+gradlew run
+
+$ gradle run
 
 > Task :app:run
 Hello World!
 
-BUILD SUCCESSFUL in 852ms
+BUILD SUCCESSFUL in 468ms
 2 actionable tasks: 1 executed, 1 up-to-date
 $
 
