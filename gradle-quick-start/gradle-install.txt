@@ -2,6 +2,9 @@ https://gradle.org/releases/
   
   
 
+# install java openjdk
+
+# install grale
 
 apt install unzip
 wget https://services.gradle.org/distributions/gradle-8.8-all.zip
@@ -12,8 +15,14 @@ unzip gradle-8.8-all.zip
 
 $HOME/.bash_profile
 
-export PATH=$PATH:/root/gradle-8.8/bin
 
+
+cat << done >> $HOME/.bash_profile
+export PATH=$PATH:/root/gradle-8.8/bin
+done
+
+
+source $HOME/.bash_profile
 
 
 gradle -v
