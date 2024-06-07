@@ -1,11 +1,7 @@
-
-
-
-
 # first project
 
-mkdir tutorial
-cd tutorial
+mkdir helloworld
+cd helloworld
 gradle init
 
 
@@ -106,7 +102,7 @@ $
 
 
 
-gradlew run
+gradle run
 
 $ gradle run
 
