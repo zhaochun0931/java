@@ -1,0 +1,123 @@
+
+
+
+
+# first project
+
+mkdir tutorial
+cd tutorial
+gradle init
+
+
+
+
+
+
+$ gradle init
+
+Select type of project to generate:
+  1: basic
+  2: application
+  3: library
+  4: Gradle plugin
+Enter selection (default: basic) [1..4] 2
+
+Select implementation language:
+  1: C++
+  2: Groovy
+  3: Java
+  4: Kotlin
+  5: Scala
+  6: Swift
+Enter selection (default: Java) [1..6] 3
+
+Generate multiple subprojects for application? (default: no) [yes, no]
+Select build script DSL:
+  1: Kotlin
+  2: Groovy
+Enter selection (default: Kotlin) [1..2]
+
+Select test framework:
+  1: JUnit 4
+  2: TestNG
+  3: Spock
+  4: JUnit Jupiter
+Enter selection (default: JUnit Jupiter) [1..4]
+
+Project name (default: gradle-demo):
+Source package (default: gradle.demo):
+Enter target version of Java (min. 7) (default: 11):
+Generate build using new APIs and behavior (some features may change in the next minor release)? (default: no) [yes, no]
+
+> Task :init
+To learn more about Gradle by exploring our Samples at https://docs.gradle.org/8.5/samples/sample_building_java_applications.html
+
+BUILD SUCCESSFUL in 1m 6s
+2 actionable tasks: 2 executed
+$
+
+
+$ tree -a .
+.
+├── .gitattributes
+├── .gitignore
+├── .gradle
+├── app
+│   ├── build.gradle.kts
+│   └── src
+│       ├── main
+│       │   ├── java
+│       │   │   └── gradle
+│       │   │       └── demo
+│       │   │           └── App.java
+│       │   └── resources
+│       └── test
+│           ├── java
+│           │   └── gradle
+│           │       └── demo
+│           │           └── AppTest.java
+│           └── resources
+├── gradle
+│   ├── libs.versions.toml
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+└── settings.gradle.kts
+
+15 directories, 11 files
+$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+gradlew run
+
+$ gradle run
+
+> Task :app:run
+Hello World!
+
+BUILD SUCCESSFUL in 468ms
+2 actionable tasks: 1 executed, 1 up-to-date
+$
+
+
+
+
+
