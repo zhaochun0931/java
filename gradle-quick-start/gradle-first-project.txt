@@ -11,23 +11,33 @@ gradle init
 
 $ gradle init
 
-Select type of project to generate:
-  1: basic
-  2: application
-  3: library
-  4: Gradle plugin
-Enter selection (default: basic) [1..4] 2
+# gradle init
+
+Select type of build to generate:
+  1: Application
+  2: Library
+  3: Gradle plugin
+  4: Basic (build structure only)
+Enter selection (default: Application) [1..4]
 
 Select implementation language:
-  1: C++
-  2: Groovy
-  3: Java
-  4: Kotlin
-  5: Scala
+  1: Java
+  2: Kotlin
+  3: Groovy
+  4: Scala
+  5: C++
   6: Swift
-Enter selection (default: Java) [1..6] 3
+Enter selection (default: Java) [1..6]
 
-Generate multiple subprojects for application? (default: no) [yes, no]
+Enter target Java version (min: 7, default: 21):
+
+Project name (default: helloworld):
+
+Select application structure:
+  1: Single application project
+  2: Application and library project
+Enter selection (default: Single application project) [1..2]
+
 Select build script DSL:
   1: Kotlin
   2: Groovy
@@ -40,17 +50,25 @@ Select test framework:
   4: JUnit Jupiter
 Enter selection (default: JUnit Jupiter) [1..4]
 
-Project name (default: gradle-demo):
-Source package (default: gradle.demo):
-Enter target version of Java (min. 7) (default: 11):
 Generate build using new APIs and behavior (some features may change in the next minor release)? (default: no) [yes, no]
 
-> Task :init
-To learn more about Gradle by exploring our Samples at https://docs.gradle.org/8.5/samples/sample_building_java_applications.html
 
-BUILD SUCCESSFUL in 1m 6s
-2 actionable tasks: 2 executed
+> Task :init
+To learn more about Gradle by exploring our Samples at https://docs.gradle.org/8.8/samples/sample_building_java_applications.html
+
+BUILD SUCCESSFUL in 15s
+1 actionable task: 1 executed
 $
+
+
+
+
+
+
+
+
+
+
 
 
 $ tree -a .
