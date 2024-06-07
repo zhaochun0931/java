@@ -1,6 +1,5 @@
 mkdir helloworld
 cd helloworld
-
 mkdir -p src/main/java
 
 # create HelloWorld.java file
