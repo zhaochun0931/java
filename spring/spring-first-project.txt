@@ -1,3 +1,6 @@
+# install spring cli
+
+
 spring init --list
 spring init --dependencies=web helloworld --name=helloworld
 
