@@ -18,7 +18,19 @@ http://localhost:8080/
 http://localhost:8080/goodbye
 
 
-
+$ curl localhost:8080
+hello world from Spring Boot
+$
+$
+$ curl localhost:8080/hello
+Hello  World! 2024-06-08T19:35:54.962241
+$
+$
+$
+$ curl localhost:8080/goodbye
+Goodbye from Spring Boot
+$
+$
 
 
 
