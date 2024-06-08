@@ -26,7 +26,7 @@ public class HelloworldApplication {
 
 	            LocalTime currentTime = LocalTime.now();
 
-      return String.format("Hello  %s!" + currentTime, name);
+      return String.format("Hello  %s! " + currentTime, name);
     }
 
 
