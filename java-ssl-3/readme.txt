@@ -16,19 +16,21 @@ keytool -import -alias client -trustcacerts -file client.crt -keypass password -
 
 
 
-java -Djavax.net.ssl.keyStore=/tmp/serverkeystore.p12 \
+
+# run java tls server
+java -Djavax.net.ssl.keyStore=/tmp/server.p12 \
 -Djavax.net.ssl.keyStorePassword=password \
--Djavax.net.ssl.trustStore=/tmp/servertruststore.jks \
+-Djavax.net.ssl.trustStore=/tmp/server.jks \
 -Djavax.net.ssl.trustStorePassword=password \
-SSLSocketEchoServer
+tlsserver
 
 
 
 
 
-
-java -Djavax.net.ssl.keyStore=/tmp/clientkeystore.p12 \
+# run java tls client
+java -Djavax.net.ssl.keyStore=/tmp/client.p12 \
 -Djavax.net.ssl.keyStorePassword=password \
--Djavax.net.ssl.trustStore=/tmp/clienttruststore.jks \
+-Djavax.net.ssl.trustStore=/tmp/client.jks \
 -Djavax.net.ssl.trustStorePassword=password \
-SSLSocketClient
+tlsclient
