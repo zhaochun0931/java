@@ -1,10 +1,9 @@
 # Server Certificate
 
-keytool -genkey -alias serverkey -keyalg RSA -keysize 2048 -sigalg SHA256withRSA -storetype pkcs12 -keystore serverkeystore.p12 -storepass password -ext san=ip:127.0.0.1,dns:localhost
+keytool -genkey -alias server -keyalg RSA -keysize 2048 -sigalg SHA256withRSA -storetype pkcs12 -keystore server.jks.p12 -storepass password -ext san=ip:127.0.0.1,dns:localhost
 
-keytool -exportcert -keystore serverkeystore.p12 -alias serverkey -storepass password -rfc -file server-certificate.pem
-
-keytool -import -trustcacerts -file server-certificate.pem -keypass password -storepass password -keystore clienttruststore.jks
+keytool -exportcert -keystore server.jks.p12 -alias server -storepass password -rfc -file server.crt
+keytool -import -trustcacerts -file server.crt -keypass password -storepass password -keystore client.jks
 
 
 
