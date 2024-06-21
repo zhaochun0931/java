@@ -12,6 +12,18 @@ javac -version
 
 
 
+# JDK installation successfully
+
+
+
+
+
+
+
+
+
+
+
 
 JAVA_HOME=xxx
 PATH=$JAVA_HOME/bin:$PATH
