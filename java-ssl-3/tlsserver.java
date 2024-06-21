@@ -9,7 +9,7 @@ import javax.net.ServerSocketFactory;
 import javax.net.ssl.SSLServerSocket;
 import javax.net.ssl.SSLServerSocketFactory;
 
-public class SSLSocketEchoServer {
+public class tlsserver {
 
     static void startServer(int port) throws IOException {
 
