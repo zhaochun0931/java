@@ -8,7 +8,7 @@ import javax.net.SocketFactory;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 
-public class SSLSocketClient {
+public class tlsclient {
 
     static void startClient(String host, int port) throws IOException {
 
