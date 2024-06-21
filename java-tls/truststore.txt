@@ -1,6 +1,6 @@
 # export the public cert from the keystore
-keytool -export -alias tls  -keystore /tmp/tls.keystore -file /tmp/tls.crt -storepass password
-keytool -exportcert -alias tls  -keystore /tmp/tls.keystore -file /tmp/tls.crt -storepass password
+keytool -export -alias tls  -keystore /tmp/tls.jks -file /tmp/tls.crt -storepass password
+keytool -exportcert -alias tls  -keystore /tmp/tls.jks -file /tmp/tls.crt -storepass password
 
 
 keytool -printcert -file /tmp/tls.crt
@@ -14,9 +14,9 @@ keytool -printcert -file /tmp/tls.crt
 
 
 # import the public cert(generated in the last step) to the truststore
-keytool -import -file /tmp/tls.crt -alias tls -keystore /tmp/tls.truststore -storepass password -noprompt
-keytool -import -file /tmp/tls.crt -alias tls -keystore /tmp/tls.truststore -storepass password -noprompt -storetype PKCS12
+keytool -import -file /tmp/tls.crt -alias tls -keystore /tmp/tls_truststore.jks -storepass password -noprompt
+keytool -import -file /tmp/tls.crt -alias tls -keystore /tmp/tls_truststore.p12 -storepass password -noprompt -storetype PKCS12
 
 
-keytool -list -v --key-store /tmp/tls.truststore -storepass password
+keytool -list -v --key-store /tmp/tls_truststore.jks -storepass password
 
