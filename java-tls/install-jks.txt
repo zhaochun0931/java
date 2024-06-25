@@ -1,0 +1,115 @@
+# generate keystore
+
+$JAVA_HOME/bin/keytool -genkey -alias [youralias] -keyalg RSA -keystore [/preferred/keystore/path]
+Use an [alias] and [path] of your choice. The default keystore will be /root/.keystore
+
+
+
+keytool -genkey -alias tls -keyalg RSA -keystore /tmp/tls.jks -keypass password -storepass password
+keytool -genkeypair -alias tls -keyalg RSA -v
+
+
+
+CN=Unknown, OU=Unknown, O=Unknown, L=sh, ST=sh, C=cn
+
+
+
+
+keytool -genkey -alias tls -keyalg RSA -keystore /tmp/server.jks -storetype PKCS12 \
+-dname "CN=server.com,OU=My Company Name,O=My Organization,L=My Location,ST=My State,C=My Country Short Code" -keypass password -storepass password
+
+
+
+
+
+
+# generate the keystore with san name(subject alternate name)
+
+keytool -genkey -alias tls -keyalg RSA -keystore /tmp/tls.jks -keyalg RSA -validity 9999 \
+-dname "CN=1.1.1.1, O=Customer, L=Seattle, S=Washington, C=US, OU=Seattle" \
+-ext san=dns:www.xx1.com,dns:www.xx2.com \
+-storepass password \
+-keypass password
+
+
+
+
+
+
+# verify the keystore
+keytool -list -v
+keytool -list -v --key-store /tmp/tls.jks -storepass password
+
+Keystore type: jks
+Keystore type: PKCS12
+
+
+
+
+
+
+
+# convert JKS to PKCS12
+keytool -importkeystore -srckeystore /tmp/tls.jks -destkeystore /tmp/tls.p12 -deststoretype pkcs12
+
+keytool -importkeystore -srckeystore /tmp/tls.jks \
+   -destkeystore /tmp/tls.p12 \
+   -srcstoretype pkcs12 \
+   -deststoretype pkcs12
+
+openssl pkcs12 -nodes -in /tmp/tls.p12 -out tls.pem
+
+
+
+
+
+
+
+# extract the public key from keystore
+keytool -exportcert -alias tls -keystore /tmp/tls.jks -rfc -file tls.crt
+keytool -exportcert -alias tls -keystore /tmp/tls.jks -file tls.crt
+
+
+
+
+
+
+
+
+# extract the private key from keystore
+openssl pkcs12 -in /tmp/tls.p12 -nodes -nocerts -out tls.key
+
+
+
+
+
+
+
+
+
+
+
+
+
+Node.js does not directly support Java KeyStore (JKS) format for SSL/TLS certificates and keys. Node.js typically uses PEM (Privacy-Enhanced Mail) format for certificates and keys, which is widely supported in the Node.js ecosystem.
+
+If you have certificates and keys stored in a Java KeyStore (JKS) format and need to use them with Node.js, you have a few options:
+
+Option 1: Convert JKS to PEM
+You can convert your Java KeyStore (JKS) files to PEM format using OpenSSL or other tools. 
+
+
+
+
+# Export private key
+keytool -v -importkeystore -srckeystore server.jks -srcstoretype JKS -deststoretype PKCS12 -destkeystore server.p12
+openssl pkcs12 -in server.p12 -out server.key.pem -nocerts -nodes
+
+# Export certificate
+keytool -exportcert -rfc -keystore server.jks -file server.crt.pem
+
+
+Node.js itself doesn't natively support JKS format for SSL/TLS certificates and keys. However, you can convert JKS files to PEM format or use third-party libraries to work with JKS files in Node.js applications. 
+
+
+
