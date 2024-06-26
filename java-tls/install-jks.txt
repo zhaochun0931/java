@@ -5,7 +5,7 @@ Use an [alias] and [path] of your choice. The default keystore will be /root/.ke
 
 
 
-keytool -genkeypair -alias tls -keyalg RSA -keystore ./tls.jks \
+keytool -genkeypair -alias tls -keyalg RSA -keystore tls.jks \
 -keypass password \
 -storepass password
 
@@ -39,7 +39,7 @@ Is CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown correct?
 
 
 
-keytool -genkeypair -keyalg RSA -keystore ./tls.jks -alias tls \
+keytool -genkeypair -keyalg RSA -keystore tls.jks -alias tls \
 -keypass password \
 -storepass password \
 -dname "CN=xman" \
@@ -48,7 +48,7 @@ keytool -genkeypair -keyalg RSA -keystore ./tls.jks -alias tls \
 
 
 
-keytool -genkey -alias tls -keyalg RSA -keystore /tmp/server.jks -storetype PKCS12 \
+keytool -genkey -alias tls -keyalg RSA -keystore server.jks -storetype PKCS12 \
 -dname "CN=server.com,OU=My Company Name,O=My Organization,L=My Location,ST=My State,C=My Country Short Code" -keypass password -storepass password
 
 
@@ -58,7 +58,7 @@ keytool -genkey -alias tls -keyalg RSA -keystore /tmp/server.jks -storetype PKCS
 
 # generate the keystore with san name(subject alternate name)
 
-keytool -genkey -alias tls -keyalg RSA -keystore /tmp/tls.jks -keyalg RSA -validity 9999 \
+keytool -genkey -alias tls -keyalg RSA -keystore tls.jks -keyalg RSA -validity 9999 \
 -dname "CN=1.1.1.1, O=Customer, L=Seattle, S=Washington, C=US, OU=Seattle" \
 -ext san=dns:www.xx1.com,dns:www.xx2.com \
 -storepass password \
@@ -71,7 +71,7 @@ keytool -genkey -alias tls -keyalg RSA -keystore /tmp/tls.jks -keyalg RSA -valid
 
 # verify the keystore
 keytool -list -v
-keytool -list -v --key-store /tmp/tls.jks -storepass password
+keytool -list -v --key-store tls.jks -storepass password
 
 Keystore type: jks
 Keystore type: PKCS12
@@ -83,10 +83,10 @@ Keystore type: PKCS12
 
 
 # convert JKS to PKCS12
-keytool -importkeystore -srckeystore /tmp/tls.jks -destkeystore /tmp/tls.p12 -deststoretype pkcs12
+keytool -importkeystore -srckeystore tls.jks -destkeystore tls.p12 -deststoretype pkcs12
 
-keytool -importkeystore -srckeystore /tmp/tls.jks \
-   -destkeystore /tmp/tls.p12 \
+keytool -importkeystore -srckeystore tls.jks \
+   -destkeystore tls.p12 \
    -srcstoretype pkcs12 \
    -deststoretype pkcs12
 
@@ -99,20 +99,20 @@ openssl pkcs12 -nodes -in /tmp/tls.p12 -out tls.pem
 
 
 # extract the public key(certificate) from keystore
-keytool -exportcert -alias tls -keystore /tmp/tls.jks -storepass password -rfc -file tls.crt
-keytool -exportcert -alias tls -keystore /tmp/tls.jks -storepass password -file tls.crt
-keytool -printcert -file /tmp/tls.crt
+keytool -exportcert -alias tls -keystore tls.jks -storepass password -rfc -file tls.crt
+keytool -exportcert -alias tls -keystore tls.jks -storepass password -file tls.crt
+keytool -printcert -file tls.crt
 
 
 
 
 
 # import the public cert(generated in the last step) to the truststore
-keytool -import -file /tmp/tls.crt -alias tls -keystore /tmp/tls_truststore.jks -storepass password -noprompt
-keytool -import -file /tmp/tls.crt -alias tls -keystore /tmp/tls_truststore.p12 -storepass password -noprompt -storetype PKCS12
+keytool -import -file tls.crt -alias tls -keystore tls_truststore.jks -storepass password -noprompt
+keytool -import -file tls.crt -alias tls -keystore tls_truststore.p12 -storepass password -noprompt -storetype PKCS12
 
 
-keytool -list -v --key-store /tmp/tls_truststore.jks -storepass password
+keytool -list -v --key-store tls_truststore.jks -storepass password
 
 
 
@@ -133,7 +133,7 @@ keytool -list -v --key-store /tmp/tls_truststore.jks -storepass password
 
 
 # extract the private key from keystore
-openssl pkcs12 -in /tmp/tls.p12 -nodes -nocerts -out tls.key
+openssl pkcs12 -in tls.p12 -nodes -nocerts -out tls.key
 
 
 
