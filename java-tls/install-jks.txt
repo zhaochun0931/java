@@ -110,8 +110,6 @@ keytool -printcert -file tls.crt
 # import the public cert(generated in the last step) to the truststore
 keytool -import -file tls.crt -alias tls -keystore tls_ts.jks -storepass password -noprompt
 keytool -import -file tls.crt -alias tls -keystore tls_ts.p12 -storepass password -noprompt -storetype PKCS12
-
-
 keytool -list -v --key-store tls_ts.jks -storepass password
 
 
