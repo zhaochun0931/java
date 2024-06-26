@@ -112,7 +112,7 @@ keytool -import -file tls.crt -alias tls -keystore tls_ts.jks -storepass passwor
 keytool -import -file tls.crt -alias tls -keystore tls_ts.p12 -storepass password -noprompt -storetype PKCS12
 
 
-keytool -list -v --key-store tls_truststore.jks -storepass password
+keytool -list -v --key-store tls_ts.jks -storepass password
 
 
 
