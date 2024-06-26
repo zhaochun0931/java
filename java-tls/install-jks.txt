@@ -99,8 +99,31 @@ openssl pkcs12 -nodes -in /tmp/tls.p12 -out tls.pem
 
 
 # extract the public key(certificate) from keystore
-keytool -exportcert -alias tls -keystore ./tls.jks -storepass password -rfc -file tls.crt
-keytool -exportcert -alias tls -keystore ./tls.jks -storepass password -file tls.crt
+keytool -exportcert -alias tls -keystore /tmp/tls.jks -storepass password -rfc -file tls.crt
+keytool -exportcert -alias tls -keystore /tmp/tls.jks -storepass password -file tls.crt
+keytool -printcert -file /tmp/tls.crt
+
+
+
+
+
+# import the public cert(generated in the last step) to the truststore
+keytool -import -file /tmp/tls.crt -alias tls -keystore /tmp/tls_truststore.jks -storepass password -noprompt
+keytool -import -file /tmp/tls.crt -alias tls -keystore /tmp/tls_truststore.p12 -storepass password -noprompt -storetype PKCS12
+
+
+keytool -list -v --key-store /tmp/tls_truststore.jks -storepass password
+
+
+
+
+
+# up till now, you have the Java keystore and truststore
+
+
+
+
+
 
 
 
