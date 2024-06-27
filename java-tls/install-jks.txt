@@ -75,6 +75,9 @@ keytool -list -v --key-store tls.jks -storepass password
 
 Keystore type: jks
 Keystore type: PKCS12
+Entry type: PrivateKeyEntry
+Entry type: trustedCertEntry
+
 
 
 
