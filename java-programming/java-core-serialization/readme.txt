@@ -1,0 +1,1 @@
+Serialization in Java refers to the process of converting an object into a stream of bytes so that it can be easily saved to persistent storage (such as a file or a database) or transmitted over a network.
