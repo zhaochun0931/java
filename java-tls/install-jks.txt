@@ -10,6 +10,10 @@ keytool -genkeypair -alias tls -keyalg RSA -keystore tls.jks \
 -storepass password
 
 
+# conver the jks to pfx format
+keytool -importkeystore -srckeystore tls.jks -destkeystore tls.jks -deststoretype pkcs12
+
+
 
 
 keytool -genkeypair -alias tls -keyalg RSA -v
