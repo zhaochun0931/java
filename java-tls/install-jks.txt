@@ -139,8 +139,7 @@ keytool -list -v --key-store tls_ts.jks -storepass password
 
 # extract the private key from keystore
 openssl pkcs12 -in tls.p12 -nodes -nocerts -out tls.key
-
-
+openssl pkcs12 -in tls.p12 -nodes -nocerts -out tls.key -legacy
 
 
 
