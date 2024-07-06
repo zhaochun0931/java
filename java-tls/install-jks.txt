@@ -90,7 +90,12 @@ Entry type: trustedCertEntry
 
 
 # convert JKS to PKCS12
-keytool -importkeystore -srckeystore tls.jks -destkeystore tls.p12 -deststoretype pkcs12
+keytool -importkeystore -srckeystore tls.jks -destkeystore tls.p12 -deststoretype pkcs12 \
+-srcstorepass password \
+-deststorepass password
+
+
+
 
 keytool -importkeystore -srckeystore tls.jks \
    -destkeystore tls.p12 \
