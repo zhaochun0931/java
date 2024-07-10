@@ -45,7 +45,7 @@ Is CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown correct?
 keytool -genkeypair -keyalg RSA -keystore tls.jks -alias tls \
 -keypass password \
 -storepass password \
--dname "CN=xman" \
+-dname "CN=xxx"
 
 
 
