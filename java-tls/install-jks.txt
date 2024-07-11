@@ -177,3 +177,33 @@ Node.js itself doesn't natively support JKS format for SSL/TLS certificates and 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+keytool -v -genkeypair -keyalg RSA \
+-dname "cn=xxx.com, ou=xxx, o=xxx,L=San Francisco, st=CA, c=US" \
+-ext SAN="DNS:localhost,IP:127.0.0.1" \
+-alias tls -keystore tls.jks -keypass password -storepass password
+
+
+
+
+keytool -export -alias tls -file tls.crt -keystore tls.jks -storepass password
+
+
+keytool -import -v -trustcacerts -alias tls -file tls.crt -keystore tls_ts.jks -storepass password -noprompt
+
+
+$ file tls*
+tls.crt:    Certificate, Version=3
+tls.jks:    data
+tls_ts.jks: data
+$
