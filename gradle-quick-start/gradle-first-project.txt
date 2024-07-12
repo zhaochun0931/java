@@ -6,12 +6,8 @@ gradle init
 
 
 
+choose "Application"
 
-
-
-$ gradle init
-
-# gradle init
 
 Select type of build to generate:
   1: Application
@@ -19,52 +15,6 @@ Select type of build to generate:
   3: Gradle plugin
   4: Basic (build structure only)
 Enter selection (default: Application) [1..4]
-
-Select implementation language:
-  1: Java
-  2: Kotlin
-  3: Groovy
-  4: Scala
-  5: C++
-  6: Swift
-Enter selection (default: Java) [1..6]
-
-Enter target Java version (min: 7, default: 21):
-
-Project name (default: helloworld):
-
-Select application structure:
-  1: Single application project
-  2: Application and library project
-Enter selection (default: Single application project) [1..2]
-
-Select build script DSL:
-  1: Kotlin
-  2: Groovy
-Enter selection (default: Kotlin) [1..2]
-
-Select test framework:
-  1: JUnit 4
-  2: TestNG
-  3: Spock
-  4: JUnit Jupiter
-Enter selection (default: JUnit Jupiter) [1..4]
-
-Generate build using new APIs and behavior (some features may change in the next minor release)? (default: no) [yes, no]
-
-
-> Task :init
-To learn more about Gradle by exploring our Samples at https://docs.gradle.org/8.8/samples/sample_building_java_applications.html
-
-BUILD SUCCESSFUL in 15s
-1 actionable task: 1 executed
-$
-
-
-
-
-
-
 
 
 
@@ -121,16 +71,6 @@ $
 
 
 gradle run
-
-$ gradle run
-
-> Task :app:run
-Hello World!
-
-BUILD SUCCESSFUL in 468ms
-2 actionable tasks: 1 executed, 1 up-to-date
-$
-
 
 
 
