@@ -19,18 +19,4 @@ java -cp build/classes/java/main/ HelloWorld
 
 
 
-
-
-
-
-Alternatively, you can also run the program directly using Gradle's run task. Add the following configuration to your build.gradle file:
-
-task run(type: JavaExec) {
-    main = 'HelloWorld'
-    classpath = sourceSets.main.runtimeClasspath
-}
-
-Then you can execute the run task:
-
-
 gradle run
