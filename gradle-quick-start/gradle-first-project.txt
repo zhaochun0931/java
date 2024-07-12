@@ -3,6 +3,10 @@
 mkdir helloworld
 cd helloworld
 gradle init
+gradle init --type java-application
+
+
+
 
 
 
