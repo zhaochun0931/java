@@ -1,3 +1,4 @@
+# ubuntu
 apt update
 
 apt install default-jdk
@@ -5,6 +6,18 @@ apt install default-jdk
 apt install -y openjdk-8-jdk
 apt install -y openjdk-11-jdk
 apt install -y openjdk-17-jdk
+
+
+
+# redhat
+yum update
+yum install java-17-openjdk-devel
+yum install java-11-openjdk-devel
+
+
+
+
+
 
 java -version
 echo
