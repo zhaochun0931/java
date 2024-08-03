@@ -1,0 +1,1 @@
+ParNew garbage collector is a parallel version of the Young Generation garbage collector used in the Java HotSpot Virtual Machine. 
