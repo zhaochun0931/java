@@ -1,14 +1,22 @@
-The Concurrent Mark Sweep (CMS) collector was deprecated in HotSpot JVM version 9.0 and will likely be removed in a future release. 
+The Concurrent Mark Sweep (CMS) collector was deprecated in HotSpot JVM version 9.0 and will likely be removed in a future release. In Java 8, the CMS is the default garbage collector and tends to give the best performance characteristics with the lowest garbage collection pause times.
+
 
 CMS is only for the old generation.
 
 
-In Java 8, the CMS is the default garbage collector and tends to give the best performance characteristics with the lowest garbage collection pause times.
 
 
 
 -XX:+UseConcMarkSweepGC
 -XX:+UseParNewGC
+
+
+
+
+
+
+
+
 
 
 
