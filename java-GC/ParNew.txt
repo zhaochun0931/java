@@ -1,1 +1,35 @@
 ParNew garbage collector is a parallel version of the Young Generation garbage collector used in the Java HotSpot Virtual Machine. 
+
+
+
+ParNew is designed to perform garbage collection in the Young Generation space (where short-lived objects are allocated) in parallel across multiple threads. This improves performance by leveraging multiple CPU cores.
+
+Concurrent with CMS: ParNew is often used in conjunction with the Concurrent Mark-Sweep (CMS) garbage collector. In this setup, ParNew handles the Young Generation, while CMS takes care of the Old Generation.
+
+
+
+
+
+
+-XX:+UseConcMarkSweepGC -XX:+UseParNewGC
+
+
+
+
+
+
+
+
+
+
+
+As of Java 8, ParNew is the default garbage collector for the Young Generation when using the CMS collector.
+
+
+JDK 9 and Later: With the introduction of the G1 garbage collector and other improvements, the usage of CMS and ParNew has declined. CMS is deprecated in JDK 9 and removed in JDK 14, so it's important to consider newer garbage collectors like G1, ZGC, or Shenandoah for modern applications.
+
+
+
+
+
+
