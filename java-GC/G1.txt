@@ -1,5 +1,26 @@
 In Java 11, the G1 garbage collector is the default (and the CMS garbage collector is deprecated).
 
+
+
+The G1 Garbage Collector (Garbage-First GC) in the Java Virtual Machine (JVM) does not use the traditional Old Generation space. Instead, it has a different approach to managing heap memory.
+
+In G1 GC, the heap is divided into regions, and these regions can be of different sizes. The heap is not explicitly divided into Young and Old Generations as in the classic garbage collectors like Parallel GC or CMS (Concurrent Mark-Sweep). Instead, G1 GC organizes the heap into:
+
+Young Regions: These are regions where new objects are allocated. Young regions are collected during Young Generation (or minor) garbage collections.
+
+Old Regions: These regions are used for objects that have survived several garbage collections in the Young Generation. When objects are promoted from the Young Generation, they are moved to Old regions.
+
+Humongous Regions: G1 also has special handling for very large objects that do not fit into regular regions. These large objects are allocated in Humongous regions, which are treated differently compared to regular regions.
+
+
+
+
+
+
+
+
+
+
 You can explicitly enable it by providing -XX:+UseG1GC on the command line.
 
 
