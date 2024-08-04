@@ -9,14 +9,20 @@ apt install -y openjdk-17-jdk
 
 
 
-# redhat
+# redhat, centos
 yum update
 yum install java-17-openjdk-devel
 yum install java-11-openjdk-devel
+yum install -y java-1.8.0-openjdk-devel
 
 
 wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.rpm
 rpm -ivh jdk-17_linux-x64_bin.rpm
+
+
+
+
+
 
 
 
