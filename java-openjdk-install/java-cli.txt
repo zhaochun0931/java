@@ -4,5 +4,8 @@ java -version
 
 
 
-
+# extract the war file
 jar xf xx.war
+
+# create the war file
+jar cvf myapp.war *
