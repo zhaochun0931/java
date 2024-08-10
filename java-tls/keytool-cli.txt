@@ -35,7 +35,7 @@ openssl pkcs12 -export -in tls.crt  -inkey tls.key -out tls.p12
 
 
 # convert openssl public cert to truststore
-keytool -import -file /tmp/tls.crt -alias tls -keystore /tmp/tls.truststore -storepass password -noprompt
+keytool -import -file tls.crt -alias tls -keystore tls.truststore -storepass password -noprompt
 
 
 
