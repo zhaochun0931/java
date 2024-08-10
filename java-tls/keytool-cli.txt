@@ -21,8 +21,24 @@ https://github.com/gemfire/node-examples/tree/develop/ssl
 
 
 
+tls.crt
+tls.key
+
+
+
+
 # convert openssl private key to keystore
 openssl pkcs12 -export -in tls.crt  -inkey tls.key -out tls.p12
+
+
+
+
+
+# convert openssl public cert to truststore
+keytool -import -file /tmp/tls.crt -alias tls -keystore /tmp/tls.truststore -storepass password -noprompt
+
+
+
 
 
 
@@ -36,8 +52,6 @@ keytool -importkeystore -srckeystore tls.jks -destkeystore tls.p12 -deststoretyp
 
 
 
-# convert openssl public cert to truststore
-keytool -import -file /tmp/tls.crt -alias tls -keystore /tmp/tls.truststore -storepass password -noprompt
 
 
 
