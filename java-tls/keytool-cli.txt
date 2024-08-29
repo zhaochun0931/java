@@ -86,7 +86,10 @@ keytool -importkeystore -srckeystore tls.jks -destkeystore tls.p12 -deststoretyp
 
 
 # how to check the java keystore and truststore
-keytool -list -v -keystore <name-of-your-truststore-or-keystore>
+keytool -list -keystore <name-of-your-truststore-or-keystore> -storepass password
+keytool -list -v -keystore <name-of-your-truststore-or-keystore> -storepass password
+
+
 
 
 
