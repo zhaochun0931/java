@@ -1,0 +1,5 @@
+keytool -genkey -keyalg RSA -v -keystore keystore.jks -alias first-key-pair -keypass password -storepass password
+keytool -genkey -keyalg RSA -v -keystore keystore.jks -alias first-key-pair -keypass password -storepass password
+
+
+
