@@ -63,7 +63,8 @@ openssl pkcs12 -nodes -in keystore.p12 -out keystore.pem -legacy
 
 
 
-keystore.pem will contain all of the keys and certificates from the KeyStore. For this example, it contains a private key and a certificate for both the first-key-pair and second-key-pair aliases.
+keystore.pem will contain all of the keys and certificates from the KeyStore. 
+For this example, it contains a private key and a certificate for both the first-key-pair and second-key-pair aliases.
 
 
 
@@ -81,6 +82,9 @@ keytool -exportcert -alias second-key-pair -keystore keystore.jks -rfc -file sec
 
 # extract the private key from p12
 openssl pkcs12 -in keystore.p12 -nocerts -out private_key.pem -legacy
+openssl pkcs12 -in keystore.p12 -nocerts -out private_key.pem -legacy --nodes
+
+
 
 
 # extract the cert from p12
