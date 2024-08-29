@@ -28,8 +28,8 @@ openssl pkcs12 -nodes -in keystore.p12 -out keystore.pem
 2060BD7A41F70000:error:0308010C:digital envelope routines:inner_evp_generic_fetch:unsupported:../crypto/evp/evp_fetch.c:386:Global default library context, Algorithm (RC2-40-CBC : 0), Properties ()
 
 
-# use --legacy option to fix above error
-openssl pkcs12 -nodes -in keystore.p12 -out keystore.pem --legacy
+# use -legacy option to fix above error
+openssl pkcs12 -nodes -in keystore.p12 -out keystore.pem -legacy
 
 
 
