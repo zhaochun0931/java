@@ -1,5 +1,43 @@
+# Creating the Java KeyStore
 keytool -genkey -keyalg RSA -v -keystore keystore.jks -alias first-key-pair -keypass password -storepass password
 keytool -genkey -keyalg RSA -v -keystore keystore.jks -alias first-key-pair -keypass password -storepass password
+
+
+
+
+
+
+keytool -list -keystore keystore.jks -storepass password -rfc
+
+
+
+# JKS to PKCS#12
+keytool -importkeystore -srckeystore keystore.jks \
+-destkeystore keystore.p12 \
+-srcstoretype jks \
+-deststoretype pkcs12
+
+
+
+
+
+# PKCS#12 to PEM
+openssl pkcs12 -nodes -in keystore.p12 -out keystore.pem
+
+
+2060BD7A41F70000:error:0308010C:digital envelope routines:inner_evp_generic_fetch:unsupported:../crypto/evp/evp_fetch.c:386:Global default library context, Algorithm (RC2-40-CBC : 0), Properties ()
+
+
+# use --legacy option to fix above error
+openssl pkcs12 -nodes -in keystore.p12 -out keystore.pem --legacy
+
+
+
+
+keystore.pem will contain all of the keys and certificates from the KeyStore. For this example, it contains a private key and a certificate for both the first-key-pair and second-key-pair aliases.
+
+
+
 
 
 
