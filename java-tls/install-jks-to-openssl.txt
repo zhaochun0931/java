@@ -41,3 +41,11 @@ keystore.pem will contain all of the keys and certificates from the KeyStore. Fo
 
 
 
+
+# We can export a single public key certificate out of a JKS and into PEM format using keytool alone:
+
+keytool -exportcert -alias first-key-pair -keystore keystore.jks -rfc -file first-key-pair-cert.pem
+
+
+
+
