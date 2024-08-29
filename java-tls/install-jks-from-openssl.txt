@@ -26,10 +26,25 @@ openssl pkcs12 -export -in cert.pem -inkey key.pem -out certificate.p12 -name tl
 
 
 
-# convert from PKCS12 to JKS format
+# convert from PKCS12 to JKS format (keystore)
 
 keytool -importkeystore -srckeystore certificate.p12 -srcstoretype pkcs12 -destkeystore cert.jks
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+# convert to truststore
+keytool -import -file cert.pem -alias tls -keystore tls.truststore
 
 
