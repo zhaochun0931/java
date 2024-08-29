@@ -142,7 +142,7 @@ keytool -list -v --key-store tls_ts.jks -storepass password
 
 
 
-# up till now, you have the Java keystore and truststore
+# Up till now, you have the Java keystore and truststore
 
 
 
