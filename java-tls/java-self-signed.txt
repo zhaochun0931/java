@@ -10,8 +10,7 @@ keytool -genkeypair -alias tls -keyalg RSA -keystore tls.pfx -keypass password -
 
 
 
-keytool -list -v -keystore tls.jks -storepass password
-keytool -list -v -keystore tls.pfx -storepass password
+
 
 
 
