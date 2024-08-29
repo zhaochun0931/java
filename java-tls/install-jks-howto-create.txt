@@ -1,3 +1,17 @@
+java keystore
+|
+|
+|
+java truststore
+
+
+
+
+
+
+
+
+
 # generate the keystore
 
 $JAVA_HOME/bin/keytool -genkey -alias [youralias] -keyalg RSA -keystore [/preferred/keystore/path]
@@ -110,8 +124,9 @@ openssl pkcs12 -nodes -in /tmp/tls.p12 -out tls.pem
 
 
 # extract the public key(certificate) from keystore
-keytool -exportcert -alias tls -keystore tls.jks -storepass password -rfc -file tls.crt
 keytool -exportcert -alias tls -keystore tls.jks -storepass password -file tls.crt
+
+keytool -exportcert -alias tls -keystore tls.jks -storepass password -rfc -file tls.crt
 keytool -printcert -file tls.crt
 
 
@@ -128,6 +143,16 @@ keytool -list -v --key-store tls_ts.jks -storepass password
 
 
 # up till now, you have the Java keystore and truststore
+
+
+
+
+
+
+
+
+
+
 
 
 
