@@ -38,7 +38,7 @@ keytool -genkeypair -alias tls -keyalg RSA -v
 
 
 What is your first and last name?
-  [Unknown]:
+  [Unknown]:xiaoming.com
 What is the name of your organizational unit?
   [Unknown]:
 What is the name of your organization?
@@ -49,13 +49,13 @@ What is the name of your State or Province?
   [Unknown]:
 What is the two-letter country code for this unit?
   [Unknown]:
-Is CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown correct?
+Is CN=xiaoming.com, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown correct?
 
 
 
 
 
-keytool -genkeypair -keyalg RSA -keystore tls.jks -alias tls -keypass password -storepass password -dname "CN=xxx"
+keytool -genkeypair -keyalg RSA -keystore key.jks -alias tls -keypass password -storepass password -dname "CN=xiaoming.com"
 
 
 
@@ -120,7 +120,7 @@ openssl pkcs12 -nodes -in /tmp/tls.p12 -out tls.pem
 
 
 # extract the public key(certificate) from keystore
-keytool -exportcert -alias tls -keystore tls.jks -storepass password -file tls.crt
+keytool -exportcert -alias tls -keystore key.jks -storepass password -file tls.crt
 keytool -exportcert -alias tls -keystore tls.jks -storepass password -file tls.crt -rfc 
 
 keytool -printcert -file tls.crt
@@ -130,7 +130,7 @@ keytool -printcert -file tls.crt
 
 
 # import the public cert(generated in the last step) to the truststore
-keytool -import -file tls.crt -alias tls -keystore tls_ts.jks -storepass password -noprompt
+keytool -import -file tls.crt -alias tls -keystore cert.jks -storepass password -noprompt
 keytool -import -file tls.crt -alias tls -keystore tls_ts.p12 -storepass password -noprompt -storetype PKCS12
 keytool -list -v --key-store tls_ts.jks -storepass password
 
