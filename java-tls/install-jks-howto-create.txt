@@ -19,17 +19,16 @@ Use an [alias] and [path] of your choice. The default keystore will be /root/.ke
 
 
 
-keytool -genkeypair -alias tls -keyalg RSA -keystore tls.jks \
--keypass password \
--storepass password
-
-
-
-
-
+keytool -genkeypair -alias tls -keyalg RSA -keystore tls.jks -keypass password -storepass password
 
 
 keytool -genkeypair -alias tls -keyalg RSA -v
+
+
+
+
+
+
 
 
 
@@ -56,10 +55,7 @@ Is CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown correct?
 
 
 
-keytool -genkeypair -keyalg RSA -keystore tls.jks -alias tls \
--keypass password \
--storepass password \
--dname "CN=xxx"
+keytool -genkeypair -keyalg RSA -keystore tls.jks -alias tls -keypass password -storepass password -dname "CN=xxx"
 
 
 
@@ -103,7 +99,7 @@ Entry type: trustedCertEntry
 
 
 # convert JKS to PKCS12(*.pfx, *.p12)
-keytool -importkeystore -srckeystore tls.jks -destkeystore tls.p12 -deststoretype pkcs12 \
+keytool -importkeystore -srckeystore key.jks -destkeystore key.p12 -deststoretype pkcs12 \
 -srcstorepass password \
 -deststorepass password
 
@@ -125,7 +121,7 @@ openssl pkcs12 -nodes -in /tmp/tls.p12 -out tls.pem
 
 # extract the public key(certificate) from keystore
 keytool -exportcert -alias tls -keystore tls.jks -storepass password -file tls.crt
-keytool -exportcert -alias tls -keystore tls.jks -storepass password -rfc -file tls.crt
+keytool -exportcert -alias tls -keystore tls.jks -storepass password -file tls.crt -rfc 
 
 keytool -printcert -file tls.crt
 
