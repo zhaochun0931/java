@@ -2,7 +2,11 @@ java keystore
 |
 |
 |
-java truststore
+export the cert from keystore
+|
+|
+|
+import the cert to the java truststore
 
 
 
@@ -20,8 +24,6 @@ Use an [alias] and [path] of your choice. The default keystore will be /root/.ke
 
 
 keytool -genkeypair -alias tls -keyalg RSA -keystore tls.jks -keypass password -storepass password
-
-
 keytool -genkeypair -alias tls -keyalg RSA -v
 
 
@@ -33,7 +35,7 @@ keytool -genkeypair -alias tls -keyalg RSA -v
 
 
 
-# generate the keystore with distinguished name
+# generate the keystore with distinguished name, When you are prompted to enter your first and last name, do not enter your first and last name. Instead, enter the fully qualified computer name
 
 
 
