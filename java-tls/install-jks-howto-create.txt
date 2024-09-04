@@ -23,7 +23,7 @@ Use an [alias] and [path] of your choice. The default keystore will be /root/.ke
 
 
 
-keytool -genkeypair -alias tls -keyalg RSA -keystore tls.jks -keypass password -storepass password
+keytool -genkeypair -alias tls -keyalg RSA -keystore key.jks -keypass password -storepass password
 keytool -genkeypair -alias tls -keyalg RSA -v
 
 
@@ -86,7 +86,7 @@ keytool -genkey -alias tls -keyalg RSA -keystore tls.jks -keyalg RSA -validity 9
 
 # verify the keystore
 keytool -list -v
-keytool -list -v --key-store tls.jks -storepass password
+keytool -list -v --key-store key.jks -storepass password
 
 Keystore type: jks
 Keystore type: PKCS12
@@ -122,7 +122,7 @@ openssl pkcs12 -nodes -in /tmp/tls.p12 -out tls.pem
 
 
 # extract the public key(certificate) from keystore
-keytool -exportcert -alias tls -keystore key.jks -storepass password -file tls.crt
+keytool -exportcert -alias tls -keystore key.jks -storepass password -file temp.crt
 keytool -exportcert -alias tls -keystore tls.jks -storepass password -file tls.crt -rfc 
 
 keytool -printcert -file tls.crt
@@ -132,7 +132,7 @@ keytool -printcert -file tls.crt
 
 
 # import the public cert(generated in the last step) to the truststore
-keytool -import -file tls.crt -alias tls -keystore cert.jks -storepass password -noprompt
+keytool -import -file temp.crt -alias tls -keystore trust.jks -storepass password -noprompt
 keytool -import -file tls.crt -alias tls -keystore tls_ts.p12 -storepass password -noprompt -storetype PKCS12
 keytool -import -v -trustcacerts -alias tls -keypass password -file cert.jks -keystore key.jks -storepass password
 
