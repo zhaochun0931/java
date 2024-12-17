@@ -4,7 +4,6 @@ https://gradle.org/releases/
 
 # install java openjdk
 
-# install grale
 
 apt install unzip
 wget https://services.gradle.org/distributions/gradle-8.8-all.zip
