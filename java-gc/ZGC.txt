@@ -14,3 +14,10 @@ By default, its value is equal to the maximum heap size.
 
 
 
+Changing SoftMaxHeapSize at runtime
+The SoftMaxHeapSize option is also manageable, meaning it can be changed at runtime without having to restart the JVM. You can change a manageable JVM option at runtime using the HotSpotDiagnosticMXBean or jcmd, like this.
+
+jcmd <pid> VM.set_flag SoftMaxHeapSize <size>
+
+
+
