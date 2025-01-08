@@ -1,5 +1,7 @@
 import java.io.*;
 import java.net.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class MultiThreadedServer {
 
@@ -14,7 +16,8 @@ public class MultiThreadedServer {
                 try {
                     // Accept a client connection
                     Socket clientSocket = serverSocket.accept();
-                    System.out.println("New client connected: " + clientSocket.getInetAddress());
+                    String timestamp = getCurrentTimestamp();
+                    System.out.println("[" + timestamp + "] New client connected: " + clientSocket.getInetAddress());
 
                     // Create a new thread for handling the client
                     new ClientHandler(clientSocket).start();
@@ -25,6 +28,12 @@ public class MultiThreadedServer {
         } catch (IOException e) {
             System.err.println("Error starting the server: " + e.getMessage());
         }
+    }
+
+    // Utility method to get current timestamp formatted
+    public static String getCurrentTimestamp() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        return LocalDateTime.now().format(formatter);
     }
 }
 
@@ -43,19 +52,23 @@ class ClientHandler extends Thread {
 
             // Read the message from the client
             String clientMessage = in.readLine();
-            System.out.println("Received from client: " + clientMessage);
+            String timestamp = MultiThreadedServer.getCurrentTimestamp();
+            System.out.println("[" + timestamp + "] Received from client: " + clientMessage);
 
             // Process the message and send a response
             out.println("Hello from the server! You said: " + clientMessage);
 
         } catch (IOException e) {
-            System.err.println("Error in communication with client: " + e.getMessage());
+            String timestamp = MultiThreadedServer.getCurrentTimestamp();
+            System.err.println("[" + timestamp + "] Error in communication with client: " + e.getMessage());
         } finally {
             try {
                 clientSocket.close();
-                System.out.println("Client connection closed.");
+                String timestamp = MultiThreadedServer.getCurrentTimestamp();
+                System.out.println("[" + timestamp + "] Client connection closed.");
             } catch (IOException e) {
-                System.err.println("Error closing client connection: " + e.getMessage());
+                String timestamp = MultiThreadedServer.getCurrentTimestamp();
+                System.err.println("[" + timestamp + "] Error closing client connection: " + e.getMessage());
             }
         }
     }
