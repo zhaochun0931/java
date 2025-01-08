@@ -24,3 +24,4 @@ Many-To-Many – Many user threads multiplex to a smaller or equal number of ker
 
 
   
+Threads in Java are typically mapped to native operating system threads, and the JVM will run into this error when it tries to create too many threads beyond the system or JVM limits (like the ulimit on Linux).
