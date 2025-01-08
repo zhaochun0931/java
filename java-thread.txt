@@ -60,4 +60,9 @@ Set Maximum Threads (ulimit) to a very low value, so the OS imposes a strict lim
 
 
 
+By adjusting the heap size (-Xmx), thread stack size (-Xss), and system thread limits (ulimit), you can simulate an OutOfMemoryError due to thread creation in Java. 
+
+
+
+
 
