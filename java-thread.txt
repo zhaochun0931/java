@@ -36,3 +36,28 @@ Java Threads vs. OS Threads
 Java Threads: Java provides its own threading model that runs on top of the native operating system threads. When you create a thread in Java, it's managed by the Java Virtual Machine (JVM). Java threads are essentially lightweight abstractions that are mapped to native OS threads by the JVM.
 
 OS Threads (Native Threads): Native threads are operating system-level threads that the OS kernel schedules and manages. These are the actual threads that execute on the processor. When a Java thread is created, it maps to a native thread, and the OS manages its execution.
+
+
+
+
+
+
+The two key factors that contribute to OutOfMemoryError: unable to create new native thread are:
+
+Thread Stack Size: Each thread in Java consumes a portion of memory for its stack. Reducing the stack size can allow you to create more threads, but it will also reduce the available memory for other processes.
+System Resources and Limits: The system (operating system or JVM) has limits on how many threads it can create, usually governed by the available memory and the ulimit settings (on Linux, for example).
+
+
+Steps to Set the JVM Arguments to Trigger the OOM Error:
+You can configure the Java application to run into the OutOfMemoryError by tweaking the following settings:
+
+Reduce the JVM Heap Memory (-Xmx), making sure you leave less memory for thread stacks.
+Reduce the Thread Stack Size (-Xss), to make the threads use less memory per thread, allowing more to be created before running out of memory.
+Set Maximum Threads (ulimit) to a very low value, so the OS imposes a strict limit on the number of threads you can create.
+
+
+
+
+
+
+
