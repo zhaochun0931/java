@@ -65,4 +65,15 @@ By adjusting the heap size (-Xmx), thread stack size (-Xss), and system thread l
 
 
 
+/proc/sys/kernel/threads-max: This controls the maximum number of threads a system can have. 
+
+
+
+
+
+cat /proc/sys/kernel/threads-max
+sudo sysctl -w kernel.threads-max=10000
+
+
+
 
