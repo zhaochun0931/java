@@ -1,0 +1,26 @@
+Most Java applications are multithreaded in nature, consisting of multiple components, performing specific tasks, and executed in different threads. However, the underlying operating system (OS) imposes a cap on the maximum number of threads that a Java application can create.
+
+The JVM throws an unable to create new native thread error when the JVM asks the underlying OS for a new thread, and the OS is incapable of creating new kernel threads also known as OS or system threads.  The sequence of events is as follows:
+
+An application running inside the Java Virtual Machine (JVM) requests for a new thread
+The JVM native code sends a request to the OS to create a new kernel thread
+The OS attempts to create a new kernel thread which requires memory allocation
+The OS refuses native memory allocation because either
+The requesting Java process has exhausted its memory address space
+The OS has depleted its virtual memory
+The Java process then returns the java.lang.OutOfMemoryError: unable to create new native thread error
+
+  
+  
+Thread Allocation Model
+An OS typically has two types of threads – user threads (threads created by a Java application) and kernel threads. User threads are supported above the kernel threads and the kernel threads are managed by the OS.
+
+Between them, there are three common relationships:
+
+Many-To-One – Many user threads map to a single kernel thread
+One-To-One – One user thread map to one kernel thread
+Many-To-Many – Many user threads multiplex to a smaller or equal number of kernel threads
+
+
+
+  
