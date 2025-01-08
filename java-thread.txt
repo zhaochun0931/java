@@ -72,8 +72,12 @@ By adjusting the heap size (-Xmx), thread stack size (-Xss), and system thread l
 
 
 cat /proc/sys/kernel/threads-max
-sudo sysctl -w kernel.threads-max=10000
 
+sudo sysctl -w kernel.threads-max=500
+
+
+
+java -Xmx256m -Xss128k 
 
 
 
