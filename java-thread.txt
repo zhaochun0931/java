@@ -80,6 +80,11 @@ sudo sysctl -w kernel.threads-max=500
 java -Xmx256m -Xss2m  
 
 
+Check the system-wide thread limit (/proc/sys/kernel/threads-max).
+Check user process limits (ulimit -u).
+Check file descriptor limits (ulimit -n).
+
+
 
 ulimit -a
 ulimit -n
