@@ -77,7 +77,7 @@ sudo sysctl -w kernel.threads-max=500
 
 
 
-java -Xmx256m -Xss128k 
+java -Xmx256m -Xss2m  
 
 
 
