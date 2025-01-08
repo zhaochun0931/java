@@ -81,3 +81,8 @@ java -Xmx256m -Xss2m
 
 
 
+ulimit -a
+ulimit -n
+ulimit -u
+
+
