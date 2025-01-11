@@ -17,3 +17,15 @@ jar cvf myapp.war *
 
 
 jar xf xxx.jar
+
+
+# To check the contents of a JAR (Java Archive) file
+
+
+
+jar tf xxx.jar
+
+
+
+
+unzip -l xxx.jar
