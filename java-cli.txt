@@ -13,3 +13,7 @@ jar xf xx.war
 
 # create the war file
 jar cvf myapp.war *
+
+
+
+jar xf xxx.jar
