@@ -8,8 +8,62 @@ the original xx.log.0 will rotate to xx.log.1
 
 
 
+==> app.log <==
+[2025-01-13 15:02:27] INFO  Log4jTest - This is an INFO message
+[2025-01-13 15:02:27] WARN  Log4jTest - This is a WARN message
+[2025-01-13 15:02:27] ERROR Log4jTest - This is an ERROR message
+[2025-01-13 15:02:27] FATAL Log4jTest - This is a FATAL message
+[2025-01-13 15:02:27] INFO  Log4jTest - Logging some info message 0
+[2025-01-13 15:02:27] INFO  Log4jTest - Logging some info message 1
+[2025-01-13 15:02:27] INFO  Log4jTest - Logging some info message 2
+[2025-01-13 15:02:27] INFO  Log4jTest - Logging some info message 3
+[2025-01-13 15:02:27] INFO  Log4jTest - Logging some info message 4
+[2025-01-13 15:02:27] INFO  Log4jTest - Log4jTest completed.
+
+==> app.log.1 <==
+[2025-01-13 15:02:25] INFO  Log4jTest - This is an INFO message
+[2025-01-13 15:02:25] WARN  Log4jTest - This is a WARN message
+[2025-01-13 15:02:25] ERROR Log4jTest - This is an ERROR message
+[2025-01-13 15:02:25] FATAL Log4jTest - This is a FATAL message
+[2025-01-13 15:02:25] INFO  Log4jTest - Logging some info message 0
+[2025-01-13 15:02:25] INFO  Log4jTest - Logging some info message 1
+[2025-01-13 15:02:25] INFO  Log4jTest - Logging some info message 2
+[2025-01-13 15:02:25] INFO  Log4jTest - Logging some info message 3
+[2025-01-13 15:02:25] INFO  Log4jTest - Logging some info message 4
+[2025-01-13 15:02:25] INFO  Log4jTest - Log4jTest completed.
+
+==> app.log.2 <==
+[2025-01-13 15:02:21] INFO  Log4jTest - Logging some info message 2
+[2025-01-13 15:02:21] INFO  Log4jTest - Logging some info message 3
+[2025-01-13 15:02:21] INFO  Log4jTest - Logging some info message 4
+[2025-01-13 15:02:21] INFO  Log4jTest - Log4jTest completed.
+[2025-01-13 15:02:23] DEBUG Log4jTest - This is a DEBUG message
+[2025-01-13 15:02:23] INFO  Log4jTest - This is an INFO message
+[2025-01-13 15:02:23] WARN  Log4jTest - This is a WARN message
+[2025-01-13 15:02:23] ERROR Log4jTest - This is an ERROR message
+[2025-01-13 15:02:23] FATAL Log4jTest - This is a FATAL message
+[2025-01-13 15:02:23] INFO  Log4jTest - Logging some info message 0
+
+==> app.log.3 <==
+[2025-01-13 15:00:36] WARN  Log4jTest - This is a WARN message
+[2025-01-13 15:00:36] ERROR Log4jTest - This is an ERROR message
+[2025-01-13 15:00:36] FATAL Log4jTest - This is a FATAL message
+[2025-01-13 15:00:36] INFO  Log4jTest - Logging some info message 0
+[2025-01-13 15:00:36] INFO  Log4jTest - Logging some info message 1
+[2025-01-13 15:00:36] INFO  Log4jTest - Logging some info message 2
+[2025-01-13 15:00:36] INFO  Log4jTest - Logging some info message 3
+[2025-01-13 15:00:36] INFO  Log4jTest - Logging some info message 4
+[2025-01-13 15:00:36] INFO  Log4jTest - Log4jTest completed.
+[2025-01-13 15:02:21] DEBUG Log4jTest - This is a DEBUG message
+
+
+
+
+
+
+
 mkdir -p src/main/resources
-touch log4j.properties
+touch src/main/resources/log4j.properties
 
 
 
