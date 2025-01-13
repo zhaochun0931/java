@@ -37,7 +37,9 @@ https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
 
 
 # Creating the first Maven Project
-mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=log4jtest -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
 cd my-app
 mvn install
 mvn clean install
