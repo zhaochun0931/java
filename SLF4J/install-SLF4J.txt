@@ -1,0 +1,5 @@
+SLF4J (Simple Logging Facade for Java) is a logging abstraction framework for Java. It provides a common API for various logging frameworks (such as Log4j, Logback, and Java Util Logging).
+
+SLF4J itself does not perform any logging; it simply acts as a facade or wrapper for actual logging implementations.
+
+In simpler terms, SLF4J allows you to log messages using a common API, while the underlying implementation can be chosen at runtime (e.g., Log4j, Logback, etc.).
