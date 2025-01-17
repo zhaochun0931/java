@@ -1,9 +1,9 @@
 import org.apache.log4j.Logger;
 
-public class Log4jTest {
+public class Log4j1Test {
 
     // Initialize the logger
-    private static final Logger logger = Logger.getLogger(Log4jTest.class);
+    private static final Logger logger = Logger.getLogger(Log4j1Test.class);
 
     public static void main(String[] args) {
         // Log a message at different levels
@@ -18,6 +18,6 @@ public class Log4jTest {
             logger.info("Logging some info message " + i);
         }
 
-        logger.info("Log4jTest completed.");
+        logger.info("Log4j1Test completed.");
     }
 }
