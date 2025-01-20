@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+  <Appenders>
+    <!-- RollingFile Appender -->
+    <RollingFile name="RollingFile" fileName="app.log" filePattern="app-%d{yyyy-MM-dd}-%i.log">
+      <!-- Log file format -->
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1} - %m%n"/>
+
+      <!-- Roll over the log file when it exceeds 10MB -->
+      <Policies>
+        <SizeBasedTriggeringPolicy size="10KB"/>
+      </Policies>
+
+      <!-- Keep 30 days' worth of logs -->
+      <DefaultRolloverStrategy max="5"/>
+    </RollingFile>
+  </Appenders>
+
+  <Loggers>
+    <!-- Root Logger -->
+    <Root level="info">
+      <AppenderRef ref="RollingFile"/>
+    </Root>
+  </Loggers>
+
+</Configuration>
