@@ -1,4 +1,6 @@
 # install spring cli
+wget https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-cli/3.4.2/spring-boot-cli-3.4.2-bin.tar.gz
+tar -xzvf spring-boot-cli-3.4.2-bin.tar.gz
 
 
 spring init --list
