@@ -1,5 +1,6 @@
   <dependencies>
 
+    <!-- Apache Shiro core -->
 
     <dependency>
         <groupId>org.apache.shiro</groupId>
@@ -12,5 +13,12 @@
         <version>1.9.1</version>
     </dependency>
 
+    
+        <!-- Apache Commons Logging -->
+    <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>1.2</version> <!-- latest stable version -->
+    </dependency>
 
   </dependencies>
