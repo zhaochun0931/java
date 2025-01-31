@@ -1,1 +1,3 @@
-
+cd my-app/
+mkdir -p src/main/resources
+touch src/main/resources/shiro.ini
