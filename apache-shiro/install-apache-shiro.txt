@@ -1,3 +1,13 @@
 cd my-app/
 mkdir -p src/main/resources
 touch src/main/resources/shiro.ini
+
+
+
+
+
+
+wget https://dlcdn.apache.org/shiro/2.0.2/shiro-root-2.0.2-source-release.zip
+unzip shiro-root-2.0.2-source-release.zip
+cd shiro-root-2.0.2/samples/quickstart
+mvn compile exec:java
