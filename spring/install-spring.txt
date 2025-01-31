@@ -20,15 +20,26 @@ spring init --dependencies=web helloworld --name=helloworld
 spring init --dependencies=web helloworld --name=helloworld --type=maven-project
 
 
+src/
+├── main
+│   ├── java
+│   │   └── com
+│   │       └── example
+│   │           └── helloworld
+│   │               └── HelloworldApplication.java
+│   └── resources
+│       ├── application.properties
+│       ├── static
+│       └── templates
+└── test
+    └── java
+        └── com
+            └── example
+                └── helloworld
+                    └── HelloworldApplicationTests.java
 
 
 
-
-
-# spring init --dependencies=web helloworld --name=helloworld
-Using service at https://start.spring.io
-Project extracted to '/root/helloworld'
-#
 
 
 
