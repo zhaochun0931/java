@@ -11,7 +11,7 @@ cd spring-3.4.2/
 
 
 
-spring init --list
+./spring init --list
 
 # gradle project
 spring init --dependencies=web helloworld --name=helloworld
