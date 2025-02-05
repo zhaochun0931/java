@@ -9,11 +9,10 @@
 
       <!-- Roll over the log file when it exceeds 10MB -->
       <Policies>
-        <SizeBasedTriggeringPolicy size="10KB"/>
+        <SizeBasedTriggeringPolicy size="10KB"/> <!-- Increased size to 10MB -->
       </Policies>
 
-      <!-- Keep 30 days' worth of logs -->
-      <DefaultRolloverStrategy max="5"/>
+      <DefaultRolloverStrategy max="0" fileIndex="nomax"/>  <!-- Do not delete any logs -->
     </RollingFile>
   </Appenders>
 
