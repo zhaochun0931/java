@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+
+    <!-- Appender for ClassA logs -->
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d [%t] %-5level %c - %msg%n" />
+        </Console>
+
+        <File name="ClassAFileAppender" fileName="logs/classA.log">
+            <PatternLayout>
+                <Pattern>%d [%t] %-5level %c - %msg%n</Pattern>
+            </PatternLayout>
+        </File>
+
+        <File name="ClassBFileAppender" fileName="logs/classB.log">
+            <PatternLayout>
+                <Pattern>%d [%t] %-5level %c - %msg%n</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+
+    <!-- Loggers Configuration -->
+    <Loggers>
+        <!-- Logger for ClassA -->
+        <Logger name="ClassA" level="DEBUG" additivity="false">
+            <AppenderRef ref="ClassAFileAppender" />
+        </Logger>
+
+        <!-- Logger for ClassB -->
+        <Logger name="ClassB" level="INFO" additivity="false">
+            <AppenderRef ref="ClassBFileAppender" />
+        </Logger>
+
+        <!-- Root Logger (Optional) -->
+        <Root level="ERROR">
+            <AppenderRef ref="ConsoleAppender" />
+        </Root>
+    </Loggers>
+
+</Configuration>
