@@ -1,8 +1,6 @@
 # ubuntu
 apt update
-
 apt install default-jdk
-
 apt install -y openjdk-8-jdk
 apt install -y openjdk-11-jdk
 apt install -y openjdk-17-jdk
