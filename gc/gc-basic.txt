@@ -1,3 +1,22 @@
+What are the Java GC algorithms?
+
+As of OpenJDK 22, there are 7 GC algorithms available:
+
+Serial GC
+Parallel GC
+CMS GC (Concurrent Mark & Sweep)
+G1 GC
+ZGC
+Shenandoah GC
+Epsilon GC
+
+
+
+
+
+
+
+
 
 The Java heap is made up of the Permanent, Old(tenured), and New (sometimes called Young) generations. 
 
