@@ -16,7 +16,7 @@ Epsilon GC
 
 java -Xms64m -Xmx64m -XX:+UseSerialGC -verbose:gc SerialGCDemo
 
-
+java -Xms64m -Xmx64m -XX:+UseParallelGC -verbose:gc SerialGCDemo
 
 
 
