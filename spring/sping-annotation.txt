@@ -1,0 +1,12 @@
+@SpringBootApplication
+Spring Boot @SpringBootApplication annotation is used to mark a configuration class that declares one or more @Bean methods and also triggers auto-configuration and component scanning. 
+
+
+@RestController
+Spring 4.0 introduced the @RestController annotation in order to simplify the creation of RESTful web services. 
+It’s a convenient annotation that combines @Controller and @ResponseBody, which eliminates the need to annotate every request handling method of the controller class with the @ResponseBody annotation.
+
+
+
+@GetMapping
+To inform framework about GET request mapping for a specific path. 
