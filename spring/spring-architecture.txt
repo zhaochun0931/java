@@ -1,0 +1,17 @@
+https://www.javaguides.net/2018/10/spring-mvc-5-hello-world-example.html
+
+
+
+
+
+three-layer architecture in Spring MVC web application
+
+Presentation layer
+Business logic (or Application) layer
+Data access layer (or Data) layer
+
+
+
+Controller classes
+Service classes
+Repository classes
