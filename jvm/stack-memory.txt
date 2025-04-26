@@ -1,1 +1,7 @@
+If this memory is full, Java throws java.lang.StackOverFlowError.
+Access to this memory is fast when compared to heap memory.
+This memory is threadsafe, as each thread operates in its own stack.
+
+
+
 
