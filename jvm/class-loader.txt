@@ -1,1 +1,12 @@
+The Java run-time supports three built-in class loaders:
 
+
+
+
+Bootstrap class loader – The virtual machine’s built-in class loader, is represented as null
+
+
+Platform class loader – Loads the platform classes, which include the Java SE platform APIs, their implementation classes, and JDK-specific run-time classes. The platform class loader is the parent of the system class loader
+
+
+System class loader – Also known as application class loader, loads classes on the application class path, module path, and JDK-specific tools
