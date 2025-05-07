@@ -2,3 +2,175 @@ https://docs.oracle.com/en/java/javase/21/gctuning/garbage-first-garbage-collect
 
 
 
+In Java 11, the G1 garbage collector is the default (and the CMS garbage collector is deprecated).
+
+
+
+The G1 Garbage Collector (Garbage-First GC) in the Java Virtual Machine (JVM) does not use the traditional Old Generation space. Instead, it has a different approach to managing heap memory.
+
+In G1 GC, the heap is divided into regions, and these regions can be of different sizes. The heap is not explicitly divided into Young and Old Generations as in the classic garbage collectors like Parallel GC or CMS (Concurrent Mark-Sweep). Instead, G1 GC organizes the heap into:
+
+Young Regions: These are regions where new objects are allocated. Young regions are collected during Young Generation (or minor) garbage collections.
+
+Old Regions: These regions are used for objects that have survived several garbage collections in the Young Generation. When objects are promoted from the Young Generation, they are moved to Old regions.
+
+Humongous Regions: G1 also has special handling for very large objects that do not fit into regular regions. These large objects are allocated in Humongous regions, which are treated differently compared to regular regions.
+
+
+
+
+
+
+
+
+
+
+You can explicitly enable it by providing -XX:+UseG1GC on the command line.
+
+
+
+-XX:+UseG1GC
+-XX:+PrintFlagsFinal
+
+-XX:+PrintGC
+
+-XX:+PrintGCDetails
+
+
+-Xms2m -Xmx24m
+
+-Xloggc:gc.log
+
+
+
+
+
+vmHeapMemoryStats
+
+
+
+
+
+In Java 11 some JVM flags including those used in Java 8 for Garbage Collection Logging have been removed.
+
+If these are still contained in the JVM flags specified in the setenv.sh or setenv.bat the JVM will not be able to start.
+
+It's known that the following options are unrecognized in Java 11:
+
+-d64
+PrintGCTimeStamps
+PrintGCDateStamps
+PrintTenuringDistribution
+PrintGCCause
+PrintGCDetails
+UseGCLogFileRotation
+NumberOfGCLogFiles
+GCLogFileSize
+
+
+
+
+
+
+   
+
+
+
+# java -Xms2m -Xmx24m -XX:+UseG1GC -XX:+PrintGC -XX:+PrintGCTimeStamps GarbageCollection
+0.066: [GC pause (G1 Evacuation Pause) (young) 1024K->436K(2048K), 0.0016241 secs]
+0.084: [GC pause (G1 Evacuation Pause) (young) 1460K->717K(3072K), 0.0019119 secs]
+0.104: [GC pause (G1 Evacuation Pause) (young) 1741K->812K(3072K), 0.0017583 secs]
+Step/TotalMemory/FreeMemory/UsedMemory:
+0.112: [GC pause (G1 Evacuation Pause) (young) 1836K->1805K(4096K), 0.0026881 secs]
+1   4194304   2257544   1936760
+1.115: [GC pause (G1 Evacuation Pause) (young) 2829K->3328K(6144K), 0.0019311 secs]
+2   6291456   2752808   3538648
+2.118: [GC pause (G1 Evacuation Pause) (young) (initial-mark) 4352K->4352K(7168K), 0.0015955 secs]
+2.120: [GC concurrent-root-region-scan-start]
+2.120: [GC concurrent-root-region-scan-end, 0.0001854 secs]
+2.120: [GC concurrent-mark-start]
+2.122: [GC concurrent-mark-end, 0.0014594 secs]
+2.122: [GC remark, 0.0013068 secs]
+2.123: [GC cleanup 4388K->4388K(7168K), 0.0003189 secs]
+3   7340032   2697240   4642792
+3.124: [GC pause (G1 Evacuation Pause) (young) 5376K->5632K(8192K), 0.0017045 secs]
+4   8388608   2369608   6019000
+4.127: [GC pause (G1 Evacuation Pause) (mixed) 6656K->6400K(10240K), 0.0023764 secs]
+5   10485760   3610600   6875160
+5.130: [GC pause (G1 Evacuation Pause) (young) 7424K->7554K(10240K), 0.0017874 secs]
+6   10485760   2175272   8310488
+6.133: [GC pause (G1 Evacuation Pause) (young) (initial-mark) 8578K->8368K(11264K), 0.0016450 secs]
+6.135: [GC concurrent-root-region-scan-start]
+6.135: [GC concurrent-root-region-scan-end, 0.0004549 secs]
+6.135: [GC concurrent-mark-start]
+7   11534336   2115736   9418600
+6.138: [GC concurrent-mark-end, 0.0026255 secs]
+6.138: [GC remark, 0.0012638 secs]
+6.139: [GC cleanup 9197K->9197K(11264K), 0.0002551 secs]
+7.135: [GC pause (G1 Evacuation Pause) (young) 9392K->9318K(12288K), 0.0019974 secs]
+7.138: [GC pause (G1 Evacuation Pause) (mixed) 10342K->10137K(13312K), 0.0022232 secs]
+8   13631488   3184832   10446656
+8.141: [GC pause (G1 Evacuation Pause) (young) 11161K->11584K(14336K), 0.0018444 secs]
+9   14680064   2691112   11988952
+9.144: [GC pause (G1 Evacuation Pause) (young) (initial-mark) 12608K->13056K(15360K), 0.0019569 secs]
+9.146: [GC concurrent-root-region-scan-start]
+9.146: [GC concurrent-root-region-scan-end, 0.0002273 secs]
+9.146: [GC concurrent-mark-start]
+10   15728640   2177232   13551408
+9.150: [GC concurrent-mark-end, 0.0035701 secs]
+9.150: [GC remark, 0.0012917 secs]
+9.151: [GC cleanup 13233K->13233K(15360K), 0.0002644 secs]
+10.147: [GC pause (G1 Evacuation Pause) (young) 14080K->13952K(16384K), 0.0015308 secs]
+11   16777216   2241816   14535400
+11.149: [GC pause (G1 Evacuation Pause) (mixed) 14976K->14573K(19456K), 0.0033089 secs]
+12   19922944   4680960   15241984
+12.153: [GC pause (G1 Evacuation Pause) (young) 15597K->15723K(19456K), 0.0025879 secs]
+13   19922944   3229792   16693152
+13.156: [GC pause (G1 Evacuation Pause) (young) (initial-mark) 16747K->16801K(19456K), 0.0022922 secs]
+13.159: [GC concurrent-root-region-scan-start]
+13.159: [GC concurrent-root-region-scan-end, 0.0005838 secs]
+13.159: [GC concurrent-mark-start]
+14   19922944   1868840   18054104
+13.167: [GC concurrent-mark-end, 0.0074260 secs]
+13.167: [GC remark, 0.0024468 secs]
+13.170: [GC cleanup 17630K->17630K(19456K), 0.0005997 secs]
+14.160: [GC pause (G1 Evacuation Pause) (young) 17825K->17826K(20480K), 0.0017287 secs]
+14.163: [GC pause (G1 Evacuation Pause) (mixed) 18850K->18752K(23552K), 0.0024499 secs]
+15   24117248   4849136   19268112
+15.166: [GC pause (G1 Evacuation Pause) (young) 19776K->19968K(23552K), 0.0018094 secs]
+16   24117248   3543296   20573952
+16.169: [GC pause (G1 Evacuation Pause) (young) (initial-mark) 20992K->20978K(23552K), 0.0013285 secs]
+16.170: [GC concurrent-root-region-scan-start]
+17   24117248   2453464   21663784
+16.171: [GC concurrent-root-region-scan-end, 0.0004107 secs]
+16.171: [GC concurrent-mark-start]
+16.175: [GC concurrent-mark-end, 0.0046745 secs]
+16.176: [GC remark, 0.0012622 secs]
+16.177: [GC cleanup 21156K->21156K(23552K), 0.0002609 secs]
+17.171: [GC pause (G1 Evacuation Pause) (young) 22002K->22171K(24576K), 0.0016238 secs]
+18   25165824   2214800   22951024
+18.173: [GC pause (G1 Evacuation Pause) (mixed)-- 23195K->24576K(24576K), 0.0035643 secs]
+18.177: [Full GC (Allocation Failure)  24576K->20522K(24576K), 0.0121272 secs]
+19   25165824   3832864   21332960
+19.190: [GC pause (G1 Evacuation Pause) (young) 21546K->21373K(24576K), 0.0009130 secs]
+20   25165824   2688032   22477792
+20.191: [GC pause (G1 Evacuation Pause) (young) (initial-mark)-- 22397K->22397K(24576K), 0.0044753 secs]
+20.196: 20.196: [Full GC (Allocation Failure) [GC concurrent-root-region-scan-start]
+20.196: [GC concurrent-root-region-scan-end, 0.0001495 secs]
+20.196: [GC concurrent-mark-start]
+ 22397K->22154K(24576K), 0.0089421 secs]
+20.205: [Full GC (Allocation Failure)  22154K->22154K(24576K), 0.0081636 secs]
+20.213: [GC concurrent-mark-abort]
+20.213: [GC pause (G1 Evacuation Pause) (young) 22154K->22154K(24576K), 0.0004160 secs]
+20.214: [GC pause (G1 Evacuation Pause) (young) (initial-mark) 22154K->22154K(24576K), 0.0004107 secs]
+20.214: [GC concurrent-root-region-scan-start]
+20.214: [GC concurrent-root-region-scan-end, 0.0000099 secs]
+20.214: [GC concurrent-mark-start]
+20.215: [GC concurrent-mark-end, 0.0007957 secs]
+20.215: [Full GC (Allocation Failure)  22154K->453K(2048K), 0.0039325 secs]
+Exception in thread "main" 20.219: [GC remark, 0.0000163 secs]
+20.220: [GC concurrent-mark-abort]
+java.lang.OutOfMemoryError: Java heap space
+	at GarbageCollection.getOneMega(GarbageCollection.java:28)
+	at GarbageCollection.main(GarbageCollection.java:13)
+#
