@@ -1,4 +1,23 @@
-https://www.baeldung.com/java-log4j-properties-guide
+├── src
+│   ├── main
+│   │   └── resources
+│   │       └── log4j.properties
+
+
+
+
+
+
+
+Log4J is a popular, open-source logging framework written in Java. 
+
+
+
+
+There are three main components of Log4j – loggers, appenders, and layoutshttps://www.baeldung.com/java-log4j-properties-guide
+
+
+
 
 
 rotate xx.log to xx.log.0
