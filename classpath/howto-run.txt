@@ -15,6 +15,79 @@ wget https://repo1.maven.org/maven2/com/google/code/gson/gson/2.10.1/gson-2.10.1
 
 
 
+javac -cp lib Main.java
+javac -cp lib/ Main.java
+
+
+$ javac -cp lib Main.java
+Main.java:1: error: package com.google.gson does not exist
+import com.google.gson.Gson;
+                      ^
+Main.java:5: error: cannot find symbol
+        Gson gson = new Gson();
+        ^
+  symbol:   class Gson
+  location: class Main
+Main.java:5: error: cannot find symbol
+        Gson gson = new Gson();
+                        ^
+  symbol:   class Gson
+  location: class Main
+3 errors
+$
+$
+$
+$ javac -cp lib/ Main.java
+Main.java:1: error: package com.google.gson does not exist
+import com.google.gson.Gson;
+                      ^
+Main.java:5: error: cannot find symbol
+        Gson gson = new Gson();
+        ^
+  symbol:   class Gson
+  location: class Main
+Main.java:5: error: cannot find symbol
+        Gson gson = new Gson();
+                        ^
+  symbol:   class Gson
+  location: class Main
+3 errors
+$
+$
+$
+$
+
+
+
+
+
+# you must use the following pattern to compile 
+
+javac -cp lib/* Main.java
+
+
+javac -cp lib/gson-2.10.1.jar Main.java
+
+
+
+
+# you must use the following pattern to run 
+
+java -cp lib/gson-2.10.1.jar: Main
+
+java -cp lib/*: Main
+
+
+
+
+$ java -cp lib/gson-2.10.1.jar: Main
+JSON output: [1,2,3]
+$
+
+$ java -cp lib/*: Main
+JSON output: [1,2,3]
+$
+
 
 
 
