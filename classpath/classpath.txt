@@ -1,3 +1,12 @@
+| Parameter             | Purpose                                            |
+| --------------------- | -------------------------------------------------- |
+| `-classpath` or `-cp` | Defines where to search for user classes and JARs. |
+
+
+
+
+
+
 1. -classpath /some/path/with/jars
 
 This adds a single path to the classpath: the directory /some/path/with/jars, but not the JAR files inside it.
