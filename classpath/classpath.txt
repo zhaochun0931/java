@@ -1,0 +1,29 @@
+1. -classpath /some/path/with/jars
+
+This adds a single path to the classpath: the directory /some/path/with/jars, but not the JAR files inside it.
+
+It means: “Java will look in that directory for .class files or a package directory structure, but not JARs.”
+
+JAR files inside that directory will not be loaded automatically.
+
+👉 Use this only if you have unarchived .class files or compiled packages in that folder.
+
+
+
+
+
+
+
+
+2. -classpath /some/path/with/jars/*
+
+This means: “Add all JAR files inside /some/path/with/jars to the classpath.”
+
+This is how you correctly include multiple JAR files in a directory.
+
+Each JAR inside the folder will be included (but not subfolders or JARs in subfolders).
+
+
+java -classpath "/some/path/with/jars/*" com.example.MyMainClass
+
+🛑 Note: You must quote the path or escape the * in some shells, otherwise the shell will expand it before Java sees it.
