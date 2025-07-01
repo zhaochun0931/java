@@ -1,16 +1,14 @@
+# 1. Create keystore with self-signed cert
 keytool -genkeypair \
-  -alias mytlskey \
+  -alias mykey \
   -keyalg RSA \
-  -keysize 2048 \
   -keystore keystore.jks \
-  -validity 365 \
   -storepass changeit \
   -keypass changeit \
-  -dname "CN=localhost, OU=Dev, O=MyOrg, L=City, S=State, C=US"
+  -dname "CN=localhost, OU=Test, O=MyOrg, L=City, S=State, C=US"
 
+# 2. Export the certificate
+keytool -exportcert -alias mykey -keystore keystore.jks -file cert.crt -storepass changeit
 
-
-# convert to pfx(p12) format
-keytool -importkeystore -srckeystore keystore.jks -destkeystore keystore.pfx -deststoretype pkcs12
-
-keytool -importkeystore -srckeystore keystore.jks -destkeystore keystore.p12 -deststoretype pkcs12
+# 3. Import into TrustStore (for client to trust server)
+keytool -importcert -alias myserver -file cert.crt -keystore truststore.jks -storepass changeit -noprompt
