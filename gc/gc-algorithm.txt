@@ -1,14 +1,19 @@
 The JVM provides four different algorithms for performing GC.
 
 
-The serial garbage collector
-
+[The serial garbage collector]
 The serial garbage collector is the simplest of the four. The serial collector uses a single thread to process the heap. It will stop all application threads as the heap is processed (for either a minor or full GC). During a full GC, it will fully compact the old generation.
 
 
 
 
 
-The throughput collector
+
+
+
+[The throughput collector]
 
 The throughput collector uses multiple threads to collect the young generation, which makes minor GCs much faster than when the serial collector is used. The throughput collector can use multiple threads to process the old generation as well. Because it uses multiple threads, the throughput collector is often called the parallel collector.
+The throughput collector stops all application threads during both minor and full GCs, and it fully compacts the old generation during a full GC.
+
+To enable it where necessary, use the flags -XX:+UseParallelGC -XX:+UseParallelOldGC.
