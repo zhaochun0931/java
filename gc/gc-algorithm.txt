@@ -26,3 +26,13 @@ To enable it where necessary, use the flags -XX:+UseParallelGC -XX:+UseParallelO
 The CMS collector is designed to eliminate the long pauses associated with the full GC cycles of the throughput and serial collectors. CMS stops all application threads during a minor GC, which it also performs with multiple threads.
 Instead of stopping the application threads during a full GC, CMS uses one or more background threads to periodically scan through the old generation and discard unused objects.
 
+
+
+
+
+
+[The G1 collector]
+The G1 (or Garbage First) collector is designed to process large heaps (greater than about 4 GB) with minimal pauses. It divides the heap into a number of regions, but it is still a generational collector.
+
+G1 is a concurrent collector: the old generation is processed by background threads that don’t need to stop the application threads to perform most of their work. Because the old generation is divided into regions, G1 can clean up objects from the old generation by copying from one region into another, which means that it (at least partially) compacts the heap during normal processing. Hence, a G1 heap is much less likely to be subject to fragmentation—though that is still possible.
+
