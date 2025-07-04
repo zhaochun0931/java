@@ -12,8 +12,17 @@ The serial garbage collector is the simplest of the four. The serial collector u
 
 
 [The throughput collector]
-
 The throughput collector uses multiple threads to collect the young generation, which makes minor GCs much faster than when the serial collector is used. The throughput collector can use multiple threads to process the old generation as well. Because it uses multiple threads, the throughput collector is often called the parallel collector.
 The throughput collector stops all application threads during both minor and full GCs, and it fully compacts the old generation during a full GC.
 
 To enable it where necessary, use the flags -XX:+UseParallelGC -XX:+UseParallelOldGC.
+
+
+
+
+
+
+[The CMS collector]
+The CMS collector is designed to eliminate the long pauses associated with the full GC cycles of the throughput and serial collectors. CMS stops all application threads during a minor GC, which it also performs with multiple threads.
+Instead of stopping the application threads during a full GC, CMS uses one or more background threads to periodically scan through the old generation and discard unused objects.
+
