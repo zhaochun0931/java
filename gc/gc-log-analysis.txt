@@ -1,0 +1,10 @@
+17.806: [GC [PSYoungGen: 227983K->14463K(264128K)]
+280122K->66610K(613696K), 0.0169320 secs]
+[Times: user=0.05 sys=0.00, real=0.02 secs]
+
+
+
+
+
+
+This GC occurred 17.806 seconds after the program began. Objects in the young generation now occupy 14463 KB (14 MB, in the survivor space); before the GC, they occupied 227983 KB (227 MB).
