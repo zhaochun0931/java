@@ -9,3 +9,6 @@ The serial garbage collector is the simplest of the four. The serial collector u
 
 
 
+The throughput collector
+
+The throughput collector uses multiple threads to collect the young generation, which makes minor GCs much faster than when the serial collector is used. The throughput collector can use multiple threads to process the old generation as well. Because it uses multiple threads, the throughput collector is often called the parallel collector.
