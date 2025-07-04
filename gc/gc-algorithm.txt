@@ -1,0 +1,11 @@
+The JVM provides four different algorithms for performing GC.
+
+
+The serial garbage collector
+
+The serial garbage collector is the simplest of the four.
+
+
+
+
+
