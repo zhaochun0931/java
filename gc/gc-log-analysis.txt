@@ -1,10 +1,15 @@
 17.806: [GC [PSYoungGen: 227983K->14463K(264128K)]
-280122K->66610K(613696K), 0.0169320 secs]
-[Times: user=0.05 sys=0.00, real=0.02 secs]
+            280122K->66610K(613696K), 0.0169320 secs]
+            [Times: user=0.05 sys=0.00, real=0.02 secs]
 
 
 
 
 
 
-This GC occurred 17.806 seconds after the program began. Objects in the young generation now occupy 14463 KB (14 MB, in the survivor space); before the GC, they occupied 227983 KB (227 MB).
+This GC occurred 17.806 seconds after the program began. Objects in the young generation now occupy 14463 KB (14 MB, in the survivor space); before the GC, they occupied 227983 KB (227 MB). The total size of the young generation at this point is 264 MB.
+
+
+
+
+Meanwhile the overall occupancy of the heap (both young and old generations) decreased from 280 MB to 66 MB, and the size of the entire heap at this point in time was 613 MB. The operation took less than 0.02 seconds (the 0.02 seconds of real time at the end of the output is 0.0169320 seconds—the actual time—rounded). The program was charged for more CPU time than real time because the young collection was done by multiple threads (in this configuration, four threads).
