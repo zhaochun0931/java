@@ -3,7 +3,7 @@ The JVM provides four different algorithms for performing GC.
 
 The serial garbage collector
 
-The serial garbage collector is the simplest of the four.
+The serial garbage collector is the simplest of the four. The serial collector uses a single thread to process the heap. It will stop all application threads as the heap is processed (for either a minor or full GC). During a full GC, it will fully compact the old generation.
 
 
 
