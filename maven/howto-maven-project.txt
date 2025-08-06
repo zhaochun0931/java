@@ -60,5 +60,9 @@ java -jar my-app-1.0-SNAPSHOT-jar-with-dependencies.jar
 $HOME/.m2/settings.xml
 
 
+# all the gemfire jar file will download to below directory
+
+/root/.m2/repository/com/vmware/gemfire
+
 
 $HOME/.m2/repository
