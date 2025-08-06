@@ -31,8 +31,7 @@ mvn -v
 
 
 
-$HOME/.m2/repository
-$HOME/.m2/settings.xml
+
 
 
 
