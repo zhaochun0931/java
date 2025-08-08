@@ -35,11 +35,6 @@ You can explicitly enable it by providing -XX:+UseG1GC on the command line.
 
 
 
-
--Xloggc:gc.log
-
-
-
 java \
   -XX:+UseG1GC \
   -Xmx32m \
