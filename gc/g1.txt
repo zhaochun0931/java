@@ -32,14 +32,21 @@ You can explicitly enable it by providing -XX:+UseG1GC on the command line.
 -XX:+UseG1GC
 -XX:+PrintFlagsFinal
 
--XX:+PrintGC
-
--XX:+PrintGCDetails
 
 
--Xms2m -Xmx24m
+
 
 -Xloggc:gc.log
+
+
+
+java \
+  -XX:+UseG1GC \
+  -Xmx32m \
+  -Xms32m \
+  -Xlog:gc*:file=gc.log:tags,uptime,level \
+  gcdemo
+
 
 
 
@@ -71,7 +78,7 @@ GCLogFileSize
 
 
 
-
+Xlog:gc
    
 
 
