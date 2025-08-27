@@ -47,3 +47,11 @@ cd target
 java -jar my-app-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 
+
+
+
+
+
+
+
+mvn spring-boot:run
