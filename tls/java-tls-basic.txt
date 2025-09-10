@@ -1,0 +1,23 @@
+🔑Keystore
+
+A Java Keystore (keystore.jks or keystore.p12) is a file that contains:
+
+The server’s private key (used to prove identity),
+
+The server certificate (public key signed by a CA),
+
+And optionally the full certificate chain.
+
+👉 It’s what your Java application (e.g., GemFire, Tomcat, Kafka, etc.) uses to present itself to clients.
+
+
+
+
+
+
+
+🛡️ Truststore
+
+A Java Truststore (truststore.jks or truststore.p12) is a file that contains:
+
+Trusted CA certificates (not private keys).
