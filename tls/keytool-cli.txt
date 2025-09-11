@@ -1,0 +1,3 @@
+# check the truststore.p12
+
+keytool -list -v -keystore truststore.p12 -storepass changeit
