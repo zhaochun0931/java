@@ -1,0 +1,12 @@
+javac MemoryDemo.java
+
+
+
+
+java -Xms128m -Xmx128m MemoryDemo
+
+
+java -Xmx1g -XX:SoftMaxHeapSize=256m MemoryDemo
+
+
+java -Xmx512m -XX:MaxDirectMemorySize=128m MemoryDemo
