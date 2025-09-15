@@ -1,0 +1,9 @@
+
+
+
+Don't forget native memory: The JVM itself, thread stacks, and other non-heap data also consume memory. Xms and Xmx only control the heap size.
+
+
+
+
+  
