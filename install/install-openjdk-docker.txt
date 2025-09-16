@@ -1,4 +1,4 @@
-docker run -it --rm openjdk:17-jdk bash
+docker run -it --rm openjdk:8-jdk bash
 
 
 
