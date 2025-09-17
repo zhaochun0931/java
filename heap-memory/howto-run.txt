@@ -10,3 +10,27 @@ java -Xmx1g -XX:SoftMaxHeapSize=256m MemoryDemo
 
 
 java -Xmx512m -XX:MaxDirectMemorySize=128m MemoryDemo
+
+
+java -Xmx64m -Xms64m -XX:MaxDirectMemorySize=512m MemoryDemo
+
+
+
+
+
+
+
+In Java, the maximum off-heap memory (when you use ByteBuffer.allocateDirect()) is controlled primarily by this JVM parameter:
+
+🔹 -XX:MaxDirectMemorySize
+
+Sets the upper limit for direct (off-heap) memory.
+
+Default (if not set explicitly):
+
+On most JVMs, it equals the maximum heap size (-Xmx).
+
+Example: if you run -Xmx512m and don’t set -XX:MaxDirectMemorySize, then max direct memory is also ~512 MB.
+
+
+
