@@ -8,6 +8,14 @@ public class MemoryDemo {
     public static void main(String[] args) throws Exception {
         System.out.println("Starting JVM memory stress test...");
 
+        // Show configured heap and off-heap limits
+        long maxHeap = Runtime.getRuntime().maxMemory();
+        long maxDirect = getMaxDirectMemory();
+
+        System.out.println("Max Heap (-Xmx): " + (maxHeap / (1024 * 1024)) + " MB");
+        System.out.println("Max Direct Memory (-XX:MaxDirectMemorySize): " +
+                           (maxDirect / (1024 * 1024)) + " MB");
+
         // Formatter for timestamp
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
@@ -18,7 +26,7 @@ public class MemoryDemo {
         try {
             // Allocate heap memory every 5 seconds
             while (true) {
-                byte[] block = new byte[10 * 1024 * 1024]; // 10 MB blocks
+                byte[] block = new byte[10 * 1024 * 1024]; // 10 MB
                 heapList.add(block);
 
                 String time = LocalDateTime.now().format(fmt);
@@ -34,7 +42,7 @@ public class MemoryDemo {
         try {
             // Allocate off-heap memory every 5 seconds
             while (true) {
-                ByteBuffer buffer = ByteBuffer.allocateDirect(20 * 1024 * 1024); // 20 MB blocks
+                ByteBuffer buffer = ByteBuffer.allocateDirect(20 * 1024 * 1024); // 20 MB
                 offHeapList.add(buffer);
 
                 String time = LocalDateTime.now().format(fmt);
@@ -48,6 +56,18 @@ public class MemoryDemo {
         }
 
         System.out.println("Test finished. Sleeping for observation...");
-        Thread.sleep(60_000); // keep JVM alive for monitoring
+        Thread.sleep(60_000);
+    }
+
+    private static long getMaxDirectMemory() {
+        // Check system property
+        String prop = System.getProperty("sun.nio.MaxDirectMemorySize");
+        if (prop != null && !prop.isEmpty()) {
+            try {
+                return Long.parseLong(prop);
+            } catch (NumberFormatException ignored) {}
+        }
+        // Fallback: JVM often defaults to -Xmx
+        return Runtime.getRuntime().maxMemory();
     }
 }
