@@ -15,6 +15,10 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 
 
 ✅ Step 3: Create PKCS12 keystore
+
+The Java keytool cannot directly import a standalone PEM private key. You must first combine the private key (mycert-key.pem) and certificate (mycert.pem) into a single PKCS#12 (.p12) file using OpenSSL.
+
+
 Java keytool can’t import PEM cert + key directly — first convert to PKCS#12:
 
 
