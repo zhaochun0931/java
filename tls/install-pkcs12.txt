@@ -1,0 +1,31 @@
+export PASS=changeit
+
+# 1. Generate keystore
+keytool -genkeypair \
+  -alias mykey \
+  -dname "CN=myapp.example.com, OU=IT, O=MyCompany, L=NY, ST=NY, C=US" \
+  -keyalg RSA \
+  -keysize 2048 \
+  -validity 3650 \
+  -keypass $PASS \
+  -keystore keystore.p12 \
+  -storepass $PASS \
+  -storetype PKCS12
+
+# 2. Export public cert
+keytool -exportcert \
+  -alias mykey \
+  -file mycert.crt \
+  -keystore keystore.p12 \
+  -storepass $PASS \
+  -rfc
+
+# 3. Create truststore
+keytool -importcert \
+  -alias mytrustedcert \
+  -file mycert.crt \
+  -keystore truststore.p12 \
+  -storepass $PASS \
+  -storetype PKCS12 \
+  -noprompt
+
