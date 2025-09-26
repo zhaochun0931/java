@@ -1,0 +1,10 @@
+In Java, a listener is an object that implements a specific interface to "listen" for and respond to events. 
+This is a fundamental concept for implementing the Observer design pattern, which is used for event handling and asynchronous notifications across many different Java frameworks. 
+
+  
+The core idea involves two main components:
+Event Source: The object that generates an event (e.g., a button being clicked).
+Listener: The object that implements the corresponding listener interface to handle the event. 
+
+  
+The listener is registered with the event source. When an event occurs, the event source calls the appropriate method on the registered listener object to notify it. 
