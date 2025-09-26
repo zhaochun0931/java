@@ -1,0 +1,5 @@
+// Grant NO permissions to all code.
+// The default system permissions would normally be loaded, but the '==' below
+// will override them completely, creating a very strict sandbox.
+grant {
+};
