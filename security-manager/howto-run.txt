@@ -26,3 +26,16 @@ java -Djava.security.manager HelloWorld
 
 
 
+
+
+
+
+
+javac SecureFileAccess.java
+
+
+java -Djava.security.manager -Djava.security.policy==app_deny.policy SecureFileAccess
+
+
+
+java -Djava.security.manager -Djava.security.policy==app_allow.policy SecureFileAccess
