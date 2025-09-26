@@ -1,3 +1,19 @@
+The Security Manager worked based on a security policy file (.policy), which granted or denied specific permissions to code based on its source (e.g., location or signer). 
+When an application performed a potentially sensitive action, the Security Manager would perform a check to see if that action was allowed by the policy. 
+
+It has since been deprecated for removal, with its functionality permanently disabled in JDK 24. 
+
+
+The removal process was executed in several steps via Java Enhancement Proposals (JEPs): 
+JDK 17: The SecurityManager was officially deprecated for removal.
+JDK 24: The Security Manager was permanently disabled. The related APIs remain for compatibility but have no functional effect. 
+
+
+
+
+
+
+
 # jdk 8
 
 java -Djava.security.manager HelloWorld
