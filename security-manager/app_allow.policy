@@ -1,0 +1,4 @@
+// Grant write access to the specified directory.
+grant {
+  permission java.io.FilePermission "/tmp/-", "write";
+};
