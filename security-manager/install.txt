@@ -12,6 +12,12 @@ JDK 24: The Security Manager was permanently disabled. The related APIs remain f
 
 
 
+This demonstration consists of two parts:
+
+SecureFileAccess.java: A Java program that attempts to create a file in a sensitive location.
+app.policy: A security policy file that will either allow or deny the program permission to perform this action, thus demonstrating the sandbox effect.
+
+
 
 
 # jdk 8
