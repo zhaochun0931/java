@@ -8,3 +8,17 @@ Listener: The object that implements the corresponding listener interface to han
 
   
 The listener is registered with the event source. When an event occurs, the event source calls the appropriate method on the registered listener object to notify it. 
+
+
+
+
+
+javac *java
+
+java Demo
+
+# java Demo
+Setting temperature to 25°C
+ALERT! Temperature changed to: 25°C
+Setting temperature again, no change this time.
+#
