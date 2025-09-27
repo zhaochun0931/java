@@ -1,0 +1,14 @@
+javac *
+
+
+-rw-r--r--  1 root root  858 Sep 27 00:58 ClassA.class
+-rw-r--r--  1 root root  858 Sep 27 00:58 ClassB.class
+-rw-r--r--  1 root root  413 Sep 27 00:58 ClassDemo.class
+-rw-r--r--  1 root root  460 Sep 27 00:58 ClassDemo.java
+
+
+
+# java ClassDemo
+ClassA: this is 100
+ClassB: this is 200
+#
