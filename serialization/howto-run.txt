@@ -18,3 +18,23 @@ For a class to be serializable using Java's built-in mechanism, it must meet the
 
 
 The ObjectOutputStream class is used for serialization, and ObjectInputStream is used for deserialization.
+
+
+
+
+
+
+
+
+
+
+
+# javac *
+# java Main
+Original object serialized: Person{name='John Doe', age=30, password='secret-password'}
+Deserialized object: Person{name='John Doe', age=30, password='null'}
+#
+
+
+
+Notice that the password field is null in the deserialized object, because it was marked with the transient keyword and was not included in the byte stream. 
