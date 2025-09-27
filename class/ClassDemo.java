@@ -9,7 +9,7 @@ class ClassA {
 class ClassB {
     int b;
     void print(){
-        System.out.println("ClassB this is " + b);
+        System.out.println("ClassB: this is " + b);
     }
 
 }
