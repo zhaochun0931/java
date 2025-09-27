@@ -1,3 +1,46 @@
+Z Garbage Collector (ZGC) is designed for very low latency. It performs most of its work concurrently with application threads and aims for pause times of less than 10 milliseconds, even with a very large heap. ZGC is ideal for interactive applications where responsiveness is critical.
+
+
+
+
+
+
+
+Example use case: Low-latency service
+A trading platform or a financial service that needs extremely fast response times, even under high load. Any long pause would be unacceptable.
+JVM flags for ZGC:
+
+# Use ZGC for a latency-sensitive service with a large heap
+java -XX:+UseZGC -Xms32g -Xmx32g -jar my-trading-platform.jar
+
+
+Explanation:
+-XX:+UseZGC: Enables the Z Garbage Collector.
+-Xms32g -Xmx32g: ZGC can handle very large heaps efficiently, and setting initial and maximum to the same value is still recommended. 
+Further tuning for ZGC:
+While ZGC is largely self-tuning, you can adjust some parameters if needed. 
+
+
+# Set the number of concurrent GC threads and logging for ZGC
+java -XX:+UseZGC -XX:ConcGCThreads=4 -Xlog:gc -jar my-trading-platform.jar
+
+
+
+-XX:ConcGCThreads=4: Sets the number of concurrent GC threads. ZGC has heuristics to determine this automatically, but you can override it if you find it necessary for your specific workload.
+-Xlog:gc: Enables garbage collection logging for analysis. 
+
+Example for Generational ZGC (JDK 21+):
+For modern Java versions, you can enable the generational mode for ZGC, which can further improve performance for many workloads. 
+
+# Enable Generational ZGC
+java -XX:+UseZGC -XX:+ZGenerational -Xms32g -Xmx32g -jar my-trading-platform.jar
+
+
+
+
+
+
+
 -XX:+UseZGC
 
 
