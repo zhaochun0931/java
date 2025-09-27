@@ -15,7 +15,7 @@ class MultiThreadDemo extends Thread{
  * Hello world!
  *
  */
-public class App 
+public class App1 
 {
     public static void main( String[] args )
     {
