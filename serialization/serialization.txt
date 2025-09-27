@@ -8,3 +8,13 @@ Deserialization is the reverse process: it reconstructs the object from the byte
 
 
 
+How Java's native serialization works
+
+For a class to be serializable using Java's built-in mechanism, it must meet these criteria:
+  The class must implement the java.io.Serializable marker interface. This interface has no methods, serving only to "mark" the class as eligible for serialization.
+  The class's non-static, non-transient fields are automatically serialized. static and transient fields are skipped.
+  When an object is deserialized, the JVM creates a new instance and populates its fields directly. It does not call the object's constructor. 
+
+
+
+The ObjectOutputStream class is used for serialization, and ObjectInputStream is used for deserialization.
