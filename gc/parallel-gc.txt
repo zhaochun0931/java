@@ -1,0 +1,24 @@
+Parallel GC
+
+The Parallel Garbage Collector is optimized for high throughput. It is a "stop-the-world" collector, meaning it pauses application threads during a collection cycle. It is most suitable for non-interactive applications where long pauses are acceptable, such as batch processing jobs, analytics, or scientific calculations. 
+
+Example use case: Batch processing job
+
+A batch job that analyzes a large dataset can tolerate occasional pauses of several hundred milliseconds or even seconds, as its main goal is to finish the processing as fast as possible. 
+JVM flags for Parallel GC:
+
+# Use Parallel GC for a batch job with 16GB of heap
+java -XX:+UseParallelGC -Xms16g -Xmx16g -jar my-batch-job.jar
+
+Explanation:
+-XX:+UseParallelGC: Explicitly enables the Parallel garbage collector.
+-Xms16g -Xmx16g: Sets the initial and maximum heap size to 16 GB to prevent dynamic resizing and allocate a large heap for high throughput. 
+
+Further tuning for Parallel GC:
+For a fine-tuned approach, you could set goals for the GC.
+
+# Set a goal of 95% of total time spent in application execution
+java -XX:+UseParallelGC -XX:GCTimeRatio=19 -jar my-batch-job.jar
+
+
+-XX:GCTimeRatio=19: Sets a target that no more than 5% of the total time (1/(1+19)) should be spent on garbage collection. 
