@@ -1,0 +1,10 @@
+Heap space is used for the dynamic memory allocation of Java objects and JRE classes at runtime. New objects are always created in heap space, and the references to these objects are stored in stack memory.
+
+
+
+4. Configure heap size
+
+Adjusting the heap size is often the first and most impactful step in GC tuning. 
+  -Xms: Sets the initial heap size.
+  -Xmx: Sets the maximum heap size. 
+Rule of thumb: Set -Xms and -Xmx to the same value to prevent the heap from constantly resizing, which can cause performance issues. 
