@@ -8,7 +8,7 @@ jstack PID
 
 $ jps
 12513 Jps
-12511 DeadlockDemo
+12511 Deadlock
 
 $ jstack 12511
 2024-05-24 19:09:18
