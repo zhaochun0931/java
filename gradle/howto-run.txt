@@ -1,0 +1,30 @@
+├── app
+│   ├── build.gradle
+│   ├── Dockerfile
+│   ├── settings.gradle
+│   └── src
+│       └── main
+│           └── java
+│               └── com
+│                   └── example
+│                       └── demo
+│                           └── DemoApplication.java
+└── compose.yaml
+
+
+
+
+
+mkdir -p app/src/main/java/com/example/demo/
+
+
+
+
+docker compose build
+
+docker compose up
+
+
+
+
+curl localhost:8080/hello
