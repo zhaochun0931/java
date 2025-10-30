@@ -1,6 +1,0 @@
-services:
-  hello-world:
-    build: ./app
-    container_name: hello-world-app
-    ports:
-      - "8080:8080"
