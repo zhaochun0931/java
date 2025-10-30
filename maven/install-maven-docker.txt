@@ -10,10 +10,6 @@ cd my-app
 mvn clean install
 
 
-
-package com.mycompany.app;
-
-
 mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
 
 
