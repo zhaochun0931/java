@@ -18,3 +18,12 @@ mkdir -p src/main/java/com/example/demo/
 docker compose build
 
 docker compose up
+
+
+
+
+
+$ curl http://localhost:8080/hello
+Hello, World from Spring Boot + Docker!
+$
+
