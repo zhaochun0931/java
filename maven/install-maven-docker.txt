@@ -5,7 +5,16 @@ docker run -it --rm --name my-maven-project -v "$(pwd)":/usr/src/mymaven -v "$HO
 
 mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
 
+cd my-app
+
+mvn clean install
+
+
+
+package com.mycompany.app;
+
 
 mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
+
 
 mvn exec:java -Dexec.mainClass=App
