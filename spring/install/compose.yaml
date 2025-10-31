@@ -4,5 +4,7 @@ services:
     container_name: ubuntu-spring-cli
     tty: true
     stdin_open: true
+    ports:
+      - "8080:8080"      # optional, to expose Spring Boot apps
     volumes:
       - ./data:/workspace
