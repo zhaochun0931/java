@@ -1,1 +1,8 @@
-
+services:
+  ubuntu-spring:
+    build: .
+    container_name: ubuntu-spring-cli
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./data:/workspace
