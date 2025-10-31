@@ -4,3 +4,15 @@ docker compose up --build
 
 docker exec -it ubuntu-spring-cli bash
 
+
+spring --version
+
+java -version
+
+mvn -v
+
+
+
+
+
+
