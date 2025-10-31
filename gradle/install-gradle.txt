@@ -112,7 +112,8 @@ $
 
 
 
+./gradlew build
 
-gradle run
+./gradlew run
 
 
