@@ -18,10 +18,9 @@ mvn -v
 
 # create the first project
 
-spring init --build=maven --dependencies=web demo
+spring init --build=maven --dependencies=web hello-world
 
-
-cd demo
+cd hello-world
 
 mvn spring-boot:run
 
