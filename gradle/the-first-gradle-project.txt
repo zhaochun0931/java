@@ -79,3 +79,5 @@ $
 ./gradlew build
 
 ./gradlew run
+
+./gradlew clean
