@@ -20,6 +20,34 @@ mvn -v
 
 spring init --build=maven --dependencies=web helloworld
 
+
+
+├── HELP.md
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── com
+    │   │       └── example
+    │   │           └── helloworld
+    │   │               └── HelloworldApplication.java
+    │   └── resources
+    │       ├── application.properties
+    │       ├── static
+    │       └── templates
+    └── test
+        └── java
+            └── com
+                └── example
+                    └── helloworld
+                        └── DemoApplicationTests.java
+
+
+
+
+
 cd helloworld
 
 mvn spring-boot:run
