@@ -1,0 +1,4 @@
+In Java, a function is typically referred to as a method — a block of code that performs a specific task and can be reused.
+
+
+
