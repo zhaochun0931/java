@@ -1,1 +1,39 @@
 gradle init
+
+
+
+
+add the following lines to build.gradle
+
+application {
+    // Define the main class for the application.
+    mainClass = 'org.example.App'
+}
+
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': application.mainClass
+        )
+    }
+}
+
+
+
+
+
+
+
+
+./gradlew clean build
+
+
+
+
+java -jar app/build/libs/app.jar
+
+
+
+
+
