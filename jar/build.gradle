@@ -1,0 +1,14 @@
+application {
+    // Define the main class for the application.
+    mainClass = 'org.example.App'
+}
+
+
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': application.mainClass
+        )
+    }
+}
