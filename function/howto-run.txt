@@ -1,0 +1,6 @@
+gradle init
+
+./gradlew clean build
+
+
+
