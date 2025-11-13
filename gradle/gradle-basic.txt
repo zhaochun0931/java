@@ -66,3 +66,15 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.10.2-bin.zip
 Downloads that Gradle version (if not already cached).
 
 Runs it automatically using the gradle-wrapper.jar.
+
+
+
+
+
+./gradlew run
+
+✅
+
+gradle run
+
+
