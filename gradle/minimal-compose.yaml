@@ -1,0 +1,10 @@
+services:
+  gradle:
+    image: amazoncorretto:21
+    container_name: gradle-dev
+    working_dir: /project
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./:/project
+    command: ["/bin/bash"]
