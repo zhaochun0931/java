@@ -9,7 +9,7 @@ public class App
     public static void main( String[] args ) throws Exception
     {
 
-        Greeter.greet("Alice");
+        Greeting.greet("Alice");
 
         System.out.println( "It will print the current time every sec." );
         
