@@ -1,6 +1,6 @@
 services:
   gradle:
-    image: amazoncorretto:21
+    image: gradle
     container_name: gradle-dev
     working_dir: /project
     tty: true
