@@ -1,4 +1,4 @@
-public class Example {
+public class App {
 
     // This is a method (a "function" in other languages)
     public static void greet(String name) {
