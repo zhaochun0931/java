@@ -1,5 +1,9 @@
 gradle init
 
+gradle init --type java-application --dsl groovy
+
+
+
 ./gradlew clean build
 
 
