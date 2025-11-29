@@ -1,6 +1,31 @@
-Java serialization is the process of converting the state of an object into a byte stream, which can then be stored in a file, sent over a network, or stored in a database. 
+✅ 1. What is Serialization in Java
 
-Deserialization is the reverse process: it reconstructs the object from the byte stream.
+Serialization in Java is the process of converting an object into a byte stream so that it can be:
+
+Saved to a file
+
+Sent over a network
+
+Stored in memory for later deserialization
+
+
+
+Deserialization is the reverse: reconstructing the object from the byte stream.
+
+
+
+Key Points:
+
+The class must implement java.io.Serializable.
+
+Transient fields are not serialized.
+
+Used in Java RMI, caching, messaging, distributed systems.
+
+
+
+
+
 
 
 
