@@ -1,0 +1,55 @@
+services:
+  java-server:
+    build: ./server
+    container_name: java-server
+    ports:
+      - "8081:8080"
+    networks:
+      - jdk-net
+
+  jdk1:
+    build: ./client
+    container_name: jdk1
+    networks:
+      - jdk-net
+    depends_on:
+      - java-server 
+
+  jdk2:
+    build: ./client
+    container_name: jdk2
+    networks:
+      - jdk-net
+    depends_on:
+      - java-server 
+
+  jdk3:
+    build: ./client
+    container_name: jdk3
+    networks:
+      - jdk-net
+    depends_on:
+      - java-server 
+
+
+  jdk4:
+    build: ./client
+    container_name: jdk4
+    networks:
+      - jdk-net
+    depends_on:
+      - java-server 
+
+
+  jdk5:
+    build: ./client
+    container_name: jdk5
+    networks:
+      - jdk-net
+    depends_on:
+      - java-server 
+
+networks:
+  jdk-net:
+    driver: bridge
+
