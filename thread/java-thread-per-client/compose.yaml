@@ -1,0 +1,14 @@
+services:
+
+  server:
+    build: ./server
+    container_name: server
+    ports:
+      - "8080:8080"
+
+  clients:
+    build: ./client
+    container_name: clients
+    depends_on:
+      - server
+
