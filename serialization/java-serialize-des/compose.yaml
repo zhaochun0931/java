@@ -1,0 +1,20 @@
+services:
+  serializer:
+    build: ./serialize
+    container_name: serializer
+    ports:
+      - "9000:9000"
+    networks:
+      - serdes-net
+
+  deserializer:
+    build: ./deserialize
+    container_name: deserializer
+    depends_on:
+      - serializer
+    networks:
+      - serdes-net
+
+networks:
+  serdes-net:
+
