@@ -1,0 +1,11 @@
+services:
+  java-listener:
+    build: ./app
+    container_name: java-listener 
+    networks:
+      - testnet
+
+
+networks:
+  testnet:
+
