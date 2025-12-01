@@ -1,0 +1,50 @@
+✅ What is NoClassDefFoundError?
+
+
+NoClassDefFoundError happens at runtime when JVM tries to load a class that existed during compile time, but is missing during execution.
+
+
+
+
+javac *java
+
+
+├── Helper.class
+├── Helper.java
+├── Main.class
+└── Main.java
+
+
+
+It worked well.
+
+$ java Main
+Hello from Helper!
+$
+
+
+
+
+
+
+Step 3 — Delete Helper.class
+
+rm Helper.class
+
+
+├── Helper.java
+├── Main.class
+└── Main.java
+
+
+❌
+
+$ java Main
+Exception in thread "main" java.lang.NoClassDefFoundError: Helper
+	at Main.main(Main.java:3)
+Caused by: java.lang.ClassNotFoundException: Helper
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 1 more
+$

@@ -1,0 +1,17 @@
+javac Main.java BrokenClass.java
+
+java Main
+
+
+
+❌
+
+$ java Main
+Exception in thread "main" java.lang.ExceptionInInitializerError
+	at Main.main(Main.java:3)
+Caused by: java.lang.ArithmeticException: / by zero
+	at BrokenClass.<clinit>(BrokenClass.java:3)
+	... 1 more
+$
+
+
