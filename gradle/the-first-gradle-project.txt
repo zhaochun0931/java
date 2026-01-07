@@ -1,3 +1,4 @@
+✅
 mkdir helloworld
 
 cd helloworld
@@ -26,6 +27,9 @@ Enter selection (default: Application) [1..4]
 
 
 
+✅
+
+tree
 
 
 $ tree -a .
@@ -64,20 +68,15 @@ $
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+✅
 ./gradlew build
 
+
+
+✅
 ./gradlew run
 
+
+
+✅
 ./gradlew clean
